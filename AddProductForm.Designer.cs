@@ -32,11 +32,13 @@
             this.input1 = new AntdUI.Input();
             this.input2 = new AntdUI.Input();
             this.input3 = new AntdUI.Input();
+            this.titlebar = new AntdUI.PageHeader();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.titlebar);
             this.panel1.Controls.Add(this.input3);
             this.panel1.Controls.Add(this.input2);
             this.panel1.Controls.Add(this.input1);
@@ -53,7 +55,7 @@
             this.input1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.input1.IconGap = 1F;
             this.input1.IconRatio = 1F;
-            this.input1.Location = new System.Drawing.Point(103, 49);
+            this.input1.Location = new System.Drawing.Point(121, 170);
             this.input1.Name = "input1";
             this.input1.PlaceholderText = "Search";
             this.input1.Radius = 20;
@@ -67,7 +69,7 @@
             this.input2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.input2.IconGap = 1F;
             this.input2.IconRatio = 1F;
-            this.input2.Location = new System.Drawing.Point(103, 97);
+            this.input2.Location = new System.Drawing.Point(121, 218);
             this.input2.Name = "input2";
             this.input2.PlaceholderText = "Search";
             this.input2.Radius = 20;
@@ -81,13 +83,28 @@
             this.input3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.input3.IconGap = 1F;
             this.input3.IconRatio = 1F;
-            this.input3.Location = new System.Drawing.Point(103, 145);
+            this.input3.Location = new System.Drawing.Point(121, 266);
             this.input3.Name = "input3";
             this.input3.PlaceholderText = "Search";
             this.input3.Radius = 20;
             this.input3.Size = new System.Drawing.Size(577, 42);
             this.input3.TabIndex = 4;
             this.input3.WaveSize = 1;
+            // 
+            // titlebar
+            // 
+            this.titlebar.CloseSize = 30;
+            this.titlebar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titlebar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.titlebar.Location = new System.Drawing.Point(0, 0);
+            this.titlebar.MaximizeBox = false;
+            this.titlebar.Name = "titlebar";
+            this.titlebar.ShowButton = true;
+            this.titlebar.ShowIcon = true;
+            this.titlebar.Size = new System.Drawing.Size(780, 38);
+            this.titlebar.SubText = "";
+            this.titlebar.TabIndex = 5;
+            this.titlebar.Text = "Add Product";
             // 
             // AddProductForm
             // 
@@ -96,6 +113,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddProductForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "AddProductForm";
@@ -110,5 +128,6 @@
         private AntdUI.Input input3;
         private AntdUI.Input input2;
         private AntdUI.Input input1;
+        private AntdUI.PageHeader titlebar;
     }
 }

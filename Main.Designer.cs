@@ -31,27 +31,27 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new AntdUI.Panel();
-            this.mainpanel = new AntdUI.Panel();
-            this.HomeBtn = new Siticone.UI.WinForms.SiticoneRoundedButton();
+            this.siticoneShadowPanel1 = new Siticone.UI.WinForms.SiticoneShadowPanel();
+            this.siticoneCirclePictureBox1 = new Siticone.UI.WinForms.SiticoneCirclePictureBox();
+            this.siticoneRoundedButton7 = new Siticone.UI.WinForms.SiticoneRoundedButton();
+            this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
             this.panelDropDown = new System.Windows.Forms.FlowLayoutPanel();
+            this.HomeBtn = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.ProductBtn = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.UserBtn = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.ReportBtn = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.InventoryRBtn = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.SalesBtn = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.siticonePictureBox1 = new Siticone.UI.WinForms.SiticonePictureBox();
-            this.siticoneRoundedButton7 = new Siticone.UI.WinForms.SiticoneRoundedButton();
-            this.siticoneShadowPanel1 = new Siticone.UI.WinForms.SiticoneShadowPanel();
-            this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
-            this.siticoneCirclePictureBox1 = new Siticone.UI.WinForms.SiticoneCirclePictureBox();
+            this.mainpanel = new AntdUI.Panel();
             this.loadingTimer = new System.Windows.Forms.Timer(this.components);
             this.dropDownTimer = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
-            this.panelDropDown.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).BeginInit();
             this.siticoneShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siticoneCirclePictureBox1)).BeginInit();
+            this.panelDropDown.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -67,16 +67,83 @@
             this.panel1.TabIndex = 0;
             this.panel1.Text = "panel1";
             // 
-            // mainpanel
+            // siticoneShadowPanel1
             // 
-            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainpanel.Location = new System.Drawing.Point(326, 10);
-            this.mainpanel.Name = "mainpanel";
-            this.mainpanel.padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.mainpanel.Radius = 20;
-            this.mainpanel.Size = new System.Drawing.Size(952, 696);
-            this.mainpanel.TabIndex = 1;
-            this.mainpanel.Text = "panel2";
+            this.siticoneShadowPanel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.siticoneShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneShadowPanel1.Controls.Add(this.siticoneCirclePictureBox1);
+            this.siticoneShadowPanel1.Controls.Add(this.siticoneRoundedButton7);
+            this.siticoneShadowPanel1.Controls.Add(this.siticoneLabel1);
+            this.siticoneShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.siticoneShadowPanel1.Location = new System.Drawing.Point(4, 629);
+            this.siticoneShadowPanel1.Name = "siticoneShadowPanel1";
+            this.siticoneShadowPanel1.Radius = 5;
+            this.siticoneShadowPanel1.ShadowColor = System.Drawing.Color.Silver;
+            this.siticoneShadowPanel1.ShadowDepth = 50;
+            this.siticoneShadowPanel1.Size = new System.Drawing.Size(307, 64);
+            this.siticoneShadowPanel1.TabIndex = 7;
+            // 
+            // siticoneCirclePictureBox1
+            // 
+            this.siticoneCirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("siticoneCirclePictureBox1.Image")));
+            this.siticoneCirclePictureBox1.Location = new System.Drawing.Point(18, 14);
+            this.siticoneCirclePictureBox1.Name = "siticoneCirclePictureBox1";
+            this.siticoneCirclePictureBox1.ShadowDecoration.Color = System.Drawing.Color.DimGray;
+            this.siticoneCirclePictureBox1.ShadowDecoration.Mode = Siticone.UI.WinForms.Enums.ShadowMode.Circle;
+            this.siticoneCirclePictureBox1.ShadowDecoration.Parent = this.siticoneCirclePictureBox1;
+            this.siticoneCirclePictureBox1.Size = new System.Drawing.Size(42, 36);
+            this.siticoneCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.siticoneCirclePictureBox1.TabIndex = 1;
+            this.siticoneCirclePictureBox1.TabStop = false;
+            // 
+            // siticoneRoundedButton7
+            // 
+            this.siticoneRoundedButton7.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneRoundedButton7.BorderColor = System.Drawing.Color.Turquoise;
+            this.siticoneRoundedButton7.CheckedState.Parent = this.siticoneRoundedButton7;
+            this.siticoneRoundedButton7.CustomImages.Parent = this.siticoneRoundedButton7;
+            this.siticoneRoundedButton7.FillColor = System.Drawing.Color.Transparent;
+            this.siticoneRoundedButton7.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneRoundedButton7.ForeColor = System.Drawing.Color.Black;
+            this.siticoneRoundedButton7.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.siticoneRoundedButton7.HoveredState.Parent = this.siticoneRoundedButton7;
+            this.siticoneRoundedButton7.Image = ((System.Drawing.Image)(resources.GetObject("siticoneRoundedButton7.Image")));
+            this.siticoneRoundedButton7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.siticoneRoundedButton7.ImageOffset = new System.Drawing.Point(1, 0);
+            this.siticoneRoundedButton7.Location = new System.Drawing.Point(260, 11);
+            this.siticoneRoundedButton7.Name = "siticoneRoundedButton7";
+            this.siticoneRoundedButton7.ShadowDecoration.Parent = this.siticoneRoundedButton7;
+            this.siticoneRoundedButton7.Size = new System.Drawing.Size(42, 42);
+            this.siticoneRoundedButton7.TabIndex = 6;
+            this.siticoneRoundedButton7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.siticoneRoundedButton7.TextOffset = new System.Drawing.Point(15, 0);
+            // 
+            // siticoneLabel1
+            // 
+            this.siticoneLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneLabel1.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold);
+            this.siticoneLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.siticoneLabel1.Location = new System.Drawing.Point(66, 21);
+            this.siticoneLabel1.Name = "siticoneLabel1";
+            this.siticoneLabel1.Size = new System.Drawing.Size(49, 22);
+            this.siticoneLabel1.TabIndex = 0;
+            this.siticoneLabel1.Text = "Admin";
+            // 
+            // panelDropDown
+            // 
+            this.panelDropDown.BackColor = System.Drawing.Color.Transparent;
+            this.panelDropDown.Controls.Add(this.HomeBtn);
+            this.panelDropDown.Controls.Add(this.ProductBtn);
+            this.panelDropDown.Controls.Add(this.UserBtn);
+            this.panelDropDown.Controls.Add(this.ReportBtn);
+            this.panelDropDown.Controls.Add(this.InventoryRBtn);
+            this.panelDropDown.Controls.Add(this.SalesBtn);
+            this.panelDropDown.Location = new System.Drawing.Point(23, 166);
+            this.panelDropDown.Name = "panelDropDown";
+            this.panelDropDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.panelDropDown.Size = new System.Drawing.Size(267, 185);
+            this.panelDropDown.TabIndex = 1;
             // 
             // HomeBtn
             // 
@@ -101,21 +168,6 @@
             this.HomeBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.HomeBtn.TextOffset = new System.Drawing.Point(15, 0);
             this.HomeBtn.Click += new System.EventHandler(this.HomeBtn_Click);
-            // 
-            // panelDropDown
-            // 
-            this.panelDropDown.BackColor = System.Drawing.Color.Transparent;
-            this.panelDropDown.Controls.Add(this.HomeBtn);
-            this.panelDropDown.Controls.Add(this.ProductBtn);
-            this.panelDropDown.Controls.Add(this.UserBtn);
-            this.panelDropDown.Controls.Add(this.ReportBtn);
-            this.panelDropDown.Controls.Add(this.InventoryRBtn);
-            this.panelDropDown.Controls.Add(this.SalesBtn);
-            this.panelDropDown.Location = new System.Drawing.Point(23, 166);
-            this.panelDropDown.Name = "panelDropDown";
-            this.panelDropDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelDropDown.Size = new System.Drawing.Size(267, 185);
-            this.panelDropDown.TabIndex = 1;
             // 
             // ProductBtn
             // 
@@ -249,68 +301,16 @@
             this.siticonePictureBox1.TabIndex = 3;
             this.siticonePictureBox1.TabStop = false;
             // 
-            // siticoneRoundedButton7
+            // mainpanel
             // 
-            this.siticoneRoundedButton7.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneRoundedButton7.BorderColor = System.Drawing.Color.Turquoise;
-            this.siticoneRoundedButton7.CheckedState.Parent = this.siticoneRoundedButton7;
-            this.siticoneRoundedButton7.CustomImages.Parent = this.siticoneRoundedButton7;
-            this.siticoneRoundedButton7.FillColor = System.Drawing.Color.Transparent;
-            this.siticoneRoundedButton7.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.siticoneRoundedButton7.ForeColor = System.Drawing.Color.Black;
-            this.siticoneRoundedButton7.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            this.siticoneRoundedButton7.HoveredState.Parent = this.siticoneRoundedButton7;
-            this.siticoneRoundedButton7.Image = ((System.Drawing.Image)(resources.GetObject("siticoneRoundedButton7.Image")));
-            this.siticoneRoundedButton7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.siticoneRoundedButton7.ImageOffset = new System.Drawing.Point(1, 0);
-            this.siticoneRoundedButton7.Location = new System.Drawing.Point(260, 11);
-            this.siticoneRoundedButton7.Name = "siticoneRoundedButton7";
-            this.siticoneRoundedButton7.ShadowDecoration.Parent = this.siticoneRoundedButton7;
-            this.siticoneRoundedButton7.Size = new System.Drawing.Size(42, 42);
-            this.siticoneRoundedButton7.TabIndex = 6;
-            this.siticoneRoundedButton7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.siticoneRoundedButton7.TextOffset = new System.Drawing.Point(15, 0);
-            // 
-            // siticoneShadowPanel1
-            // 
-            this.siticoneShadowPanel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.siticoneShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneShadowPanel1.Controls.Add(this.siticoneCirclePictureBox1);
-            this.siticoneShadowPanel1.Controls.Add(this.siticoneRoundedButton7);
-            this.siticoneShadowPanel1.Controls.Add(this.siticoneLabel1);
-            this.siticoneShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.siticoneShadowPanel1.Location = new System.Drawing.Point(4, 629);
-            this.siticoneShadowPanel1.Name = "siticoneShadowPanel1";
-            this.siticoneShadowPanel1.Radius = 5;
-            this.siticoneShadowPanel1.ShadowColor = System.Drawing.Color.Silver;
-            this.siticoneShadowPanel1.ShadowDepth = 50;
-            this.siticoneShadowPanel1.Size = new System.Drawing.Size(307, 64);
-            this.siticoneShadowPanel1.TabIndex = 7;
-            // 
-            // siticoneLabel1
-            // 
-            this.siticoneLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneLabel1.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold);
-            this.siticoneLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.siticoneLabel1.Location = new System.Drawing.Point(66, 21);
-            this.siticoneLabel1.Name = "siticoneLabel1";
-            this.siticoneLabel1.Size = new System.Drawing.Size(49, 22);
-            this.siticoneLabel1.TabIndex = 0;
-            this.siticoneLabel1.Text = "Admin";
-            // 
-            // siticoneCirclePictureBox1
-            // 
-            this.siticoneCirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("siticoneCirclePictureBox1.Image")));
-            this.siticoneCirclePictureBox1.Location = new System.Drawing.Point(18, 14);
-            this.siticoneCirclePictureBox1.Name = "siticoneCirclePictureBox1";
-            this.siticoneCirclePictureBox1.ShadowDecoration.Color = System.Drawing.Color.DimGray;
-            this.siticoneCirclePictureBox1.ShadowDecoration.Mode = Siticone.UI.WinForms.Enums.ShadowMode.Circle;
-            this.siticoneCirclePictureBox1.ShadowDecoration.Parent = this.siticoneCirclePictureBox1;
-            this.siticoneCirclePictureBox1.Size = new System.Drawing.Size(42, 36);
-            this.siticoneCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.siticoneCirclePictureBox1.TabIndex = 1;
-            this.siticoneCirclePictureBox1.TabStop = false;
+            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainpanel.Location = new System.Drawing.Point(326, 10);
+            this.mainpanel.Name = "mainpanel";
+            this.mainpanel.padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.mainpanel.Radius = 20;
+            this.mainpanel.Size = new System.Drawing.Size(952, 696);
+            this.mainpanel.TabIndex = 1;
+            this.mainpanel.Text = "panel2";
             // 
             // loadingTimer
             // 
@@ -336,11 +336,11 @@
             this.Text = "WiseMart";
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
-            this.panelDropDown.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).EndInit();
             this.siticoneShadowPanel1.ResumeLayout(false);
             this.siticoneShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siticoneCirclePictureBox1)).EndInit();
+            this.panelDropDown.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

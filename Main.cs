@@ -31,8 +31,6 @@ namespace CSCISystem1._1
             this.mainpanel.Controls.Add(f);
             this.mainpanel.Tag = f;
             f.Show();
-
-
         }
 
         private void loadingTimer_Tick(object sender, EventArgs e)
