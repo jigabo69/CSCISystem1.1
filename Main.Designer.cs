@@ -114,7 +114,7 @@
             this.panelDropDown.Location = new System.Drawing.Point(23, 166);
             this.panelDropDown.Name = "panelDropDown";
             this.panelDropDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelDropDown.Size = new System.Drawing.Size(267, 280);
+            this.panelDropDown.Size = new System.Drawing.Size(267, 185);
             this.panelDropDown.TabIndex = 1;
             // 
             // ProductBtn
@@ -171,7 +171,7 @@
             this.ReportBtn.BorderColor = System.Drawing.Color.Turquoise;
             this.ReportBtn.CheckedState.Parent = this.ReportBtn;
             this.ReportBtn.CustomImages.Parent = this.ReportBtn;
-            this.ReportBtn.FillColor = System.Drawing.SystemColors.WindowFrame;
+            this.ReportBtn.FillColor = System.Drawing.Color.White;
             this.ReportBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ReportBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
@@ -195,7 +195,7 @@
             this.InventoryRBtn.BorderColor = System.Drawing.Color.Turquoise;
             this.InventoryRBtn.CheckedState.Parent = this.InventoryRBtn;
             this.InventoryRBtn.CustomImages.Parent = this.InventoryRBtn;
-            this.InventoryRBtn.FillColor = System.Drawing.SystemColors.WindowFrame;
+            this.InventoryRBtn.FillColor = System.Drawing.Color.White;
             this.InventoryRBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InventoryRBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.InventoryRBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
@@ -203,10 +203,10 @@
             this.InventoryRBtn.Image = ((System.Drawing.Image)(resources.GetObject("InventoryRBtn.Image")));
             this.InventoryRBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.InventoryRBtn.ImageOffset = new System.Drawing.Point(10, 0);
-            this.InventoryRBtn.Location = new System.Drawing.Point(71, 187);
+            this.InventoryRBtn.Location = new System.Drawing.Point(47, 187);
             this.InventoryRBtn.Name = "InventoryRBtn";
             this.InventoryRBtn.ShadowDecoration.Parent = this.InventoryRBtn;
-            this.InventoryRBtn.Size = new System.Drawing.Size(193, 40);
+            this.InventoryRBtn.Size = new System.Drawing.Size(217, 40);
             this.InventoryRBtn.TabIndex = 4;
             this.InventoryRBtn.Text = "Inventory";
             this.InventoryRBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -227,10 +227,10 @@
             this.SalesBtn.Image = ((System.Drawing.Image)(resources.GetObject("SalesBtn.Image")));
             this.SalesBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SalesBtn.ImageOffset = new System.Drawing.Point(10, 0);
-            this.SalesBtn.Location = new System.Drawing.Point(71, 233);
+            this.SalesBtn.Location = new System.Drawing.Point(47, 233);
             this.SalesBtn.Name = "SalesBtn";
             this.SalesBtn.ShadowDecoration.Parent = this.SalesBtn;
-            this.SalesBtn.Size = new System.Drawing.Size(193, 40);
+            this.SalesBtn.Size = new System.Drawing.Size(217, 40);
             this.SalesBtn.TabIndex = 5;
             this.SalesBtn.Text = "Sales";
             this.SalesBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -314,10 +314,12 @@
             // 
             // loadingTimer
             // 
+            this.loadingTimer.Interval = 1000;
             this.loadingTimer.Tick += new System.EventHandler(this.loadingTimer_Tick);
             // 
             // dropDownTimer
             // 
+            this.dropDownTimer.Interval = 1;
             this.dropDownTimer.Tick += new System.EventHandler(this.dropDownTimer_Tick);
             // 
             // Main
@@ -332,7 +334,6 @@
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WiseMart";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panelDropDown.ResumeLayout(false);

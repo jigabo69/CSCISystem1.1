@@ -45,8 +45,8 @@ namespace CSCISystem1._1
         {
             if (reportExpand == false)
             {
-                panelDropDown.Height += 280;
-                if (panelDropDown.Height >= 187)
+                panelDropDown.Height += 10;
+                if (panelDropDown.Height >= 279)
                 {
                     dropDownTimer.Stop();
                     reportExpand = true;
@@ -54,8 +54,8 @@ namespace CSCISystem1._1
             }
             else
             {
-                panelDropDown.Height -= 280;
-                if (panelDropDown.Height <= 187)
+                panelDropDown.Height -= 10;
+                if (panelDropDown.Height <= 185)
                 {
                     dropDownTimer.Stop();
                     reportExpand = false;
@@ -65,12 +65,12 @@ namespace CSCISystem1._1
 
         private void HomeBtn_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void ProductBtn_Click(object sender, EventArgs e)
         {
-
+            Loadform(new Product());
         }
 
         private void UserBtn_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace CSCISystem1._1
 
         private void ReportBtn_Click(object sender, EventArgs e)
         {
-
+            dropDownTimer.Start();
         }
 
         private void InventoryRBtn_Click(object sender, EventArgs e)
