@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventory
 {
-    internal class ProductClass
+    class ProductClass
     {
         private int _Quantity;
         private double _SellingPrice;
