@@ -16,6 +16,24 @@ namespace CSCISystem1._1
         public Product()
         {
             InitializeComponent();
+            InitializeDataGridView();
+        }
+
+        private void InitializeDataGridView()
+        {
+            
+            gridViewProductList.Columns.Add("ProductCode", "Product Code");
+            gridViewProductList.Columns.Add("ProductName", "Product Name");
+            gridViewProductList.Columns.Add("Category", "Category");
+            gridViewProductList.Columns.Add("MfgDate", "Manufacturing Date");
+            gridViewProductList.Columns.Add("ExpDate", "Expiration Date");
+            gridViewProductList.Columns.Add("Quantity", "Qty.");
+            gridViewProductList.Columns.Add("Price", "Price");
+            
+            
+            
+            gridViewProductList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gridViewProductList.AllowUserToAddRows = false;
         }
         private void AddProductBtn_Click(object sender, EventArgs e)
         {
