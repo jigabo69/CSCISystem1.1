@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace AntdUIDemo
 {
-    public partial class ProductForm : AntdUI.Window
+    public partial class HomeForm : AntdUI.Window
     {
-        public ProductForm()
+        public HomeForm()
         {
             InitializeComponent();      
         }

@@ -1,6 +1,6 @@
 ﻿namespace AntdUIDemo
 {
-    partial class ProductForm
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.SuspendLayout();
             // 
             // ProductForm

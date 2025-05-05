@@ -152,7 +152,7 @@
             this.HomeBtn.CheckedState.Parent = this.HomeBtn;
             this.HomeBtn.CustomImages.Parent = this.HomeBtn;
             this.HomeBtn.FillColor = System.Drawing.Color.White;
-            this.HomeBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HomeBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HomeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.HomeBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.HomeBtn.HoveredState.Parent = this.HomeBtn;
@@ -176,7 +176,7 @@
             this.ProductBtn.CheckedState.Parent = this.ProductBtn;
             this.ProductBtn.CustomImages.Parent = this.ProductBtn;
             this.ProductBtn.FillColor = System.Drawing.Color.White;
-            this.ProductBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ProductBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.ProductBtn.HoveredState.Parent = this.ProductBtn;
@@ -200,7 +200,7 @@
             this.UserBtn.CheckedState.Parent = this.UserBtn;
             this.UserBtn.CustomImages.Parent = this.UserBtn;
             this.UserBtn.FillColor = System.Drawing.Color.White;
-            this.UserBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.UserBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.UserBtn.HoveredState.Parent = this.UserBtn;
@@ -224,7 +224,7 @@
             this.ReportBtn.CheckedState.Parent = this.ReportBtn;
             this.ReportBtn.CustomImages.Parent = this.ReportBtn;
             this.ReportBtn.FillColor = System.Drawing.Color.White;
-            this.ReportBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ReportBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.ReportBtn.HoveredState.Parent = this.ReportBtn;
@@ -248,7 +248,7 @@
             this.InventoryRBtn.CheckedState.Parent = this.InventoryRBtn;
             this.InventoryRBtn.CustomImages.Parent = this.InventoryRBtn;
             this.InventoryRBtn.FillColor = System.Drawing.Color.White;
-            this.InventoryRBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InventoryRBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InventoryRBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.InventoryRBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.InventoryRBtn.HoveredState.Parent = this.InventoryRBtn;
@@ -272,7 +272,7 @@
             this.SalesBtn.CheckedState.Parent = this.SalesBtn;
             this.SalesBtn.CustomImages.Parent = this.SalesBtn;
             this.SalesBtn.FillColor = System.Drawing.Color.White;
-            this.SalesBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalesBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.SalesBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.SalesBtn.HoveredState.Parent = this.SalesBtn;
