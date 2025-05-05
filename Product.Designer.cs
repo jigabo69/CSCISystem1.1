@@ -67,11 +67,11 @@
             this.panel1.Back = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.gridViewProductList);
-            this.panel1.Location = new System.Drawing.Point(21, 227);
+            this.panel1.Location = new System.Drawing.Point(18, 155);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
             this.panel1.Radius = 20;
-            this.panel1.Size = new System.Drawing.Size(898, 420);
+            this.panel1.Size = new System.Drawing.Size(898, 512);
             this.panel1.TabIndex = 6;
             this.panel1.Text = "panel1";
             // 
@@ -110,7 +110,7 @@
             this.gridViewProductList.Name = "gridViewProductList";
             this.gridViewProductList.RowHeadersVisible = false;
             this.gridViewProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridViewProductList.Size = new System.Drawing.Size(872, 394);
+            this.gridViewProductList.Size = new System.Drawing.Size(872, 486);
             this.gridViewProductList.TabIndex = 0;
             this.gridViewProductList.Theme = Siticone.UI.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gridViewProductList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -157,7 +157,7 @@
             this.AddProductBtn.Icon = ((System.Drawing.Image)(resources.GetObject("AddProductBtn.Icon")));
             this.AddProductBtn.IconRatio = 1F;
             this.AddProductBtn.IconSize = new System.Drawing.Size(30, 30);
-            this.AddProductBtn.Location = new System.Drawing.Point(840, 122);
+            this.AddProductBtn.Location = new System.Drawing.Point(856, 70);
             this.AddProductBtn.Name = "AddProductBtn";
             this.AddProductBtn.Radius = 20;
             this.AddProductBtn.Shape = AntdUI.TShape.Circle;

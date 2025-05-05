@@ -80,19 +80,19 @@
             this.siticoneShadowPanel1.Radius = 5;
             this.siticoneShadowPanel1.ShadowColor = System.Drawing.Color.Silver;
             this.siticoneShadowPanel1.ShadowDepth = 50;
-            this.siticoneShadowPanel1.Size = new System.Drawing.Size(307, 64);
+            this.siticoneShadowPanel1.Size = new System.Drawing.Size(177, 64);
             this.siticoneShadowPanel1.TabIndex = 7;
             // 
             // siticoneCirclePictureBox1
             // 
             this.siticoneCirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.siticoneCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("siticoneCirclePictureBox1.Image")));
-            this.siticoneCirclePictureBox1.Location = new System.Drawing.Point(18, 14);
+            this.siticoneCirclePictureBox1.Location = new System.Drawing.Point(18, 18);
             this.siticoneCirclePictureBox1.Name = "siticoneCirclePictureBox1";
             this.siticoneCirclePictureBox1.ShadowDecoration.Color = System.Drawing.Color.DimGray;
             this.siticoneCirclePictureBox1.ShadowDecoration.Mode = Siticone.UI.WinForms.Enums.ShadowMode.Circle;
             this.siticoneCirclePictureBox1.ShadowDecoration.Parent = this.siticoneCirclePictureBox1;
-            this.siticoneCirclePictureBox1.Size = new System.Drawing.Size(42, 36);
+            this.siticoneCirclePictureBox1.Size = new System.Drawing.Size(30, 29);
             this.siticoneCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.siticoneCirclePictureBox1.TabIndex = 1;
             this.siticoneCirclePictureBox1.TabStop = false;
@@ -111,7 +111,7 @@
             this.siticoneRoundedButton7.Image = ((System.Drawing.Image)(resources.GetObject("siticoneRoundedButton7.Image")));
             this.siticoneRoundedButton7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.siticoneRoundedButton7.ImageOffset = new System.Drawing.Point(1, 0);
-            this.siticoneRoundedButton7.Location = new System.Drawing.Point(260, 11);
+            this.siticoneRoundedButton7.Location = new System.Drawing.Point(118, 11);
             this.siticoneRoundedButton7.Name = "siticoneRoundedButton7";
             this.siticoneRoundedButton7.ShadowDecoration.Parent = this.siticoneRoundedButton7;
             this.siticoneRoundedButton7.Size = new System.Drawing.Size(42, 42);
@@ -122,11 +122,11 @@
             // siticoneLabel1
             // 
             this.siticoneLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneLabel1.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold);
+            this.siticoneLabel1.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siticoneLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.siticoneLabel1.Location = new System.Drawing.Point(66, 21);
             this.siticoneLabel1.Name = "siticoneLabel1";
-            this.siticoneLabel1.Size = new System.Drawing.Size(49, 22);
+            this.siticoneLabel1.Size = new System.Drawing.Size(51, 22);
             this.siticoneLabel1.TabIndex = 0;
             this.siticoneLabel1.Text = "Admin";
             // 
@@ -330,6 +330,7 @@
             this.ClientSize = new System.Drawing.Size(1288, 716);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
