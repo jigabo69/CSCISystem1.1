@@ -292,6 +292,7 @@
             // siticonePictureBox1
             // 
             this.siticonePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.siticonePictureBox1.BorderRadius = 2;
             this.siticonePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("siticonePictureBox1.Image")));
             this.siticonePictureBox1.Location = new System.Drawing.Point(106, 37);
             this.siticonePictureBox1.Name = "siticonePictureBox1";

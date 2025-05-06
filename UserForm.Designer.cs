@@ -1,6 +1,6 @@
 ﻿namespace CSCISystem1._1
 {
-    partial class Home
+    partial class UserForm
     {
         /// <summary>
         /// Required designer variable.

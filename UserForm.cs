@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CSCISystem1._1
 {
-    public partial class Home: Form
+    public partial class UserForm: Form
     {
-        public Home()
+        public UserForm()
         {
             InitializeComponent();
         }
