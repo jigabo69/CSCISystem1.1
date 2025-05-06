@@ -29,6 +29,7 @@ namespace CSCISystem1._1
             comboBoxCategory.Items.Add("Dairy");
             comboBoxCategory.Items.Add("Bakery");
             comboBoxCategory.Items.Add("Frozen Food");
+
         }
 
         private void RadiusForm()
