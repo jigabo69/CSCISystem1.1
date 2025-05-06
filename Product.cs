@@ -28,7 +28,7 @@ namespace CSCISystem1._1
             gridViewProductList.Columns.Add("MfgDate", "Manufacturing Date");
             gridViewProductList.Columns.Add("ExpDate", "Expiration Date");
             gridViewProductList.Columns.Add("Quantity", "Qty.");
-            gridViewProductList.Columns.Add("Price", "Price");
+            gridViewProductList.Columns.Add("Price", "Price (per item)");
             
             
             
