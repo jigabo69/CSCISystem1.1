@@ -155,6 +155,11 @@
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Satoshi", 12F);
             this.txtQuantity.Location = new System.Drawing.Point(57, 380);
+            this.txtQuantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.PlaceholderText = "Quantity";
             this.txtQuantity.Size = new System.Drawing.Size(375, 55);
@@ -200,19 +205,20 @@
             // 
             this.txtTotalPrice.DecimalPlaces = 2;
             this.txtTotalPrice.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.txtTotalPrice.Hexadecimal = true;
+            this.txtTotalPrice.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.txtTotalPrice.Location = new System.Drawing.Point(59, 502);
             this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.PlaceholderText = "";
+            this.txtTotalPrice.PlaceholderText = "Total Price";
             this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(375, 55);
             this.txtTotalPrice.SuffixText = "";
             this.txtTotalPrice.TabIndex = 15;
             this.txtTotalPrice.ThousandsSeparator = true;
-            this.txtTotalPrice.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // AddProductForm
             // 
