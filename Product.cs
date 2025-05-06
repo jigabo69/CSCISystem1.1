@@ -29,13 +29,16 @@ namespace CSCISystem1._1
             gridViewProductList.Columns.Add("ExpDate", "Expiration Date");
             gridViewProductList.Columns.Add("Quantity", "Qty.");
             gridViewProductList.Columns.Add("Price", "Price (per item)");
-            
-            
-            
+            gridViewProductList.Columns.Add("TotalPrice", "Total Price");
+
+
+
+
             gridViewProductList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridViewProductList.AllowUserToAddRows = false;
 
-            gridViewProductList.Rows.Add("P001", "Coke", "Beverage", "2025-01-01", "2028-04-01", 1, 100.00);
+            gridViewProductList.Rows.Add("P001", "Coke 1.5L", "Beverage", "2025-01-01", "2028-04-01", "1", "100.00", "100.00");
+            gridViewProductList.Rows.Add("P002", "Pepsi 1.5L", "Beverage", "2025-01-01", "2028-04-01", "5", "100.00", "500.00");
         }
         private void AddProductBtn_Click(object sender, EventArgs e)
         {
