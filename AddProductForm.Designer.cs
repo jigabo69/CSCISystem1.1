@@ -41,12 +41,16 @@
             this.button1 = new AntdUI.Button();
             this.txtPrice = new AntdUI.InputNumber();
             this.txtTotalPrice = new AntdUI.InputNumber();
+            this.panel2 = new AntdUI.Panel();
+            this.uploadDragger1 = new AntdUI.UploadDragger();
             this.panel1.SuspendLayout();
             this.titlebar.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtTotalPrice);
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.button1);
@@ -60,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(10, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(479, 661);
+            this.panel1.Size = new System.Drawing.Size(855, 661);
             this.panel1.TabIndex = 0;
             this.panel1.Text = "panel1";
             // 
@@ -75,7 +79,7 @@
             this.titlebar.MaximizeBox = false;
             this.titlebar.Name = "titlebar";
             this.titlebar.ShowIcon = true;
-            this.titlebar.Size = new System.Drawing.Size(479, 27);
+            this.titlebar.Size = new System.Drawing.Size(855, 27);
             this.titlebar.SubText = "";
             this.titlebar.TabIndex = 5;
             this.titlebar.Text = "Add Product";
@@ -87,7 +91,7 @@
             this.siticoneControlBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.siticoneControlBox3.HoveredState.Parent = this.siticoneControlBox3;
             this.siticoneControlBox3.IconColor = System.Drawing.Color.Black;
-            this.siticoneControlBox3.Location = new System.Drawing.Point(389, -1);
+            this.siticoneControlBox3.Location = new System.Drawing.Point(765, -1);
             this.siticoneControlBox3.Name = "siticoneControlBox3";
             this.siticoneControlBox3.ShadowDecoration.Parent = this.siticoneControlBox3;
             this.siticoneControlBox3.Size = new System.Drawing.Size(45, 29);
@@ -100,7 +104,7 @@
             this.siticoneControlBox1.HoveredState.FillColor = System.Drawing.Color.Red;
             this.siticoneControlBox1.HoveredState.Parent = this.siticoneControlBox1;
             this.siticoneControlBox1.IconColor = System.Drawing.Color.Black;
-            this.siticoneControlBox1.Location = new System.Drawing.Point(434, -1);
+            this.siticoneControlBox1.Location = new System.Drawing.Point(810, -1);
             this.siticoneControlBox1.Name = "siticoneControlBox1";
             this.siticoneControlBox1.ShadowDecoration.Parent = this.siticoneControlBox1;
             this.siticoneControlBox1.Size = new System.Drawing.Size(45, 29);
@@ -220,13 +224,39 @@
             this.txtTotalPrice.TabIndex = 15;
             this.txtTotalPrice.ThousandsSeparator = true;
             // 
+            // panel2
+            // 
+            this.panel2.Back = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.uploadDragger1);
+            this.panel2.Location = new System.Drawing.Point(491, 75);
+            this.panel2.Name = "panel2";
+            this.panel2.Radius = 8;
+            this.panel2.Size = new System.Drawing.Size(312, 283);
+            this.panel2.TabIndex = 16;
+            this.panel2.Text = "panel2";
+            // 
+            // uploadDragger1
+            // 
+            this.uploadDragger1.BackColor = System.Drawing.Color.Transparent;
+            this.uploadDragger1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.uploadDragger1.Font = new System.Drawing.Font("Satoshi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uploadDragger1.IconRatio = 2F;
+            this.uploadDragger1.Location = new System.Drawing.Point(3, 198);
+            this.uploadDragger1.Multiselect = false;
+            this.uploadDragger1.Name = "uploadDragger1";
+            this.uploadDragger1.Size = new System.Drawing.Size(306, 82);
+            this.uploadDragger1.TabIndex = 17;
+            this.uploadDragger1.Text = "Upload";
+            this.uploadDragger1.TextDesc = "";
+            // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(499, 674);
+            this.ClientSize = new System.Drawing.Size(875, 674);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddProductForm";
@@ -235,6 +265,7 @@
             this.Text = "AddProductForm";
             this.panel1.ResumeLayout(false);
             this.titlebar.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -254,5 +285,7 @@
         private AntdUI.Button button1;
         private AntdUI.InputNumber txtPrice;
         private AntdUI.InputNumber txtTotalPrice;
+        private AntdUI.Panel panel2;
+        private AntdUI.UploadDragger uploadDragger1;
     }
 }
