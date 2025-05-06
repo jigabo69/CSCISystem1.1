@@ -37,18 +37,20 @@
             this.select1 = new AntdUI.Select();
             this.datePicker1 = new AntdUI.DatePicker();
             this.datePicker2 = new AntdUI.DatePicker();
-            this.inputNumber1 = new AntdUI.InputNumber();
+            this.txtQuantity = new AntdUI.InputNumber();
             this.button1 = new AntdUI.Button();
-            this.inputNumber2 = new AntdUI.InputNumber();
+            this.txtPrice = new AntdUI.InputNumber();
+            this.txtTotalPrice = new AntdUI.InputNumber();
             this.panel1.SuspendLayout();
             this.titlebar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.inputNumber2);
+            this.panel1.Controls.Add(this.txtTotalPrice);
+            this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.inputNumber1);
+            this.panel1.Controls.Add(this.txtQuantity);
             this.panel1.Controls.Add(this.datePicker2);
             this.panel1.Controls.Add(this.datePicker1);
             this.panel1.Controls.Add(this.select1);
@@ -149,44 +151,64 @@
             this.datePicker2.Size = new System.Drawing.Size(375, 55);
             this.datePicker2.TabIndex = 10;
             // 
-            // inputNumber1
+            // txtQuantity
             // 
-            this.inputNumber1.Font = new System.Drawing.Font("Satoshi", 12F);
-            this.inputNumber1.Location = new System.Drawing.Point(57, 380);
-            this.inputNumber1.Name = "inputNumber1";
-            this.inputNumber1.PlaceholderText = "Quantity";
-            this.inputNumber1.Size = new System.Drawing.Size(375, 55);
-            this.inputNumber1.SuffixText = "";
-            this.inputNumber1.TabIndex = 11;
-            this.inputNumber1.ThousandsSeparator = true;
-            this.inputNumber1.Value = new decimal(new int[] {
+            this.txtQuantity.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.txtQuantity.Location = new System.Drawing.Point(57, 380);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.PlaceholderText = "Quantity";
+            this.txtQuantity.Size = new System.Drawing.Size(375, 55);
+            this.txtQuantity.SuffixText = "";
+            this.txtQuantity.TabIndex = 11;
+            this.txtQuantity.ThousandsSeparator = true;
+            this.txtQuantity.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.txtQuantity.Leave += new System.EventHandler(this.txtQuantity_Leave);
             // 
             // button1
             // 
             this.button1.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
             this.button1.Font = new System.Drawing.Font("Satoshi", 12F);
-            this.button1.Location = new System.Drawing.Point(165, 527);
+            this.button1.Location = new System.Drawing.Point(166, 583);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 42);
             this.button1.TabIndex = 13;
             this.button1.Text = "Submit";
             // 
-            // inputNumber2
+            // txtPrice
             // 
-            this.inputNumber2.DecimalPlaces = 2;
-            this.inputNumber2.Font = new System.Drawing.Font("Satoshi", 12F);
-            this.inputNumber2.Location = new System.Drawing.Point(57, 441);
-            this.inputNumber2.Name = "inputNumber2";
-            this.inputNumber2.PlaceholderText = "Price";
-            this.inputNumber2.Size = new System.Drawing.Size(375, 55);
-            this.inputNumber2.SuffixText = "";
-            this.inputNumber2.TabIndex = 14;
-            this.inputNumber2.ThousandsSeparator = true;
-            this.inputNumber2.Value = new decimal(new int[] {
+            this.txtPrice.DecimalPlaces = 2;
+            this.txtPrice.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.txtPrice.Location = new System.Drawing.Point(57, 441);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.PlaceholderText = "Price";
+            this.txtPrice.Size = new System.Drawing.Size(375, 55);
+            this.txtPrice.SuffixText = "";
+            this.txtPrice.TabIndex = 14;
+            this.txtPrice.ThousandsSeparator = true;
+            this.txtPrice.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtPrice.Leave += new System.EventHandler(this.txtPrice_Leave);
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.DecimalPlaces = 2;
+            this.txtTotalPrice.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.txtTotalPrice.Location = new System.Drawing.Point(59, 502);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.PlaceholderText = "";
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(375, 55);
+            this.txtTotalPrice.SuffixText = "";
+            this.txtTotalPrice.TabIndex = 15;
+            this.txtTotalPrice.ThousandsSeparator = true;
+            this.txtTotalPrice.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -222,8 +244,9 @@
         private AntdUI.Select select1;
         private AntdUI.DatePicker datePicker2;
         private AntdUI.DatePicker datePicker1;
-        private AntdUI.InputNumber inputNumber1;
+        private AntdUI.InputNumber txtQuantity;
         private AntdUI.Button button1;
-        private AntdUI.InputNumber inputNumber2;
+        private AntdUI.InputNumber txtPrice;
+        private AntdUI.InputNumber txtTotalPrice;
     }
 }

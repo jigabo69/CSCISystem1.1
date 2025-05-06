@@ -16,6 +16,7 @@ namespace CSCISystem1._1
         {
             InitializeComponent();
             RadiusForm();
+            CalculateTotalPrice();
         }
 
         private void RadiusForm()
@@ -31,6 +32,29 @@ namespace CSCISystem1._1
             path.CloseFigure();
 
             Region = new Region(path);
+        }
+
+        private void CalculateTotalPrice()
+        {
+            if (int.TryParse(txtQuantity.Text, out int quantity) && decimal.TryParse(txtPrice.Text, out decimal price))
+            {
+                decimal totalPrice = quantity * price;
+                txtTotalPrice.Text = totalPrice.ToString("0.00");
+            }
+            else
+            {
+                txtTotalPrice.Text = "0.00";
+            }
+        }
+
+        private void txtPrice_Leave(object sender, EventArgs e)
+        {
+            CalculateTotalPrice();
+        }
+
+        private void txtQuantity_Leave(object sender, EventArgs e)
+        {
+            CalculateTotalPrice();
         }
     }
 
