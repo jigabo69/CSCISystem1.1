@@ -34,7 +34,7 @@
             this.siticoneControlBox1 = new Siticone.UI.WinForms.SiticoneControlBox();
             this.input1 = new AntdUI.Input();
             this.input2 = new AntdUI.Input();
-            this.select1 = new AntdUI.Select();
+            this.comboBoxCategory = new AntdUI.Select();
             this.datePicker1 = new AntdUI.DatePicker();
             this.datePicker2 = new AntdUI.DatePicker();
             this.txtQuantity = new AntdUI.InputNumber();
@@ -53,7 +53,7 @@
             this.panel1.Controls.Add(this.txtQuantity);
             this.panel1.Controls.Add(this.datePicker2);
             this.panel1.Controls.Add(this.datePicker1);
-            this.panel1.Controls.Add(this.select1);
+            this.panel1.Controls.Add(this.comboBoxCategory);
             this.panel1.Controls.Add(this.input2);
             this.panel1.Controls.Add(this.input1);
             this.panel1.Controls.Add(this.titlebar);
@@ -124,14 +124,14 @@
             this.input2.Size = new System.Drawing.Size(375, 55);
             this.input2.TabIndex = 7;
             // 
-            // select1
+            // comboBoxCategory
             // 
-            this.select1.Font = new System.Drawing.Font("Satoshi", 12F);
-            this.select1.Location = new System.Drawing.Point(57, 197);
-            this.select1.Name = "select1";
-            this.select1.PlaceholderText = "Category";
-            this.select1.Size = new System.Drawing.Size(375, 55);
-            this.select1.TabIndex = 8;
+            this.comboBoxCategory.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.comboBoxCategory.Location = new System.Drawing.Point(57, 197);
+            this.comboBoxCategory.Name = "comboBoxCategory";
+            this.comboBoxCategory.PlaceholderText = "Category";
+            this.comboBoxCategory.Size = new System.Drawing.Size(375, 55);
+            this.comboBoxCategory.TabIndex = 8;
             // 
             // datePicker1
             // 
@@ -247,7 +247,7 @@
         private Siticone.UI.WinForms.SiticoneControlBox siticoneControlBox1;
         private AntdUI.Input input2;
         private AntdUI.Input input1;
-        private AntdUI.Select select1;
+        private AntdUI.Select comboBoxCategory;
         private AntdUI.DatePicker datePicker2;
         private AntdUI.DatePicker datePicker1;
         private AntdUI.InputNumber txtQuantity;

@@ -15,8 +15,20 @@ namespace CSCISystem1._1
         public AddProductForm()
         {
             InitializeComponent();
+            InitializeCategoryComboBox();
             RadiusForm();
             CalculateTotalPrice();
+        }
+
+
+        private void InitializeCategoryComboBox()
+        {
+            // Initialize the category combo box with some sample categories
+            comboBoxCategory.Items.Add("Beverage");
+            comboBoxCategory.Items.Add("Snack");
+            comboBoxCategory.Items.Add("Dairy");
+            comboBoxCategory.Items.Add("Bakery");
+            comboBoxCategory.Items.Add("Frozen Food");
         }
 
         private void RadiusForm()
