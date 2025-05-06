@@ -38,16 +38,16 @@
             this.datePicker1 = new AntdUI.DatePicker();
             this.datePicker2 = new AntdUI.DatePicker();
             this.inputNumber1 = new AntdUI.InputNumber();
-            this.input3 = new AntdUI.Input();
             this.button1 = new AntdUI.Button();
+            this.inputNumber2 = new AntdUI.InputNumber();
             this.panel1.SuspendLayout();
             this.titlebar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.inputNumber2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.input3);
             this.panel1.Controls.Add(this.inputNumber1);
             this.panel1.Controls.Add(this.datePicker2);
             this.panel1.Controls.Add(this.datePicker1);
@@ -165,15 +165,6 @@
             0,
             0});
             // 
-            // input3
-            // 
-            this.input3.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input3.Location = new System.Drawing.Point(57, 441);
-            this.input3.Name = "input3";
-            this.input3.PlaceholderText = "Price";
-            this.input3.Size = new System.Drawing.Size(375, 55);
-            this.input3.TabIndex = 12;
-            // 
             // button1
             // 
             this.button1.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
@@ -183,6 +174,23 @@
             this.button1.Size = new System.Drawing.Size(132, 42);
             this.button1.TabIndex = 13;
             this.button1.Text = "Submit";
+            // 
+            // inputNumber2
+            // 
+            this.inputNumber2.DecimalPlaces = 2;
+            this.inputNumber2.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.inputNumber2.Location = new System.Drawing.Point(57, 441);
+            this.inputNumber2.Name = "inputNumber2";
+            this.inputNumber2.PlaceholderText = "Price";
+            this.inputNumber2.Size = new System.Drawing.Size(375, 55);
+            this.inputNumber2.SuffixText = "";
+            this.inputNumber2.TabIndex = 14;
+            this.inputNumber2.ThousandsSeparator = true;
+            this.inputNumber2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // AddProductForm
             // 
@@ -215,7 +223,7 @@
         private AntdUI.DatePicker datePicker2;
         private AntdUI.DatePicker datePicker1;
         private AntdUI.InputNumber inputNumber1;
-        private AntdUI.Input input3;
         private AntdUI.Button button1;
+        private AntdUI.InputNumber inputNumber2;
     }
 }

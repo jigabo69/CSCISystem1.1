@@ -34,6 +34,8 @@ namespace CSCISystem1._1
             
             gridViewProductList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridViewProductList.AllowUserToAddRows = false;
+
+            gridViewProductList.Rows.Add("P001", "Coke", "Beverage", "2025-01-01", "2028-04-01", 1, 100.00);
         }
         private void AddProductBtn_Click(object sender, EventArgs e)
         {
