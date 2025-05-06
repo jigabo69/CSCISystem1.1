@@ -63,7 +63,7 @@ namespace CSCISystem1._1
 
         private void HomeBtn_Click(object sender, EventArgs e)
         {
-            Loadform(new UserForm());
+            Loadform(new HomeForm());
         }
 
         private void ProductBtn_Click(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace CSCISystem1._1
 
         private void UserBtn_Click(object sender, EventArgs e)
         {
-
+            Loadform(new UserForm());
         }
 
         private void ReportBtn_Click(object sender, EventArgs e)

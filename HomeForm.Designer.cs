@@ -1,6 +1,6 @@
 ﻿namespace CSCISystem1._1
 {
-    partial class UserForm
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,8 +41,8 @@
             this.panel1.Name = "panel1";
             this.panel1.padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel1.Radius = 20;
-            this.panel1.Size = new System.Drawing.Size(936, 657);
-            this.panel1.TabIndex = 0;
+            this.panel1.Size = new System.Drawing.Size(1047, 769);
+            this.panel1.TabIndex = 1;
             this.panel1.Text = "panel1";
             // 
             // label1
@@ -53,21 +53,20 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(65, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 24);
+            this.label1.Size = new System.Drawing.Size(63, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "User";
+            this.label1.Text = "Home";
             // 
-            // UserForm
+            // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(936, 657);
+            this.ClientSize = new System.Drawing.Size(1047, 769);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UserForm";
+            this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Home";
+            this.Text = "HomeForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
