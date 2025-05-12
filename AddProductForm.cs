@@ -69,6 +69,73 @@ namespace CSCISystem1._1
         {
             CalculateTotalPrice();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (ValidateInputs())
+            {
+                try
+                {
+                    ProductClass newProduct = new ProductClass(
+                        txtProductName.Text,
+                        comboBoxCategory.Text,
+                        dtpMfgDate.Value.ToString("yyyy-MM-dd"),
+                        dtpExpDate.Value.ToString("yyyy-MM-dd"),
+                        Convert.ToDouble(txtPrice.Text),
+                        Convert.ToInt32(txtQuantity.Text),
+                        txtDescription.Text
+                    );
+
+                    // Add to the main product list
+                    if (Application.OpenForms["Product"] is Product productForm)
+                    {
+                        productForm.AddProductToList(newProduct);
+                    }
+
+                    MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error saving product: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private bool ValidateInputs()
+        {
+            if (string.IsNullOrWhiteSpace(txtProductName.Text))
+            {
+                MessageBox.Show("Please enter a product name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (comboBoxCategory.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a category.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!decimal.TryParse(txtPrice.Text, out decimal price) || price <= 0)
+            {
+                MessageBox.Show("Please enter a valid price.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!int.TryParse(txtQuantity.Text, out int quantity) || quantity <= 0)
+            {
+                MessageBox.Show("Please enter a valid quantity.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (dtpExpDate.Value <= dtpMfgDate.Value)
+            {
+                MessageBox.Show("Expiration date must be after manufacturing date.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
     }
 
 }
