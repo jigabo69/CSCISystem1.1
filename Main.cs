@@ -83,12 +83,12 @@ namespace CSCISystem1._1
 
         private void InventoryRBtn_Click(object sender, EventArgs e)
         {
-            Loadform(new InventoryReportForm());
+            
         }
 
         private void SalesBtn_Click(object sender, EventArgs e)
         {
-            Loadform(new SalesReportForm());
+            
         }
     }
 }

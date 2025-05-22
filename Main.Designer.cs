@@ -148,7 +148,7 @@
             // HomeBtn
             // 
             this.HomeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.HomeBtn.BorderColor = System.Drawing.Color.Turquoise;
+            this.HomeBtn.BorderColor = System.Drawing.Color.Lime;
             this.HomeBtn.CheckedState.Parent = this.HomeBtn;
             this.HomeBtn.CustomImages.Parent = this.HomeBtn;
             this.HomeBtn.FillColor = System.Drawing.Color.White;
@@ -172,7 +172,7 @@
             // ProductBtn
             // 
             this.ProductBtn.BackColor = System.Drawing.Color.Transparent;
-            this.ProductBtn.BorderColor = System.Drawing.Color.Turquoise;
+            this.ProductBtn.BorderColor = System.Drawing.Color.Lime;
             this.ProductBtn.CheckedState.Parent = this.ProductBtn;
             this.ProductBtn.CustomImages.Parent = this.ProductBtn;
             this.ProductBtn.FillColor = System.Drawing.Color.White;
@@ -196,7 +196,7 @@
             // UserBtn
             // 
             this.UserBtn.BackColor = System.Drawing.Color.Transparent;
-            this.UserBtn.BorderColor = System.Drawing.Color.Turquoise;
+            this.UserBtn.BorderColor = System.Drawing.Color.Lime;
             this.UserBtn.CheckedState.Parent = this.UserBtn;
             this.UserBtn.CustomImages.Parent = this.UserBtn;
             this.UserBtn.FillColor = System.Drawing.Color.White;
@@ -220,7 +220,7 @@
             // ReportBtn
             // 
             this.ReportBtn.BackColor = System.Drawing.Color.Transparent;
-            this.ReportBtn.BorderColor = System.Drawing.Color.Turquoise;
+            this.ReportBtn.BorderColor = System.Drawing.Color.Lime;
             this.ReportBtn.CheckedState.Parent = this.ReportBtn;
             this.ReportBtn.CustomImages.Parent = this.ReportBtn;
             this.ReportBtn.FillColor = System.Drawing.Color.White;
@@ -327,7 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1288, 716);
             this.Controls.Add(this.mainpanel);
             this.Controls.Add(this.panel1);
@@ -336,6 +336,7 @@
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WiseMart";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.siticoneShadowPanel1.ResumeLayout(false);
