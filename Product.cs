@@ -50,8 +50,7 @@ namespace CSCISystem1._1
         }
         private void AddProductBtn_Click(object sender, EventArgs e)
         {
-            AddProductForm addProductForm = new AddProductForm();
-            addProductForm.ShowDialog();
+            
         }
     }
 }
