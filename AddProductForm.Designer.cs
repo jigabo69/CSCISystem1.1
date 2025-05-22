@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductForm));
             this.panel1 = new AntdUI.Panel();
             this.resetBtn = new AntdUI.Button();
             this.siticoneLabel6 = new Siticone.UI.WinForms.SiticoneLabel();
@@ -40,7 +41,6 @@
             this.monthComboBox = new AntdUI.Select();
             this.dayComboBox = new AntdUI.Select();
             this.panel2 = new AntdUI.Panel();
-            this.pictureBox = new Siticone.UI.WinForms.SiticonePictureBox();
             this.txtTotalPrice = new AntdUI.InputNumber();
             this.txtPrice = new AntdUI.InputNumber();
             this.addBtn = new AntdUI.Button();
@@ -49,10 +49,10 @@
             this.txtProductCode = new AntdUI.Input();
             this.titlebar = new AntdUI.PageHeader();
             this.siticoneControlBox1 = new Siticone.UI.WinForms.SiticoneControlBox();
-            this.siticoneRoundedButton1 = new Siticone.UI.WinForms.SiticoneRoundedButton();
+            this.uploadBtn = new AntdUI.Button();
+            this.pictureBox = new AntdUI.Avatar();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.titlebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,24 +186,14 @@
             // 
             this.panel2.Back = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.siticoneRoundedButton1);
             this.panel2.Controls.Add(this.pictureBox);
+            this.panel2.Controls.Add(this.uploadBtn);
             this.panel2.Location = new System.Drawing.Point(498, 265);
             this.panel2.Name = "panel2";
             this.panel2.Radius = 8;
             this.panel2.Size = new System.Drawing.Size(230, 319);
             this.panel2.TabIndex = 16;
             this.panel2.Text = "panel2";
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.ShadowDecoration.Parent = this.pictureBox;
-            this.pictureBox.Size = new System.Drawing.Size(224, 224);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 18;
-            this.pictureBox.TabStop = false;
             // 
             // txtTotalPrice
             // 
@@ -331,20 +321,30 @@
             this.siticoneControlBox1.Size = new System.Drawing.Size(45, 29);
             this.siticoneControlBox1.TabIndex = 6;
             // 
-            // siticoneRoundedButton1
+            // uploadBtn
             // 
-            this.siticoneRoundedButton1.CheckedState.Parent = this.siticoneRoundedButton1;
-            this.siticoneRoundedButton1.CustomImages.Parent = this.siticoneRoundedButton1;
-            this.siticoneRoundedButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.siticoneRoundedButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneRoundedButton1.ForeColor = System.Drawing.Color.White;
-            this.siticoneRoundedButton1.HoveredState.Parent = this.siticoneRoundedButton1;
-            this.siticoneRoundedButton1.Location = new System.Drawing.Point(3, 236);
-            this.siticoneRoundedButton1.Name = "siticoneRoundedButton1";
-            this.siticoneRoundedButton1.ShadowDecoration.Parent = this.siticoneRoundedButton1;
-            this.siticoneRoundedButton1.Size = new System.Drawing.Size(212, 63);
-            this.siticoneRoundedButton1.TabIndex = 19;
-            this.siticoneRoundedButton1.Text = "siticoneRoundedButton1";
+            this.uploadBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
+            this.uploadBtn.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.uploadBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uploadBtn.Icon = ((System.Drawing.Image)(resources.GetObject("uploadBtn.Icon")));
+            this.uploadBtn.IconPosition = AntdUI.TAlignMini.Top;
+            this.uploadBtn.IconRatio = 0.9F;
+            this.uploadBtn.Location = new System.Drawing.Point(3, 234);
+            this.uploadBtn.Name = "uploadBtn";
+            this.uploadBtn.Size = new System.Drawing.Size(224, 80);
+            this.uploadBtn.TabIndex = 31;
+            this.uploadBtn.Text = "Upload";
+            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(10, 15);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Radius = 6;
+            this.pictureBox.Size = new System.Drawing.Size(210, 210);
+            this.pictureBox.TabIndex = 32;
+            this.pictureBox.Text = "";
             // 
             // AddProductForm
             // 
@@ -363,7 +363,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.titlebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -390,8 +389,8 @@
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel6;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel5;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel4;
-        private Siticone.UI.WinForms.SiticonePictureBox pictureBox;
         private AntdUI.Button resetBtn;
-        private Siticone.UI.WinForms.SiticoneRoundedButton siticoneRoundedButton1;
+        private AntdUI.Button uploadBtn;
+        private AntdUI.Avatar pictureBox;
     }
 }

@@ -1,15 +1,16 @@
-﻿using AntdUIDemo;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using Siticone.UI.WinForms.Suite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AntdUI;
 
 namespace CSCISystem1._1
 {
@@ -44,12 +45,22 @@ namespace CSCISystem1._1
             dayComboBox.SelectedIndex = -1;
             monthComboBox.SelectedIndex = -1;
             yearComboBox.SelectedIndex = -1;
-            pictureBox.Image = null;
+
+            string defaultImagePath = @"C:\Users\emman\OneDrive\Pictures\Icon Black small\23.png"; 
+            if (File.Exists(defaultImagePath))
+            {
+                pictureBox.Image = Image.FromFile(defaultImagePath);
+            }
+            else
+            {
+                pictureBox.Image = null; // in case file is missing
+            }
 
             txtProductCode.Focus();
         }
-        
-       
+
+
+
         private void RadiusForm()
         {
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
@@ -167,7 +178,7 @@ namespace CSCISystem1._1
             ClearField();
         }
 
-        private void uploadDragger_Click(object sender, EventArgs e)
+        private void uploadBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
@@ -175,7 +186,8 @@ namespace CSCISystem1._1
             {
                 // Load the selected image into the PictureBox
                 pictureBox.Image = Image.FromFile(openFileDialog.FileName);
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                
+
             }
         }
     }
