@@ -28,14 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            AntdUI.CarouselItem carouselItem1 = new AntdUI.CarouselItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
+            AntdUI.CarouselItem carouselItem2 = new AntdUI.CarouselItem();
             this.panel1 = new AntdUI.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.carousel1 = new AntdUI.Carousel();
+            this.labelTime1 = new AntdUI.LabelTime();
+            this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.siticoneLabel1);
+            this.panel1.Controls.Add(this.labelTime1);
+            this.panel1.Controls.Add(this.carousel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -45,17 +52,41 @@
             this.panel1.TabIndex = 1;
             this.panel1.Text = "panel1";
             // 
-            // label1
+            // carousel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Satoshi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(65, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Home";
+            this.carousel1.DotMargin = 20;
+            this.carousel1.DotPosition = AntdUI.TAlignMini.Top;
+            this.carousel1.DotSize = new System.Drawing.Size(30, 6);
+            carouselItem1.Img = ((System.Drawing.Image)(resources.GetObject("carouselItem1.Img")));
+            carouselItem2.Img = ((System.Drawing.Image)(resources.GetObject("carouselItem2.Img")));
+            this.carousel1.Image.Add(carouselItem1);
+            this.carousel1.Image.Add(carouselItem2);
+            this.carousel1.Location = new System.Drawing.Point(78, 181);
+            this.carousel1.Name = "carousel1";
+            this.carousel1.Radius = 6;
+            this.carousel1.SelectIndex = 1;
+            this.carousel1.Size = new System.Drawing.Size(903, 473);
+            this.carousel1.TabIndex = 2;
+            this.carousel1.Text = "carousel1";
+            // 
+            // labelTime1
+            // 
+            this.labelTime1.BackColor = System.Drawing.Color.Transparent;
+            this.labelTime1.Location = new System.Drawing.Point(833, 37);
+            this.labelTime1.Name = "labelTime1";
+            this.labelTime1.Size = new System.Drawing.Size(135, 32);
+            this.labelTime1.TabIndex = 3;
+            this.labelTime1.Text = "labelTime1";
+            // 
+            // siticoneLabel1
+            // 
+            this.siticoneLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneLabel1.Font = new System.Drawing.Font("Satoshi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneLabel1.Location = new System.Drawing.Point(78, 37);
+            this.siticoneLabel1.Name = "siticoneLabel1";
+            this.siticoneLabel1.Size = new System.Drawing.Size(67, 32);
+            this.siticoneLabel1.TabIndex = 10;
+            this.siticoneLabel1.Text = "Home";
             // 
             // HomeForm
             // 
@@ -77,6 +108,8 @@
         #endregion
 
         private AntdUI.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private AntdUI.Carousel carousel1;
+        private AntdUI.LabelTime labelTime1;
+        private Siticone.UI.WinForms.SiticoneLabel siticoneLabel1;
     }
 }
