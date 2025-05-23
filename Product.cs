@@ -36,6 +36,7 @@ namespace CSCISystem1._1
             cmd = new SqlCommand(query, con);
             SqlDataReader reader = cmd.ExecuteReader();
 
+            
             while (reader.Read())
             {
                 gridViewProductList.Rows.Add(
