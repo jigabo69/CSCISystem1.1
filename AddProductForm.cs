@@ -25,7 +25,7 @@ namespace CSCISystem1._1
             RadiusForm();
             
         }
-        //yahh
+        
 
         private void AddProductForm_Load(object sender, EventArgs e)
         {
@@ -52,7 +52,6 @@ namespace CSCISystem1._1
 
             txtUsername.Focus();
         }
-
         private void RadiusForm()
         {
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();

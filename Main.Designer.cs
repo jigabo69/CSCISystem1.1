@@ -47,6 +47,7 @@
             this.loadingTimer = new System.Windows.Forms.Timer(this.components);
             this.dropDownTimer = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.TempPOSBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.siticoneShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siticoneCirclePictureBox1)).BeginInit();
@@ -56,6 +57,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.TempPOSBTN);
             this.panel1.Controls.Add(this.siticoneShadowPanel1);
             this.panel1.Controls.Add(this.panelDropDown);
             this.panel1.Controls.Add(this.siticonePictureBox1);
@@ -323,6 +325,16 @@
             this.dropDownTimer.Interval = 1;
             this.dropDownTimer.Tick += new System.EventHandler(this.dropDownTimer_Tick);
             // 
+            // TempPOSBTN
+            // 
+            this.TempPOSBTN.Location = new System.Drawing.Point(42, 433);
+            this.TempPOSBTN.Name = "TempPOSBTN";
+            this.TempPOSBTN.Size = new System.Drawing.Size(227, 66);
+            this.TempPOSBTN.TabIndex = 8;
+            this.TempPOSBTN.Text = "POS";
+            this.TempPOSBTN.UseVisualStyleBackColor = true;
+            this.TempPOSBTN.Click += new System.EventHandler(this.TempPOSBTN_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +379,7 @@
         private System.Windows.Forms.Timer loadingTimer;
         private System.Windows.Forms.Timer dropDownTimer;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button TempPOSBTN;
     }
 }
 
