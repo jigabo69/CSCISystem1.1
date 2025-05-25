@@ -53,6 +53,7 @@ namespace CSCISystem1._1
         {
             AddProductForm addProductForm = new AddProductForm();
             addProductForm.ShowDialog();
+
         }
     }
 }

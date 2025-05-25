@@ -20,12 +20,12 @@ namespace CSCISystem1._1
         public UserForm()
         {
             InitializeComponent();
-            InitializeDataUser();
+            
         }
 
         private void UserForm_Load(object sender, EventArgs e)
         {
-            
+            InitializeDataUser();
         }
 
         public void InitializeDataUser()
@@ -50,6 +50,12 @@ namespace CSCISystem1._1
                     reader["usertype"].ToString()
                 );
             }
+        }
+
+        private void AddUserBtn_Click(object sender, EventArgs e)
+        {
+            AddUser addUserForm = new AddUser();
+            addUserForm.ShowDialog();
         }
     }
 }

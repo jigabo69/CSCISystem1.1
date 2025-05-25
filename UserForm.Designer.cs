@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new AntdUI.Panel();
-            this.panel2 = new AntdUI.Panel();
-            this.gridViewUserList = new Siticone.UI.WinForms.SiticoneDataGridView();
-            this.AddProductBtn = new AntdUI.Button();
+            this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
             this.txtSearchItem = new AntdUI.Input();
             this.button3 = new AntdUI.Button();
-            this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
+            this.panel2 = new AntdUI.Panel();
+            this.gridViewUserList = new Siticone.UI.WinForms.SiticoneDataGridView();
+            this.AddUserBtn = new AntdUI.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUserList)).BeginInit();
@@ -50,7 +50,7 @@
             this.panel1.Controls.Add(this.txtSearchItem);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.AddProductBtn);
+            this.panel1.Controls.Add(this.AddUserBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(10, 0);
             this.panel1.Name = "panel1";
@@ -58,6 +58,41 @@
             this.panel1.Size = new System.Drawing.Size(942, 696);
             this.panel1.TabIndex = 0;
             this.panel1.Text = "panel1";
+            // 
+            // siticoneLabel1
+            // 
+            this.siticoneLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneLabel1.Font = new System.Drawing.Font("Satoshi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneLabel1.Location = new System.Drawing.Point(48, 26);
+            this.siticoneLabel1.Name = "siticoneLabel1";
+            this.siticoneLabel1.Size = new System.Drawing.Size(51, 32);
+            this.siticoneLabel1.TabIndex = 13;
+            this.siticoneLabel1.Text = "User";
+            // 
+            // txtSearchItem
+            // 
+            this.txtSearchItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtSearchItem.JoinLeft = true;
+            this.txtSearchItem.Location = new System.Drawing.Point(636, 26);
+            this.txtSearchItem.Name = "txtSearchItem";
+            this.txtSearchItem.PlaceholderText = "Search";
+            this.txtSearchItem.Size = new System.Drawing.Size(267, 47);
+            this.txtSearchItem.TabIndex = 11;
+            this.txtSearchItem.WaveSize = 0;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
+            this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button3.Icon = ((System.Drawing.Image)(resources.GetObject("button3.Icon")));
+            this.button3.JoinRight = true;
+            this.button3.Location = new System.Drawing.Point(585, 22);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(51, 55);
+            this.button3.TabIndex = 12;
             // 
             // panel2
             // 
@@ -79,8 +114,8 @@
             // 
             this.gridViewUserList.AllowUserToResizeColumns = false;
             this.gridViewUserList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.gridViewUserList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gridViewUserList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridViewUserList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -89,23 +124,23 @@
             this.gridViewUserList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridViewUserList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridViewUserList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridViewUserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewUserList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridViewUserList.ColumnHeadersHeight = 40;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridViewUserList.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridViewUserList.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridViewUserList.EnableHeadersVisualStyles = false;
             this.gridViewUserList.GridColor = System.Drawing.Color.White;
             this.gridViewUserList.Location = new System.Drawing.Point(27, 27);
@@ -140,54 +175,20 @@
             this.gridViewUserList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.gridViewUserList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
-            // AddProductBtn
+            // AddUserBtn
             // 
-            this.AddProductBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddProductBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            this.AddProductBtn.Icon = ((System.Drawing.Image)(resources.GetObject("AddProductBtn.Icon")));
-            this.AddProductBtn.IconRatio = 1F;
-            this.AddProductBtn.IconSize = new System.Drawing.Size(25, 25);
-            this.AddProductBtn.Location = new System.Drawing.Point(841, 90);
-            this.AddProductBtn.Name = "AddProductBtn";
-            this.AddProductBtn.Radius = 9;
-            this.AddProductBtn.Size = new System.Drawing.Size(62, 48);
-            this.AddProductBtn.TabIndex = 8;
-            this.AddProductBtn.WaveSize = 1;
-            // 
-            // txtSearchItem
-            // 
-            this.txtSearchItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtSearchItem.JoinLeft = true;
-            this.txtSearchItem.Location = new System.Drawing.Point(636, 26);
-            this.txtSearchItem.Name = "txtSearchItem";
-            this.txtSearchItem.PlaceholderText = "Search";
-            this.txtSearchItem.Size = new System.Drawing.Size(267, 47);
-            this.txtSearchItem.TabIndex = 11;
-            this.txtSearchItem.WaveSize = 0;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button3.Icon = ((System.Drawing.Image)(resources.GetObject("button3.Icon")));
-            this.button3.JoinRight = true;
-            this.button3.Location = new System.Drawing.Point(585, 22);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(51, 55);
-            this.button3.TabIndex = 12;
-            // 
-            // siticoneLabel1
-            // 
-            this.siticoneLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneLabel1.Font = new System.Drawing.Font("Satoshi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.siticoneLabel1.Location = new System.Drawing.Point(48, 26);
-            this.siticoneLabel1.Name = "siticoneLabel1";
-            this.siticoneLabel1.Size = new System.Drawing.Size(51, 32);
-            this.siticoneLabel1.TabIndex = 13;
-            this.siticoneLabel1.Text = "User";
+            this.AddUserBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddUserBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.AddUserBtn.Icon = ((System.Drawing.Image)(resources.GetObject("AddUserBtn.Icon")));
+            this.AddUserBtn.IconRatio = 1F;
+            this.AddUserBtn.IconSize = new System.Drawing.Size(25, 25);
+            this.AddUserBtn.Location = new System.Drawing.Point(841, 90);
+            this.AddUserBtn.Name = "AddUserBtn";
+            this.AddUserBtn.Radius = 9;
+            this.AddUserBtn.Size = new System.Drawing.Size(62, 48);
+            this.AddUserBtn.TabIndex = 8;
+            this.AddUserBtn.WaveSize = 1;
+            this.AddUserBtn.Click += new System.EventHandler(this.AddUserBtn_Click);
             // 
             // UserForm
             // 
@@ -215,7 +216,7 @@
         private AntdUI.Panel panel1;
         private AntdUI.Panel panel2;
         private Siticone.UI.WinForms.SiticoneDataGridView gridViewUserList;
-        private AntdUI.Button AddProductBtn;
+        private AntdUI.Button AddUserBtn;
         private AntdUI.Input txtSearchItem;
         private AntdUI.Button button3;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel1;
