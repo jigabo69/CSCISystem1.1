@@ -12,6 +12,7 @@ namespace CSCISystem1._1
         private void Main_Load(object sender, EventArgs e)
         {
             loadingTimer.Start();
+            LoadForm(new HomeForm());
         }
         private void LoadForm(object Form)
         {

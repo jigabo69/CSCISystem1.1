@@ -121,7 +121,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridViewUserList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridViewUserList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.gridViewUserList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.gridViewUserList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridViewUserList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridViewUserList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -144,14 +144,14 @@
             this.gridViewUserList.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridViewUserList.EnableHeadersVisualStyles = false;
             this.gridViewUserList.GridColor = System.Drawing.Color.White;
-            this.gridViewUserList.Location = new System.Drawing.Point(27, 27);
+            this.gridViewUserList.Location = new System.Drawing.Point(27, 13);
             this.gridViewUserList.Name = "gridViewUserList";
             this.gridViewUserList.ReadOnly = true;
             this.gridViewUserList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.gridViewUserList.RowHeadersVisible = false;
             this.gridViewUserList.RowTemplate.Height = 60;
             this.gridViewUserList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridViewUserList.Size = new System.Drawing.Size(842, 454);
+            this.gridViewUserList.Size = new System.Drawing.Size(842, 468);
             this.gridViewUserList.TabIndex = 4;
             this.gridViewUserList.Theme = Siticone.UI.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gridViewUserList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -159,7 +159,7 @@
             this.gridViewUserList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.gridViewUserList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.gridViewUserList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gridViewUserList.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.gridViewUserList.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.gridViewUserList.ThemeStyle.GridColor = System.Drawing.Color.White;
             this.gridViewUserList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.gridViewUserList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
