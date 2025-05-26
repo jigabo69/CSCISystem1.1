@@ -86,7 +86,8 @@ namespace CSCISystem1._1
 
         private void TempPOSBTN_Click(object sender, EventArgs e)
         {
-
+            POS pos = new POS();
+            pos.Show();
         }
     }
 }
