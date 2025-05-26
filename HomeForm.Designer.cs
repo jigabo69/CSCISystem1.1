@@ -43,7 +43,7 @@
             this.panel1.Name = "panel1";
             this.panel1.padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel1.Radius = 20;
-            this.panel1.Size = new System.Drawing.Size(1047, 769);
+            this.panel1.Size = new System.Drawing.Size(952, 696);
             this.panel1.TabIndex = 1;
             this.panel1.Text = "panel1";
             // 
@@ -61,7 +61,7 @@
             // 
             this.labelTime1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTime1.BackColor = System.Drawing.Color.Transparent;
-            this.labelTime1.Location = new System.Drawing.Point(833, 37);
+            this.labelTime1.Location = new System.Drawing.Point(738, 37);
             this.labelTime1.Name = "labelTime1";
             this.labelTime1.Size = new System.Drawing.Size(135, 32);
             this.labelTime1.TabIndex = 3;
@@ -72,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1047, 769);
+            this.ClientSize = new System.Drawing.Size(952, 696);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HomeForm";

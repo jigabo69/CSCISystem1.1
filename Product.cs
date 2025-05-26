@@ -14,8 +14,6 @@ namespace CSCISystem1._1
             InitializeDataGridView();
         }
 
-
-
         private void InitializeDataGridView()
         {
             gridViewProductList.Columns.Clear();
@@ -29,7 +27,7 @@ namespace CSCISystem1._1
             gridViewProductList.Columns.Add("Price", "Unit Price");
             gridViewProductList.Columns.Add("TotalPrice", "Total Price");
 
-            // Add Edit button
+            //edit button
             var editButton = new DataGridViewButtonColumn
             {
                 Name = "EditAction",
@@ -40,7 +38,7 @@ namespace CSCISystem1._1
             };
             gridViewProductList.Columns.Add(editButton);
 
-            // Add Delete button
+            //delete button
             var deleteButton = new DataGridViewButtonColumn
             {
                 Name = "DeleteAction",
@@ -132,8 +130,8 @@ namespace CSCISystem1._1
             }
             else if (gridViewProductList.Columns[e.ColumnIndex].Name == "DeleteAction")
             {
-                DialogResult result = MessageBox.Show($"Are you sure you want to delete {productCode}?",
-                    "Confirm Delete", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show($"Are you sure you want to delete Item: {productCode}?" ,
+                    "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     DeleteProductFromDatabase(productCode);

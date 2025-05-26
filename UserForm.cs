@@ -37,6 +37,35 @@ namespace CSCISystem1._1
             imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
             gridViewUserList.Columns.Add(imgCol); // Fixed syntax issues and corrected the column definition
 
+            //edit button
+            var editButton = new DataGridViewButtonColumn
+            {
+                Name = "EditAction",
+                Text = "Edit",
+                UseColumnTextForButtonValue = true,
+                HeaderText = "                                 Action",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader,
+            };
+            gridViewUserList.Columns.Add(editButton);
+
+            //delete button
+            var deleteButton = new DataGridViewButtonColumn
+            {
+                Name = "DeleteAction",
+                Text = "Delete",
+                UseColumnTextForButtonValue = true,
+                HeaderText = "",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+
+            };
+            gridViewUserList.Columns.Add(deleteButton);
+            LoadUserData();
+
+        }
+
+        private void LoadUserData()
+        {
+            gridViewUserList.Rows.Clear();
             con.Open();
             string query = "SELECT Username, Email, FirstName, LastName, UserType, ProfilePicture FROM tb_user";
             cmd = new SqlCommand(query, con);
@@ -50,16 +79,45 @@ namespace CSCISystem1._1
                     reader["LastName"].ToString(),
                     reader["UserType"].ToString(),
                     reader["ProfilePicture"] != DBNull.Value ? Image.FromStream(new MemoryStream((byte[])reader["ProfilePicture"])) : null
-
                 );
             }
-            con.Close(); // Ensure the connection is closed after use
+            reader.Close();
+            con.Close();
+        }
+
+        private void DeleteUserFromDatabase(string username)
+        {
+            try
+            {
+                con.Open();
+                string deleteQuery = "DELETE FROM tb_user WHERE Username = @Username";
+                cmd = new SqlCommand(deleteQuery, con);
+                cmd.Parameters.AddWithValue("@Username", username);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("User deleted successfully.", "Deleted", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                LoadUserData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting user: " + ex.Message, "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                if (con.State == System.Data.ConnectionState.Open) con.Close();
+            }
         }
 
         private void AddUserBtn_Click(object sender, EventArgs e)
         {
             AddUser addUserForm = new AddUser();
             addUserForm.ShowDialog();
+            LoadUserData();
+            
+        }
+
+        private void gridViewUserList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
