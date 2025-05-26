@@ -35,8 +35,8 @@ namespace CSCISystem1._1
                 Name = "EditAction",
                 Text = "Edit",
                 UseColumnTextForButtonValue = true,
-                HeaderText = "Edit",
-                
+                HeaderText = "                                 Action",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
             };
             gridViewProductList.Columns.Add(editButton);
 
@@ -46,8 +46,9 @@ namespace CSCISystem1._1
                 Name = "DeleteAction",
                 Text = "Delete",
                 UseColumnTextForButtonValue = true,
-                HeaderText = "Delete",
-                
+                HeaderText = "",
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+
             };
             gridViewProductList.Columns.Add(deleteButton);
 
@@ -121,12 +122,11 @@ namespace CSCISystem1._1
 
             if (gridViewProductList.Columns[e.ColumnIndex].Name == "EditAction")
             {
-                // Assume AddProductForm has a constructor for editing:
+                // assume AddProductForm has a constructor for editing:
                 // public AddProductForm(string productCode)
                 AddProductForm editForm = new AddProductForm();
                 editForm.ShowDialog();
-                
-
+               
                 // Reload after editing
                 InitializeDataGridView();
             }
