@@ -82,7 +82,7 @@ namespace CSCISystem1._1
 
         private void SalesBtn_Click(object sender, EventArgs e)
         {
-            
+            LoadForm(new SalesReport());
         }
 
         private void TempPOSBTN_Click(object sender, EventArgs e)

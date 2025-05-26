@@ -28,20 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.panel1 = new AntdUI.Panel();
             this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cartesianChart1
-            // 
-            this.cartesianChart1.BackColor = System.Drawing.Color.Transparent;
-            this.cartesianChart1.Location = new System.Drawing.Point(32, 188);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(864, 409);
-            this.cartesianChart1.TabIndex = 11;
-            this.cartesianChart1.Text = "cartesianChart1";
             // 
             // panel1
             // 
@@ -66,6 +57,15 @@
             this.siticoneLabel1.TabIndex = 10;
             this.siticoneLabel1.Text = "Sales Report";
             // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.BackColor = System.Drawing.Color.Transparent;
+            this.cartesianChart1.Location = new System.Drawing.Point(39, 273);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(842, 318);
+            this.cartesianChart1.TabIndex = 11;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
             // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -84,9 +84,8 @@
         }
 
         #endregion
-
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private AntdUI.Panel panel1;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }
