@@ -77,7 +77,7 @@ namespace CSCISystem1._1
 
         private void InventoryRBtn_Click(object sender, EventArgs e)
         {
-            
+            LoadForm(new InventoryReport());
         }
 
         private void SalesBtn_Click(object sender, EventArgs e)

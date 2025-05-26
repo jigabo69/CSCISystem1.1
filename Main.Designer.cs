@@ -154,7 +154,7 @@
             this.panelDropDown.Location = new System.Drawing.Point(23, 166);
             this.panelDropDown.Name = "panelDropDown";
             this.panelDropDown.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panelDropDown.Size = new System.Drawing.Size(267, 185);
+            this.panelDropDown.Size = new System.Drawing.Size(267, 271);
             this.panelDropDown.TabIndex = 1;
             // 
             // HomeBtn
