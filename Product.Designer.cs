@@ -113,7 +113,6 @@
             // gridViewProductList
             // 
             this.gridViewProductList.AllowUserToAddRows = false;
-            this.gridViewProductList.AllowUserToResizeColumns = false;
             this.gridViewProductList.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gridViewProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -134,6 +133,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridViewProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridViewProductList.ColumnHeadersHeight = 40;
+            this.gridViewProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -145,6 +145,7 @@
             this.gridViewProductList.EnableHeadersVisualStyles = false;
             this.gridViewProductList.GridColor = System.Drawing.Color.White;
             this.gridViewProductList.Location = new System.Drawing.Point(28, 29);
+            this.gridViewProductList.MultiSelect = false;
             this.gridViewProductList.Name = "gridViewProductList";
             this.gridViewProductList.ReadOnly = true;
             this.gridViewProductList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -165,7 +166,7 @@
             this.gridViewProductList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gridViewProductList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.gridViewProductList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
-            this.gridViewProductList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gridViewProductList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridViewProductList.ThemeStyle.HeaderStyle.Height = 40;
             this.gridViewProductList.ThemeStyle.ReadOnly = true;
             this.gridViewProductList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
