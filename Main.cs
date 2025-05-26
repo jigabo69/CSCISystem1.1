@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CSCISystem1._1
@@ -20,7 +13,7 @@ namespace CSCISystem1._1
         {
             loadingTimer.Start();
         }
-        private void Loadform(object Form)
+        private void LoadForm(object Form)
         {
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.RemoveAt(0);
@@ -63,17 +56,17 @@ namespace CSCISystem1._1
 
         private void HomeBtn_Click(object sender, EventArgs e)
         {
-            Loadform(new HomeForm());
+            LoadForm(new HomeForm());
         }
 
         private void ProductBtn_Click(object sender, EventArgs e)
         {
-            Loadform(new Product());
+            LoadForm(new Product());
         }
 
         private void UserBtn_Click(object sender, EventArgs e)
         {
-            Loadform(new UserForm());
+            LoadForm(new UserForm());
         }
 
         private void ReportBtn_Click(object sender, EventArgs e)

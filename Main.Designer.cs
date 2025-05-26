@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new AntdUI.Panel();
+            this.TempPOSBTN = new System.Windows.Forms.Button();
             this.siticoneShadowPanel1 = new Siticone.UI.WinForms.SiticoneShadowPanel();
             this.siticoneCirclePictureBox1 = new Siticone.UI.WinForms.SiticoneCirclePictureBox();
             this.siticoneRoundedButton7 = new Siticone.UI.WinForms.SiticoneRoundedButton();
@@ -47,7 +48,6 @@
             this.loadingTimer = new System.Windows.Forms.Timer(this.components);
             this.dropDownTimer = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.TempPOSBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.siticoneShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siticoneCirclePictureBox1)).BeginInit();
@@ -68,6 +68,16 @@
             this.panel1.Size = new System.Drawing.Size(316, 696);
             this.panel1.TabIndex = 0;
             this.panel1.Text = "panel1";
+            // 
+            // TempPOSBTN
+            // 
+            this.TempPOSBTN.Location = new System.Drawing.Point(42, 433);
+            this.TempPOSBTN.Name = "TempPOSBTN";
+            this.TempPOSBTN.Size = new System.Drawing.Size(227, 66);
+            this.TempPOSBTN.TabIndex = 8;
+            this.TempPOSBTN.Text = "POS";
+            this.TempPOSBTN.UseVisualStyleBackColor = true;
+            this.TempPOSBTN.Click += new System.EventHandler(this.TempPOSBTN_Click);
             // 
             // siticoneShadowPanel1
             // 
@@ -163,6 +173,7 @@
             this.HomeBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.HomeBtn.Location = new System.Drawing.Point(6, 3);
             this.HomeBtn.Name = "HomeBtn";
+            this.HomeBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.HomeBtn.ShadowDecoration.Parent = this.HomeBtn;
             this.HomeBtn.Size = new System.Drawing.Size(258, 40);
             this.HomeBtn.TabIndex = 0;
@@ -187,6 +198,7 @@
             this.ProductBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.ProductBtn.Location = new System.Drawing.Point(6, 49);
             this.ProductBtn.Name = "ProductBtn";
+            this.ProductBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.ProductBtn.ShadowDecoration.Parent = this.ProductBtn;
             this.ProductBtn.Size = new System.Drawing.Size(258, 40);
             this.ProductBtn.TabIndex = 1;
@@ -211,6 +223,7 @@
             this.UserBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.UserBtn.Location = new System.Drawing.Point(6, 95);
             this.UserBtn.Name = "UserBtn";
+            this.UserBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.UserBtn.ShadowDecoration.Parent = this.UserBtn;
             this.UserBtn.Size = new System.Drawing.Size(258, 40);
             this.UserBtn.TabIndex = 2;
@@ -235,6 +248,7 @@
             this.ReportBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.ReportBtn.Location = new System.Drawing.Point(6, 141);
             this.ReportBtn.Name = "ReportBtn";
+            this.ReportBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.ReportBtn.ShadowDecoration.Parent = this.ReportBtn;
             this.ReportBtn.Size = new System.Drawing.Size(258, 40);
             this.ReportBtn.TabIndex = 3;
@@ -259,6 +273,7 @@
             this.InventoryRBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.InventoryRBtn.Location = new System.Drawing.Point(47, 187);
             this.InventoryRBtn.Name = "InventoryRBtn";
+            this.InventoryRBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.InventoryRBtn.ShadowDecoration.Parent = this.InventoryRBtn;
             this.InventoryRBtn.Size = new System.Drawing.Size(217, 40);
             this.InventoryRBtn.TabIndex = 4;
@@ -283,6 +298,7 @@
             this.SalesBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.SalesBtn.Location = new System.Drawing.Point(47, 233);
             this.SalesBtn.Name = "SalesBtn";
+            this.SalesBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.SalesBtn.ShadowDecoration.Parent = this.SalesBtn;
             this.SalesBtn.Size = new System.Drawing.Size(217, 40);
             this.SalesBtn.TabIndex = 5;
@@ -324,16 +340,6 @@
             // 
             this.dropDownTimer.Interval = 1;
             this.dropDownTimer.Tick += new System.EventHandler(this.dropDownTimer_Tick);
-            // 
-            // TempPOSBTN
-            // 
-            this.TempPOSBTN.Location = new System.Drawing.Point(42, 433);
-            this.TempPOSBTN.Name = "TempPOSBTN";
-            this.TempPOSBTN.Size = new System.Drawing.Size(227, 66);
-            this.TempPOSBTN.TabIndex = 8;
-            this.TempPOSBTN.Text = "POS";
-            this.TempPOSBTN.UseVisualStyleBackColor = true;
-            this.TempPOSBTN.Click += new System.EventHandler(this.TempPOSBTN_Click);
             // 
             // Main
             // 
