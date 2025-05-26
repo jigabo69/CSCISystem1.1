@@ -19,6 +19,38 @@ namespace CSCISystem1._1
 
         }
 
+        private void AddProductToDatabase()
+        {
+            var productCode = txtProductCode.Text.Trim();
+            var productName = txtProductName.Text.Trim();
+            var quantityText = txtQuantity.Text.Trim();
+            var priceText = txtPrice.Text.Trim();
+            var totalPriceText = txtTotalPrice.Text.Trim();
+            if (string.IsNullOrEmpty(productCode) || string.IsNullOrEmpty(productName) ||
+                string.IsNullOrEmpty(quantityText) || string.IsNullOrEmpty(priceText) ||
+                string.IsNullOrEmpty(totalPriceText))
+            {
+                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Add your logic to save the product information to the database here
+            var query = "INSERT INTO tb_product (ProductCode, ProductName, ExpDate, Quantity, Price, TotalPrice) " +
+                        "VALUES (@ProductCode, @ProductName, @ExpDate, @Quantity, @Price, @TotalPrice)";
+            _cmd = new SqlCommand(query, _con);
+            _cmd.Parameters.AddWithValue("@ProductCode", productCode);
+            _cmd.Parameters.AddWithValue("@ProductName", productName);
+
+            _cmd.Parameters.AddWithValue("@Quantity", Convert.ToInt32(quantityText));
+            _cmd.Parameters.AddWithValue("@Price", Convert.ToDecimal(priceText));
+            _cmd.Parameters.AddWithValue("@TotalPrice", Convert.ToDecimal(totalPriceText));
+            _con.Open();
+            _cmd.ExecuteNonQuery();
+            _con.Close();
+            // Optionally, you can clear the input fields after adding the product
+            MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClearField();
+        }
+
         private void AddProductForm_Load(object sender, EventArgs e)
         {
             ClearField();
@@ -77,36 +109,7 @@ namespace CSCISystem1._1
         }
         private void addBtn_Click(object sender, EventArgs e)
         {
-            var productCode = txtProductCode.Text.Trim();
-            var productName = txtProductName.Text.Trim();
-            var quantityText = txtQuantity.Text.Trim();
-            var priceText = txtPrice.Text.Trim();
-            var totalPriceText = txtTotalPrice.Text.Trim();
-            if (string.IsNullOrEmpty(productCode) || string.IsNullOrEmpty(productName) ||
-                string.IsNullOrEmpty(quantityText) || string.IsNullOrEmpty(priceText) ||
-                string.IsNullOrEmpty(totalPriceText))
-            {
-                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            // Add your logic to save the product information to the database here
-            var query = "INSERT INTO tb_product (ProductCode, ProductName, ExpDate, Quantity, Price, TotalPrice) " +
-                           "VALUES (@ProductCode, @ProductName, @ExpDate, @Quantity, @Price, @TotalPrice)";
-            _cmd = new SqlCommand(query, _con);
-            _cmd.Parameters.AddWithValue("@ProductCode", productCode);
-            _cmd.Parameters.AddWithValue("@ProductName", productName);
-            
-            _cmd.Parameters.AddWithValue("@Quantity", Convert.ToInt32(quantityText));
-            _cmd.Parameters.AddWithValue("@Price", Convert.ToDecimal(priceText));
-            _cmd.Parameters.AddWithValue("@TotalPrice", Convert.ToDecimal(totalPriceText));
-            _con.Open();
-            _cmd.ExecuteNonQuery();
-            _con.Close();
-            // Optionally, you can clear the input fields after adding the product
-            MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ClearField();
-
-
+            AddProductToDatabase();
         }
         private void resetBtn_Click(object sender, EventArgs e)
         {
