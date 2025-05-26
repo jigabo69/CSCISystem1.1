@@ -28,7 +28,7 @@ namespace CSCISystem1._1
             var password = txtPassword.Text.Trim();
             var firstName = txtFname.Text.Trim();
             var lastName = txtLname.Text.Trim();
-            var userType = selectUsertype.SelectedIndex.ToString();
+            var userType = selectUsertype.SelectedText.ToString();
 
             // Check for empty required fields
             if (string.IsNullOrEmpty(username) ||
@@ -86,6 +86,7 @@ namespace CSCISystem1._1
                     con.Close();
             }
         }
+
 
         private void LoadUserType()
         {

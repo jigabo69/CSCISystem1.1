@@ -64,9 +64,9 @@ namespace CSCISystem1._1
             txtTotalPrice.Clear();
             datePicker = null;
             pictureBoxAddProduct.Image = null;
-
             txtProductCode.Focus();
         }
+
         private void RadiusForm()
         {
             System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();

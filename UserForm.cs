@@ -31,7 +31,11 @@ namespace CSCISystem1._1
             gridViewUserList.Columns.Add("FirstName", "First Name");
             gridViewUserList.Columns.Add("LastName", "Last Name");
             gridViewUserList.Columns.Add("UserType", "User Type");
-            gridViewUserList.Columns.Add("ProfilePicture", "Image"); // Fixed syntax issues and corrected the column definition
+            DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+            imgCol.Name = "ProfilePicture";
+            imgCol.HeaderText = "                       Profile";
+            imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            gridViewUserList.Columns.Add(imgCol); // Fixed syntax issues and corrected the column definition
 
             con.Open();
             string query = "SELECT Username, Email, FirstName, LastName, UserType, ProfilePicture FROM tb_user";

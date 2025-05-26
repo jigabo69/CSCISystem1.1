@@ -112,6 +112,7 @@
             // 
             // gridViewUserList
             // 
+            this.gridViewUserList.AllowUserToAddRows = false;
             this.gridViewUserList.AllowUserToResizeColumns = false;
             this.gridViewUserList.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -148,7 +149,7 @@
             this.gridViewUserList.ReadOnly = true;
             this.gridViewUserList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.gridViewUserList.RowHeadersVisible = false;
-            this.gridViewUserList.RowTemplate.Height = 40;
+            this.gridViewUserList.RowTemplate.Height = 60;
             this.gridViewUserList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridViewUserList.Size = new System.Drawing.Size(842, 454);
             this.gridViewUserList.TabIndex = 4;
@@ -171,7 +172,7 @@
             this.gridViewUserList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridViewUserList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.gridViewUserList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.gridViewUserList.ThemeStyle.RowsStyle.Height = 40;
+            this.gridViewUserList.ThemeStyle.RowsStyle.Height = 60;
             this.gridViewUserList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.gridViewUserList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
