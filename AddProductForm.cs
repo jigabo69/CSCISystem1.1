@@ -16,7 +16,6 @@ namespace CSCISystem1._1
             InitializeComponent();
             RadiusForm();
             CalculateTotalPrice();
-
         }
 
         private void AddProductToDatabase()
