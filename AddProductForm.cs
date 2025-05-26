@@ -1,14 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
-using Siticone.UI.WinForms.Suite;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using AntdUI;
 
 namespace CSCISystem1._1
 {
@@ -29,7 +23,6 @@ namespace CSCISystem1._1
         {
             ClearField();
         }
-
         private void ClearField()
         {
             txtPrice.Clear();
@@ -38,7 +31,7 @@ namespace CSCISystem1._1
             txtQuantity.Clear();
             txtTotalPrice.Clear();
             datePicker = null;
-            pictureBox.Image = null;
+            pictureBoxAddProduct.Image = null;
 
             txtProductCode.Focus();
         }
@@ -74,17 +67,14 @@ namespace CSCISystem1._1
                 txtTotalPrice.Text = "0.00";
             }
         }
-
         private void txtPrice_Leave(object sender, EventArgs e)
         {
             CalculateTotalPrice();
         }
-
         private void txtQuantity_Leave(object sender, EventArgs e)
         {
             CalculateTotalPrice();
         }
-
         private void addBtn_Click(object sender, EventArgs e)
         {
             var productCode = txtProductCode.Text.Trim();
@@ -123,21 +113,16 @@ namespace CSCISystem1._1
             ClearField();
         }
 
-        private void uploadDragger_Click(object sender, EventArgs e)
+        private void uploadBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 // Load the selected image into the PictureBox
-                pictureBox.Image = Image.FromFile(openFileDialog.FileName);
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxAddProduct.Image = Image.FromFile(openFileDialog.FileName);
+                pictureBoxAddProduct.ImageFit = TFit.Cover;
             }
-        }
-
-        private void siticoneRoundedButton1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

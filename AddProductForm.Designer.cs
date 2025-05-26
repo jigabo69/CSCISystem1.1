@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductForm));
             this.panel1 = new AntdUI.Panel();
             this.datePicker = new Siticone.UI.WinForms.SiticoneDateTimePicker();
             this.resetBtn = new AntdUI.Button();
@@ -37,8 +38,6 @@
             this.siticoneLabel3 = new Siticone.UI.WinForms.SiticoneLabel();
             this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
             this.siticoneLabel2 = new Siticone.UI.WinForms.SiticoneLabel();
-            this.panel2 = new AntdUI.Panel();
-            this.pictureBox = new Siticone.UI.WinForms.SiticonePictureBox();
             this.txtTotalPrice = new AntdUI.InputNumber();
             this.txtPrice = new AntdUI.InputNumber();
             this.addBtn = new AntdUI.Button();
@@ -47,14 +46,17 @@
             this.txtProductCode = new AntdUI.Input();
             this.titlebar = new AntdUI.PageHeader();
             this.siticoneControlBox1 = new Siticone.UI.WinForms.SiticoneControlBox();
+            this.panel2 = new AntdUI.Panel();
+            this.pictureBoxAddProduct = new AntdUI.Avatar();
+            this.uploadBtn = new AntdUI.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.titlebar.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.datePicker);
             this.panel1.Controls.Add(this.resetBtn);
             this.panel1.Controls.Add(this.siticoneLabel6);
@@ -63,7 +65,6 @@
             this.panel1.Controls.Add(this.siticoneLabel3);
             this.panel1.Controls.Add(this.siticoneLabel1);
             this.panel1.Controls.Add(this.siticoneLabel2);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.txtTotalPrice);
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.addBtn);
@@ -97,7 +98,7 @@
             this.datePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datePicker.Name = "datePicker";
             this.datePicker.ShadowDecoration.Parent = this.datePicker;
-            this.datePicker.Size = new System.Drawing.Size(367, 55);
+            this.datePicker.Size = new System.Drawing.Size(401, 55);
             this.datePicker.TabIndex = 31;
             this.datePicker.Value = new System.DateTime(2025, 5, 24, 20, 50, 7, 0);
             // 
@@ -173,28 +174,6 @@
             this.siticoneLabel2.TabIndex = 24;
             this.siticoneLabel2.Text = "Expiration Date";
             // 
-            // panel2
-            // 
-            this.panel2.Back = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.pictureBox);
-            this.panel2.Location = new System.Drawing.Point(498, 265);
-            this.panel2.Name = "panel2";
-            this.panel2.Radius = 8;
-            this.panel2.Size = new System.Drawing.Size(230, 319);
-            this.panel2.TabIndex = 16;
-            this.panel2.Text = "panel2";
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Location = new System.Drawing.Point(3, 5);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.ShadowDecoration.Parent = this.pictureBox;
-            this.pictureBox.Size = new System.Drawing.Size(224, 224);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 18;
-            this.pictureBox.TabStop = false;
-            // 
             // txtTotalPrice
             // 
             this.txtTotalPrice.DecimalPlaces = 2;
@@ -210,7 +189,7 @@
             this.txtTotalPrice.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.txtTotalPrice.PlaceholderText = "";
             this.txtTotalPrice.ReadOnly = true;
-            this.txtTotalPrice.Size = new System.Drawing.Size(378, 55);
+            this.txtTotalPrice.Size = new System.Drawing.Size(412, 55);
             this.txtTotalPrice.SuffixText = "";
             this.txtTotalPrice.TabIndex = 15;
             this.txtTotalPrice.Text = "0.00";
@@ -228,7 +207,7 @@
             0});
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PlaceholderText = "Price";
-            this.txtPrice.Size = new System.Drawing.Size(378, 55);
+            this.txtPrice.Size = new System.Drawing.Size(412, 55);
             this.txtPrice.SuffixText = "";
             this.txtPrice.TabIndex = 14;
             this.txtPrice.Text = "1.00";
@@ -263,7 +242,7 @@
             0});
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.PlaceholderText = "Quantity";
-            this.txtQuantity.Size = new System.Drawing.Size(375, 55);
+            this.txtQuantity.Size = new System.Drawing.Size(409, 55);
             this.txtQuantity.SuffixText = "";
             this.txtQuantity.TabIndex = 11;
             this.txtQuantity.Text = "1";
@@ -321,6 +300,44 @@
             this.siticoneControlBox1.Size = new System.Drawing.Size(45, 29);
             this.siticoneControlBox1.TabIndex = 6;
             // 
+            // panel2
+            // 
+            this.panel2.Back = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.pictureBoxAddProduct);
+            this.panel2.Controls.Add(this.uploadBtn);
+            this.panel2.Location = new System.Drawing.Point(498, 270);
+            this.panel2.Name = "panel2";
+            this.panel2.Radius = 8;
+            this.panel2.Size = new System.Drawing.Size(230, 319);
+            this.panel2.TabIndex = 32;
+            this.panel2.Text = "panel2";
+            // 
+            // pictureBoxAddProduct
+            // 
+            this.pictureBoxAddProduct.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAddProduct.Image")));
+            this.pictureBoxAddProduct.Location = new System.Drawing.Point(10, 15);
+            this.pictureBoxAddProduct.Name = "pictureBoxAddProduct";
+            this.pictureBoxAddProduct.Radius = 6;
+            this.pictureBoxAddProduct.Size = new System.Drawing.Size(210, 210);
+            this.pictureBoxAddProduct.TabIndex = 32;
+            this.pictureBoxAddProduct.Text = "";
+            // 
+            // uploadBtn
+            // 
+            this.uploadBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
+            this.uploadBtn.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.uploadBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uploadBtn.Icon = ((System.Drawing.Image)(resources.GetObject("uploadBtn.Icon")));
+            this.uploadBtn.IconPosition = AntdUI.TAlignMini.Top;
+            this.uploadBtn.IconRatio = 0.9F;
+            this.uploadBtn.Location = new System.Drawing.Point(3, 234);
+            this.uploadBtn.Name = "uploadBtn";
+            this.uploadBtn.Size = new System.Drawing.Size(224, 80);
+            this.uploadBtn.TabIndex = 31;
+            this.uploadBtn.Text = "Upload";
+            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
+            // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,9 +354,8 @@
             this.Load += new System.EventHandler(this.AddProductForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.titlebar.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -355,15 +371,16 @@
         private AntdUI.Button addBtn;
         private AntdUI.InputNumber txtPrice;
         private AntdUI.InputNumber txtTotalPrice;
-        private AntdUI.Panel panel2;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel2;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel1;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel3;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel6;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel5;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel4;
-        private Siticone.UI.WinForms.SiticonePictureBox pictureBox;
         private AntdUI.Button resetBtn;
         private Siticone.UI.WinForms.SiticoneDateTimePicker datePicker;
+        private AntdUI.Panel panel2;
+        private AntdUI.Avatar pictureBoxAddProduct;
+        private AntdUI.Button uploadBtn;
     }
 }

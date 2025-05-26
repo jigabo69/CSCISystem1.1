@@ -59,6 +59,7 @@
             // 
             // labelTime1
             // 
+            this.labelTime1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTime1.BackColor = System.Drawing.Color.Transparent;
             this.labelTime1.Location = new System.Drawing.Point(833, 37);
             this.labelTime1.Name = "labelTime1";

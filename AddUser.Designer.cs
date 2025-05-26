@@ -115,7 +115,7 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.pictureBoxAddUser);
             this.panel2.Controls.Add(this.uploadBtn);
-            this.panel2.Location = new System.Drawing.Point(559, 161);
+            this.panel2.Location = new System.Drawing.Point(558, 161);
             this.panel2.Name = "panel2";
             this.panel2.Radius = 8;
             this.panel2.Size = new System.Drawing.Size(230, 319);
@@ -145,6 +145,7 @@
             this.uploadBtn.Size = new System.Drawing.Size(224, 80);
             this.uploadBtn.TabIndex = 31;
             this.uploadBtn.Text = "Upload";
+            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
             // 
             // resetBtn
             // 
