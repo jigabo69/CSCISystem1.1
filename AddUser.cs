@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using AntdUI;
+using System.Data;
 
 namespace CSCISystem1._1
 {
@@ -21,46 +22,69 @@ namespace CSCISystem1._1
 
         private void AddUserToDatabase()
         {
+            // Trim and gather input values
+            var username = txtUsername.Text.Trim();
+            var email = txtEmail.Text.Trim();
+            var password = txtPassword.Text.Trim();
+            var firstName = txtFname.Text.Trim();
+            var lastName = txtLname.Text.Trim();
+            var userType = selectUsertype.SelectedIndex.ToString();
+
+            // Check for empty required fields
+            if (string.IsNullOrEmpty(username) ||
+                string.IsNullOrEmpty(email) ||
+                string.IsNullOrEmpty(password) ||
+                string.IsNullOrEmpty(firstName) ||
+                string.IsNullOrEmpty(lastName))
+            {
+                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
-                con.Open();
-                cmd.Connection = con;
-                cmd.CommandText = "INSERT INTO Users (Username, Email, Password, FirstName, LastName, UserType, ProfilePicture) VALUES (@Username, @Email, @Password, @FirstName, @LastName, @UserType, @ProfilePicture)";
-                cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
-                cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
-                cmd.Parameters.AddWithValue("@FirstName", txtFname.Text);
-                cmd.Parameters.AddWithValue("@LastName", txtLname.Text);
-                cmd.Parameters.AddWithValue("@UserType", selectUsertype.SelectedIndex.ToString());
-                if (pictureBoxAddUser.Image != null)
+                string query = "INSERT INTO tb_user (Username, Email, Password, FirstName, LastName, UserType, ProfilePicture) " +
+                               "VALUES (@Username, @Email, @Password, @FirstName, @LastName, @UserType, @ProfilePicture)";
+                using (SqlCommand _cmd = new SqlCommand(query, con))
                 {
-                    using (MemoryStream ms = new MemoryStream())
+                    _cmd.Parameters.AddWithValue("@Username", username);
+                    _cmd.Parameters.AddWithValue("@Email", email);
+                    _cmd.Parameters.AddWithValue("@Password", password);
+                    _cmd.Parameters.AddWithValue("@FirstName", firstName);
+                    _cmd.Parameters.AddWithValue("@LastName", lastName);
+                    _cmd.Parameters.AddWithValue("@UserType", userType);
+
+                    if (pictureBoxAddUser.Image != null)
                     {
-                        pictureBoxAddUser.Image.Save(ms, pictureBoxAddUser.Image.RawFormat);
-                        byte[] imageBytes = ms.ToArray();
-                        cmd.Parameters.AddWithValue("@ProfilePicture", imageBytes);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            pictureBoxAddUser.Image.Save(ms, pictureBoxAddUser.Image.RawFormat);
+                            byte[] imageBytes = ms.ToArray();
+                            _cmd.Parameters.AddWithValue("@ProfilePicture", imageBytes);
+                        }
                     }
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("@ProfilePicture", DBNull.Value);
-                }
-                int rowsAffected = cmd.ExecuteNonQuery();
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("User added successfully.");
+                    else
+                    {
+                        _cmd.Parameters.AddWithValue("@ProfilePicture", DBNull.Value);
+                    }
+
+                    con.Open();
+                    _cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearField();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                con.Close();
+                if (con.State == ConnectionState.Open)
+                    con.Close();
             }
-
         }
 
         private void LoadUserType()

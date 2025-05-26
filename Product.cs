@@ -14,6 +14,8 @@ namespace CSCISystem1._1
             InitializeDataGridView();
         }
 
+
+
         private void InitializeDataGridView()
         {
             gridViewProductList.Columns.Add("ProductCode", "Item Code");
