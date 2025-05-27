@@ -144,7 +144,7 @@
             this.gridViewUserList.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridViewUserList.EnableHeadersVisualStyles = false;
             this.gridViewUserList.GridColor = System.Drawing.Color.White;
-            this.gridViewUserList.Location = new System.Drawing.Point(27, 13);
+            this.gridViewUserList.Location = new System.Drawing.Point(28, 13);
             this.gridViewUserList.Name = "gridViewUserList";
             this.gridViewUserList.ReadOnly = true;
             this.gridViewUserList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
