@@ -45,7 +45,7 @@
       <HintPath>packages\Azure.Identity.1.11.4\lib\netstandard2.0\Azure.Identity.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.1.5.3">
-      <HintPath>..\..\GUI\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Bunifu.UI.WinForms.1.5.3\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
@@ -110,7 +110,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Siticone.UI">
-      <HintPath>..\..\..\..\..\Downloads\Siticone.UI\Siticone.UI.dll</HintPath>
+      <HintPath>..\..\..\Downloads\Siticone.UI\Siticone.UI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
