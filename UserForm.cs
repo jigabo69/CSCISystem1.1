@@ -138,6 +138,7 @@ namespace CSCISystem1._1
                 if (result == DialogResult.Yes)
                 {
                     DeleteUserFromDatabase(username);
+                    //luke
                 }
             }
         }
