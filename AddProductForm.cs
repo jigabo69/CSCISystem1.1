@@ -16,7 +16,6 @@ namespace CSCISystem1._1
             InitializeComponent();
             RadiusForm();
             CalculateTotalPrice();
-
         }
 
         private void AddProductToDatabase()
@@ -26,9 +25,11 @@ namespace CSCISystem1._1
             var quantityText = txtQuantity.Text.Trim();
             var priceText = txtPrice.Text.Trim();
             var totalPriceText = txtTotalPrice.Text.Trim();
+            var expDate = datePicker.Value;
+
             if (string.IsNullOrEmpty(productCode) || string.IsNullOrEmpty(productName) ||
                 string.IsNullOrEmpty(quantityText) || string.IsNullOrEmpty(priceText) ||
-                string.IsNullOrEmpty(totalPriceText))
+                string.IsNullOrEmpty(totalPriceText) || expDate == DateTime.MinValue || expDate < DateTime.Today)
             {
                 MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -39,11 +40,12 @@ namespace CSCISystem1._1
             _cmd = new SqlCommand(query, _con);
             _cmd.Parameters.AddWithValue("@ProductCode", productCode);
             _cmd.Parameters.AddWithValue("@ProductName", productName);
-
+            _cmd.Parameters.AddWithValue("@ExpDate", expDate);
             _cmd.Parameters.AddWithValue("@Quantity", Convert.ToInt32(quantityText));
             _cmd.Parameters.AddWithValue("@Price", Convert.ToDecimal(priceText));
             _cmd.Parameters.AddWithValue("@TotalPrice", Convert.ToDecimal(totalPriceText));
             _con.Open();
+            
             _cmd.ExecuteNonQuery();
             _con.Close();
             // Optionally, you can clear the input fields after adding the product
@@ -62,7 +64,7 @@ namespace CSCISystem1._1
             txtProductName.Clear();
             txtQuantity.Clear();
             txtTotalPrice.Clear();
-            datePicker = null;
+            datePicker.Value = DateTime.Today; 
             pictureBoxAddProduct.Image = null;
             txtProductCode.Focus();
         }

@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductForm));
             this.panel1 = new AntdUI.Panel();
+            this.panel2 = new AntdUI.Panel();
+            this.pictureBoxAddProduct = new AntdUI.Avatar();
+            this.uploadBtn = new AntdUI.Button();
             this.datePicker = new Siticone.UI.WinForms.SiticoneDateTimePicker();
             this.resetBtn = new AntdUI.Button();
             this.siticoneLabel6 = new Siticone.UI.WinForms.SiticoneLabel();
@@ -46,16 +49,15 @@
             this.txtProductCode = new AntdUI.Input();
             this.titlebar = new AntdUI.PageHeader();
             this.siticoneControlBox1 = new Siticone.UI.WinForms.SiticoneControlBox();
-            this.panel2 = new AntdUI.Panel();
-            this.pictureBoxAddProduct = new AntdUI.Avatar();
-            this.uploadBtn = new AntdUI.Button();
+            this.datePicker1 = new AntdUI.DatePicker();
             this.panel1.SuspendLayout();
-            this.titlebar.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.titlebar.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.datePicker1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.datePicker);
             this.panel1.Controls.Add(this.resetBtn);
@@ -79,6 +81,44 @@
             this.panel1.TabIndex = 0;
             this.panel1.Text = "panel1";
             // 
+            // panel2
+            // 
+            this.panel2.Back = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.pictureBoxAddProduct);
+            this.panel2.Controls.Add(this.uploadBtn);
+            this.panel2.Location = new System.Drawing.Point(498, 270);
+            this.panel2.Name = "panel2";
+            this.panel2.Radius = 8;
+            this.panel2.Size = new System.Drawing.Size(230, 319);
+            this.panel2.TabIndex = 32;
+            this.panel2.Text = "panel2";
+            // 
+            // pictureBoxAddProduct
+            // 
+            this.pictureBoxAddProduct.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAddProduct.Image")));
+            this.pictureBoxAddProduct.Location = new System.Drawing.Point(10, 15);
+            this.pictureBoxAddProduct.Name = "pictureBoxAddProduct";
+            this.pictureBoxAddProduct.Radius = 6;
+            this.pictureBoxAddProduct.Size = new System.Drawing.Size(210, 210);
+            this.pictureBoxAddProduct.TabIndex = 32;
+            this.pictureBoxAddProduct.Text = "";
+            // 
+            // uploadBtn
+            // 
+            this.uploadBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
+            this.uploadBtn.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.uploadBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uploadBtn.Icon = ((System.Drawing.Image)(resources.GetObject("uploadBtn.Icon")));
+            this.uploadBtn.IconPosition = AntdUI.TAlignMini.Top;
+            this.uploadBtn.IconRatio = 0.9F;
+            this.uploadBtn.Location = new System.Drawing.Point(3, 234);
+            this.uploadBtn.Name = "uploadBtn";
+            this.uploadBtn.Size = new System.Drawing.Size(224, 80);
+            this.uploadBtn.TabIndex = 31;
+            this.uploadBtn.Text = "Upload";
+            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
+            // 
             // datePicker
             // 
             this.datePicker.BackColor = System.Drawing.Color.Transparent;
@@ -100,7 +140,7 @@
             this.datePicker.ShadowDecoration.Parent = this.datePicker;
             this.datePicker.Size = new System.Drawing.Size(401, 55);
             this.datePicker.TabIndex = 31;
-            this.datePicker.Value = new System.DateTime(2025, 5, 24, 20, 50, 7, 0);
+            this.datePicker.Value = new System.DateTime(2025, 5, 27, 0, 0, 0, 0);
             // 
             // resetBtn
             // 
@@ -300,43 +340,13 @@
             this.siticoneControlBox1.Size = new System.Drawing.Size(45, 29);
             this.siticoneControlBox1.TabIndex = 6;
             // 
-            // panel2
+            // datePicker1
             // 
-            this.panel2.Back = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.pictureBoxAddProduct);
-            this.panel2.Controls.Add(this.uploadBtn);
-            this.panel2.Location = new System.Drawing.Point(498, 270);
-            this.panel2.Name = "panel2";
-            this.panel2.Radius = 8;
-            this.panel2.Size = new System.Drawing.Size(230, 319);
-            this.panel2.TabIndex = 32;
-            this.panel2.Text = "panel2";
-            // 
-            // pictureBoxAddProduct
-            // 
-            this.pictureBoxAddProduct.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAddProduct.Image")));
-            this.pictureBoxAddProduct.Location = new System.Drawing.Point(10, 15);
-            this.pictureBoxAddProduct.Name = "pictureBoxAddProduct";
-            this.pictureBoxAddProduct.Radius = 6;
-            this.pictureBoxAddProduct.Size = new System.Drawing.Size(210, 210);
-            this.pictureBoxAddProduct.TabIndex = 32;
-            this.pictureBoxAddProduct.Text = "";
-            // 
-            // uploadBtn
-            // 
-            this.uploadBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
-            this.uploadBtn.Font = new System.Drawing.Font("Satoshi", 12F);
-            this.uploadBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.uploadBtn.Icon = ((System.Drawing.Image)(resources.GetObject("uploadBtn.Icon")));
-            this.uploadBtn.IconPosition = AntdUI.TAlignMini.Top;
-            this.uploadBtn.IconRatio = 0.9F;
-            this.uploadBtn.Location = new System.Drawing.Point(3, 234);
-            this.uploadBtn.Name = "uploadBtn";
-            this.uploadBtn.Size = new System.Drawing.Size(224, 80);
-            this.uploadBtn.TabIndex = 31;
-            this.uploadBtn.Text = "Upload";
-            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
+            this.datePicker1.Location = new System.Drawing.Point(286, 233);
+            this.datePicker1.Name = "datePicker1";
+            this.datePicker1.Size = new System.Drawing.Size(173, 54);
+            this.datePicker1.TabIndex = 33;
+            this.datePicker1.Text = "datePicker1";
             // 
             // AddProductForm
             // 
@@ -354,8 +364,8 @@
             this.Load += new System.EventHandler(this.AddProductForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.titlebar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.titlebar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -382,5 +392,6 @@
         private AntdUI.Panel panel2;
         private AntdUI.Avatar pictureBoxAddProduct;
         private AntdUI.Button uploadBtn;
+        private AntdUI.DatePicker datePicker1;
     }
 }

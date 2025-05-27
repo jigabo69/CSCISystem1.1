@@ -1,6 +1,6 @@
 ﻿namespace CSCISystem1._1
 {
-    partial class HomeForm
+    partial class SalesReport
     {
         /// <summary>
         /// Required designer variable.
@@ -30,21 +30,21 @@
         {
             this.panel1 = new AntdUI.Panel();
             this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
-            this.labelTime1 = new AntdUI.LabelTime();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cartesianChart1);
             this.panel1.Controls.Add(this.siticoneLabel1);
-            this.panel1.Controls.Add(this.labelTime1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel1.Radius = 20;
-            this.panel1.Size = new System.Drawing.Size(952, 696);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(920, 618);
+            this.panel1.TabIndex = 3;
             this.panel1.Text = "panel1";
             // 
             // siticoneLabel1
@@ -53,31 +53,30 @@
             this.siticoneLabel1.Font = new System.Drawing.Font("Satoshi", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siticoneLabel1.Location = new System.Drawing.Point(78, 37);
             this.siticoneLabel1.Name = "siticoneLabel1";
-            this.siticoneLabel1.Size = new System.Drawing.Size(67, 32);
+            this.siticoneLabel1.Size = new System.Drawing.Size(136, 32);
             this.siticoneLabel1.TabIndex = 10;
-            this.siticoneLabel1.Text = "Home";
+            this.siticoneLabel1.Text = "Sales Report";
             // 
-            // labelTime1
+            // cartesianChart1
             // 
-            this.labelTime1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTime1.BackColor = System.Drawing.Color.Transparent;
-            this.labelTime1.Location = new System.Drawing.Point(738, 37);
-            this.labelTime1.Name = "labelTime1";
-            this.labelTime1.Size = new System.Drawing.Size(135, 32);
-            this.labelTime1.TabIndex = 3;
-            this.labelTime1.Text = "labelTime1";
+            this.cartesianChart1.BackColor = System.Drawing.Color.Transparent;
+            this.cartesianChart1.Location = new System.Drawing.Point(39, 273);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(842, 318);
+            this.cartesianChart1.TabIndex = 11;
+            this.cartesianChart1.Text = "cartesianChart1";
             // 
-            // HomeForm
+            // SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(952, 696);
+            this.ClientSize = new System.Drawing.Size(920, 618);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "HomeForm";
+            this.Name = "SalesReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomeForm";
+            this.Text = "SalesReport";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -85,9 +84,8 @@
         }
 
         #endregion
-
         private AntdUI.Panel panel1;
-        private AntdUI.LabelTime labelTime1;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }

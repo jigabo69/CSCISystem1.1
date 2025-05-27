@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using AntdUIDemo;
 
 namespace CSCISystem1._1
 {
@@ -12,6 +13,7 @@ namespace CSCISystem1._1
         private void Main_Load(object sender, EventArgs e)
         {
             loadingTimer.Start();
+            LoadForm(new HomeForm());
         }
         private void LoadForm(object Form)
         {
@@ -76,12 +78,12 @@ namespace CSCISystem1._1
 
         private void InventoryRBtn_Click(object sender, EventArgs e)
         {
-            
+            LoadForm(new InventoryReport());
         }
 
         private void SalesBtn_Click(object sender, EventArgs e)
         {
-            
+            LoadForm(new SalesReport());
         }
 
         private void TempPOSBTN_Click(object sender, EventArgs e)

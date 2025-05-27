@@ -22,6 +22,7 @@ namespace CSCISystem1._1
 
         private void AddUserToDatabase()
         {
+
             // Trim and gather input values
             var username = txtUsername.Text.Trim();
             var email = txtEmail.Text.Trim();
@@ -35,7 +36,8 @@ namespace CSCISystem1._1
                 string.IsNullOrEmpty(email) ||
                 string.IsNullOrEmpty(password) ||
                 string.IsNullOrEmpty(firstName) ||
-                string.IsNullOrEmpty(lastName))
+                string.IsNullOrEmpty(lastName) ||
+                string.IsNullOrEmpty(userType))
             {
                 MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -100,7 +102,7 @@ namespace CSCISystem1._1
         
         private void AddProductForm_Load(object sender, EventArgs e)
         {
-            ClearField();
+            
             LoadUserType();
         }
 
