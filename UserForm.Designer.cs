@@ -175,6 +175,7 @@
             this.gridViewUserList.ThemeStyle.RowsStyle.Height = 60;
             this.gridViewUserList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.gridViewUserList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gridViewUserList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewUserList_CellClick_1);
             // 
             // AddUserBtn
             // 

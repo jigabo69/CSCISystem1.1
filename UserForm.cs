@@ -115,9 +115,31 @@ namespace CSCISystem1._1
             
         }
 
-        private void gridViewUserList_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void gridViewUserList_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
 
+            string username = gridViewUserList.Rows[e.RowIndex].Cells["Username"].Value.ToString();
+
+            if (gridViewUserList.Columns[e.ColumnIndex].Name == "EditAction")
+            {
+                // assume AddProductForm has a constructor for editing:
+                // public AddProductForm(string productCode)
+                AddProductForm editForm = new AddProductForm();
+                editForm.ShowDialog();
+
+                // Reload after editing
+                InitializeDataUser();
+            }
+            else if (gridViewUserList.Columns[e.ColumnIndex].Name == "DeleteAction")
+            {
+                DialogResult result = MessageBox.Show($"Are you sure you want to delete {username}?",
+                    "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    DeleteUserFromDatabase(username);
+                }
+            }
         }
     }
 }
