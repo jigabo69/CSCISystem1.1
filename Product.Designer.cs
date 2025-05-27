@@ -74,7 +74,7 @@
             this.txtSearchItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchItem.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtSearchItem.JoinLeft = true;
-            this.txtSearchItem.Location = new System.Drawing.Point(636, 26);
+            this.txtSearchItem.Location = new System.Drawing.Point(553, 91);
             this.txtSearchItem.Name = "txtSearchItem";
             this.txtSearchItem.PlaceholderText = "Search";
             this.txtSearchItem.Size = new System.Drawing.Size(267, 47);
@@ -89,7 +89,7 @@
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button3.Icon = ((System.Drawing.Image)(resources.GetObject("button3.Icon")));
             this.button3.JoinRight = true;
-            this.button3.Location = new System.Drawing.Point(585, 22);
+            this.button3.Location = new System.Drawing.Point(502, 87);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(51, 55);
             this.button3.TabIndex = 8;
