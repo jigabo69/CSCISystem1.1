@@ -12,7 +12,7 @@ namespace CSCISystem1._1
 {
     public partial class AddUser: Form
     {
-        SqlConnection con = new SqlConnection("Data Source = laptop-jclj6t4h\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
         SqlCommand cmd = new SqlCommand();
 
         public AddUser()

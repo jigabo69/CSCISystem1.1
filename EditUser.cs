@@ -9,7 +9,8 @@ namespace CSCISystem1._1
     public partial class EditUser: Form
     {
         private string _usernameToEdit;
-        SqlConnection _con = new SqlConnection("Data Source = EMMAN\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+
         SqlCommand _cmd = new SqlCommand();
 
         public EditUser(string usernameToEdit)
@@ -34,9 +35,9 @@ namespace CSCISystem1._1
         {
             try
             {
-                _con.Open();
+                con.Open();
                 string query = "SELECT * FROM tb_user WHERE Username = @Username";
-                using (SqlCommand cmd = new SqlCommand(query, _con))
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@Username", username);
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -68,7 +69,7 @@ namespace CSCISystem1._1
             }
             finally
             {
-                _con.Close();
+                con.Close();
             }
         }
 
@@ -97,7 +98,7 @@ namespace CSCISystem1._1
             {
                 string query =
                     "UPDATE tb_user SET Email = @Email, Password = @Password, FirstName = @FirstName, LastName = @LastName, UserType = @UserType, ProfilePicture = @ProfilePicture WHERE Username = @Username";
-                using (SqlCommand _cmd = new SqlCommand(query, _con))
+                using (SqlCommand _cmd = new SqlCommand(query, con))
                 {
                     _cmd.Parameters.AddWithValue("@Username", username);
                     _cmd.Parameters.AddWithValue("@Email", email);
@@ -119,7 +120,7 @@ namespace CSCISystem1._1
                         _cmd.Parameters.AddWithValue("@ProfilePicture", DBNull.Value);
                     }
 
-                    _con.Open();
+                    con.Open();
                     int rowsAffected = _cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
@@ -142,7 +143,7 @@ namespace CSCISystem1._1
             }
             finally
             {
-                _con.Close();
+                con.Close();
             }
         }
 

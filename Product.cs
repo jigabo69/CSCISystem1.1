@@ -10,7 +10,9 @@ namespace CSCISystem1._1
 {
     public partial class Product : Form
     {
-        SqlConnection con = new SqlConnection("Data Source = laptop-jclj6t4h\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+
+
         SqlCommand cmd;
         
         public Product()
@@ -43,7 +45,7 @@ namespace CSCISystem1._1
             {
                 Name = "EditAction",
                 HeaderText = "", // We'll set a label over it later
-                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit-20.png"),
+               // Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit-20.png"),
                 ImageLayout = DataGridViewImageCellLayout.Zoom,
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
@@ -54,7 +56,7 @@ namespace CSCISystem1._1
             {
                 Name = "DeleteAction",
                 HeaderText = "",
-                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\delete-20.png"),
+                //Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\delete-20.png"),
                 ImageLayout = DataGridViewImageCellLayout.Zoom,
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
