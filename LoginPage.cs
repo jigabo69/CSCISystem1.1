@@ -38,7 +38,5 @@ namespace CSCISystem1._1
             this.IsLoginSuccessful = true;
             this.Close();
         }
-
-        
     }
 }
