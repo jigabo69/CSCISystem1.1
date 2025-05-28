@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             this.siticonePanel1 = new Siticone.UI.WinForms.SiticonePanel();
-            this.loginlabel = new Siticone.UI.WinForms.SiticoneLabel();
-            this.InputUserName = new Siticone.UI.WinForms.SiticoneRoundedTextBox();
-            this.InputPassword = new Siticone.UI.WinForms.SiticoneRoundedTextBox();
-            this.ShowPasswordBtn = new Siticone.UI.WinForms.SiticoneCheckBox();
-            this.Loginbutton = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.siticoneControlBox1 = new Siticone.UI.WinForms.SiticoneControlBox();
+            this.Loginbutton = new Siticone.UI.WinForms.SiticoneRoundedButton();
+            this.ShowPasswordBtn = new Siticone.UI.WinForms.SiticoneCheckBox();
+            this.InputPassword = new Siticone.UI.WinForms.SiticoneRoundedTextBox();
+            this.InputUserName = new Siticone.UI.WinForms.SiticoneRoundedTextBox();
+            this.loginlabel = new Siticone.UI.WinForms.SiticoneLabel();
             this.siticonePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,16 +56,78 @@
             this.siticonePanel1.Size = new System.Drawing.Size(522, 595);
             this.siticonePanel1.TabIndex = 0;
             // 
-            // loginlabel
+            // siticoneControlBox1
             // 
-            this.loginlabel.BackColor = System.Drawing.Color.Transparent;
-            this.loginlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginlabel.ForeColor = System.Drawing.Color.DimGray;
-            this.loginlabel.Location = new System.Drawing.Point(227, 132);
-            this.loginlabel.Name = "loginlabel";
-            this.loginlabel.Size = new System.Drawing.Size(76, 33);
-            this.loginlabel.TabIndex = 0;
-            this.loginlabel.Text = "Log in";
+            this.siticoneControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.siticoneControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.siticoneControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.siticoneControlBox1.HoveredState.Parent = this.siticoneControlBox1;
+            this.siticoneControlBox1.IconColor = System.Drawing.Color.Gray;
+            this.siticoneControlBox1.Location = new System.Drawing.Point(461, 14);
+            this.siticoneControlBox1.Name = "siticoneControlBox1";
+            this.siticoneControlBox1.PressedColor = System.Drawing.Color.Snow;
+            this.siticoneControlBox1.ShadowDecoration.Parent = this.siticoneControlBox1;
+            this.siticoneControlBox1.Size = new System.Drawing.Size(46, 30);
+            this.siticoneControlBox1.TabIndex = 6;
+            // 
+            // Loginbutton
+            // 
+            this.Loginbutton.CheckedState.Parent = this.Loginbutton;
+            this.Loginbutton.CustomImages.Parent = this.Loginbutton;
+            this.Loginbutton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Loginbutton.ForeColor = System.Drawing.Color.White;
+            this.Loginbutton.HoveredState.Parent = this.Loginbutton;
+            this.Loginbutton.Location = new System.Drawing.Point(197, 440);
+            this.Loginbutton.Name = "Loginbutton";
+            this.Loginbutton.ShadowDecoration.Parent = this.Loginbutton;
+            this.Loginbutton.Size = new System.Drawing.Size(134, 45);
+            this.Loginbutton.TabIndex = 4;
+            this.Loginbutton.Text = "Log in";
+            this.Loginbutton.Click += new System.EventHandler(this.Loginbutton_Click);
+            // 
+            // ShowPasswordBtn
+            // 
+            this.ShowPasswordBtn.AutoSize = true;
+            this.ShowPasswordBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ShowPasswordBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ShowPasswordBtn.CheckedState.BorderRadius = 2;
+            this.ShowPasswordBtn.CheckedState.BorderThickness = 0;
+            this.ShowPasswordBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ShowPasswordBtn.ForeColor = System.Drawing.Color.Black;
+            this.ShowPasswordBtn.Location = new System.Drawing.Point(164, 386);
+            this.ShowPasswordBtn.Name = "ShowPasswordBtn";
+            this.ShowPasswordBtn.Size = new System.Drawing.Size(101, 17);
+            this.ShowPasswordBtn.TabIndex = 3;
+            this.ShowPasswordBtn.Text = "Show password";
+            this.ShowPasswordBtn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.ShowPasswordBtn.UncheckedState.BorderRadius = 2;
+            this.ShowPasswordBtn.UncheckedState.BorderThickness = 0;
+            this.ShowPasswordBtn.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.ShowPasswordBtn.UseVisualStyleBackColor = false;
+            // 
+            // InputPassword
+            // 
+            this.InputPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.InputPassword.DefaultText = "";
+            this.InputPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.InputPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.InputPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.InputPassword.DisabledState.Parent = this.InputPassword;
+            this.InputPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.InputPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.InputPassword.FocusedState.Parent = this.InputPassword;
+            this.InputPassword.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.InputPassword.HoveredState.Parent = this.InputPassword;
+            this.InputPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("InputPassword.IconLeft")));
+            this.InputPassword.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.InputPassword.Location = new System.Drawing.Point(152, 328);
+            this.InputPassword.Name = "InputPassword";
+            this.InputPassword.PasswordChar = '\0';
+            this.InputPassword.PlaceholderText = "Password";
+            this.InputPassword.SelectedText = "";
+            this.InputPassword.ShadowDecoration.Parent = this.InputPassword;
+            this.InputPassword.Size = new System.Drawing.Size(214, 42);
+            this.InputPassword.TabIndex = 2;
             // 
             // InputUserName
             // 
@@ -96,86 +158,22 @@
             this.InputUserName.TabIndex = 1;
             this.InputUserName.TextChanged += new System.EventHandler(this.siticoneRoundedTextBox1_TextChanged);
             // 
-            // InputPassword
+            // loginlabel
             // 
-            this.InputPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.InputPassword.DefaultText = "";
-            this.InputPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.InputPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.InputPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.InputPassword.DisabledState.Parent = this.InputPassword;
-            this.InputPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.InputPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.InputPassword.FocusedState.Parent = this.InputPassword;
-            this.InputPassword.HoveredState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.InputPassword.HoveredState.Parent = this.InputPassword;
-            this.InputPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("InputPassword.IconLeft")));
-            this.InputPassword.IconLeftOffset = new System.Drawing.Point(5, 0);
-            this.InputPassword.Location = new System.Drawing.Point(152, 328);
-            this.InputPassword.Name = "InputPassword";
-            this.InputPassword.PasswordChar = '\0';
-            this.InputPassword.PlaceholderText = "Password";
-            this.InputPassword.SelectedText = "";
-            this.InputPassword.ShadowDecoration.Parent = this.InputPassword;
-            this.InputPassword.Size = new System.Drawing.Size(214, 42);
-            this.InputPassword.TabIndex = 2;
-          
-            // 
-            // ShowPasswordBtn
-            // 
-            this.ShowPasswordBtn.AutoSize = true;
-            this.ShowPasswordBtn.BackColor = System.Drawing.Color.Transparent;
-            this.ShowPasswordBtn.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ShowPasswordBtn.CheckedState.BorderRadius = 2;
-            this.ShowPasswordBtn.CheckedState.BorderThickness = 0;
-            this.ShowPasswordBtn.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ShowPasswordBtn.ForeColor = System.Drawing.Color.Black;
-            this.ShowPasswordBtn.Location = new System.Drawing.Point(164, 386);
-            this.ShowPasswordBtn.Name = "ShowPasswordBtn";
-            this.ShowPasswordBtn.Size = new System.Drawing.Size(101, 17);
-            this.ShowPasswordBtn.TabIndex = 3;
-            this.ShowPasswordBtn.Text = "Show password";
-            this.ShowPasswordBtn.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.ShowPasswordBtn.UncheckedState.BorderRadius = 2;
-            this.ShowPasswordBtn.UncheckedState.BorderThickness = 0;
-            this.ShowPasswordBtn.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.ShowPasswordBtn.UseVisualStyleBackColor = false;
-
-            // 
-            // Loginbutton
-            // 
-            this.Loginbutton.CheckedState.Parent = this.Loginbutton;
-            this.Loginbutton.CustomImages.Parent = this.Loginbutton;
-            this.Loginbutton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Loginbutton.ForeColor = System.Drawing.Color.White;
-            this.Loginbutton.HoveredState.Parent = this.Loginbutton;
-            this.Loginbutton.Location = new System.Drawing.Point(197, 440);
-            this.Loginbutton.Name = "Loginbutton";
-            this.Loginbutton.ShadowDecoration.Parent = this.Loginbutton;
-            this.Loginbutton.Size = new System.Drawing.Size(134, 45);
-            this.Loginbutton.TabIndex = 4;
-            this.Loginbutton.Text = "Log in";
-            this.Loginbutton.Click += new System.EventHandler(this.Loginbutton_Click);
-            // 
-            // siticoneControlBox1
-            // 
-            this.siticoneControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.siticoneControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneControlBox1.FillColor = System.Drawing.Color.Transparent;
-            this.siticoneControlBox1.HoveredState.Parent = this.siticoneControlBox1;
-            this.siticoneControlBox1.IconColor = System.Drawing.Color.Gray;
-            this.siticoneControlBox1.Location = new System.Drawing.Point(473, 14);
-            this.siticoneControlBox1.Name = "siticoneControlBox1";
-            this.siticoneControlBox1.PressedColor = System.Drawing.Color.Snow;
-            this.siticoneControlBox1.ShadowDecoration.Parent = this.siticoneControlBox1;
-            this.siticoneControlBox1.Size = new System.Drawing.Size(34, 19);
-            this.siticoneControlBox1.TabIndex = 6;
+            this.loginlabel.BackColor = System.Drawing.Color.Transparent;
+            this.loginlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginlabel.ForeColor = System.Drawing.Color.DimGray;
+            this.loginlabel.Location = new System.Drawing.Point(227, 132);
+            this.loginlabel.Name = "loginlabel";
+            this.loginlabel.Size = new System.Drawing.Size(76, 33);
+            this.loginlabel.TabIndex = 0;
+            this.loginlabel.Text = "Log in";
             // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(604, 662);
             this.Controls.Add(this.siticonePanel1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -183,6 +181,7 @@
             this.Name = "LoginPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginPage";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             this.siticonePanel1.ResumeLayout(false);
             this.siticonePanel1.PerformLayout();
             this.ResumeLayout(false);
