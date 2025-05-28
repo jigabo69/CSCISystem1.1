@@ -15,14 +15,15 @@ using Microsoft.Data.SqlClient;
 namespace CSCISystem1._1
 {
 
+
     public partial class LoginPage : Form
     {
         SqlConnection con = new SqlConnection("Data Source = EMMAN\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
         SqlCommand cmd;
 
         public bool IsLoginSuccessful { get; private set; } = false;
+        public bool IsAuthenticated { get; private set; }
 
-        
         public LoginPage()
         {
             InitializeComponent();
