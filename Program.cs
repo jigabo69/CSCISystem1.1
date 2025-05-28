@@ -16,26 +16,8 @@ namespace CSCISystem1._1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginPage());
+            Application.Run(new LoginPage());
 
-
-            while (true)
-            {
-                LoginPage login = new LoginPage();
-                Application.Run(login);
-
-                if (login.IsLoginSuccessful)
-                {
-                    {
-                        Main main = new Main();
-                        Application.Run(main);
-                    }
-                }
-                else
-                {
-                    break;
-                }
-            }
         }
     }
 }
