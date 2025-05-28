@@ -39,6 +39,6 @@ namespace CSCISystem1._1
             this.Close();
         }
 
-        
+        }
     }
 }
