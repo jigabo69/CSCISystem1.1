@@ -6,6 +6,7 @@ namespace CSCISystem1._1
 {
     public partial class Main: Form
     {
+
         public Main()
         {
             InitializeComponent();
@@ -15,7 +16,7 @@ namespace CSCISystem1._1
             loadingTimer.Start();
             LoadForm(new HomeForm());
         }
-        private void LoadForm(object Form)
+        public void LoadForm(object Form)
         {
             if (this.mainpanel.Controls.Count > 0)
                 this.mainpanel.Controls.RemoveAt(0);
