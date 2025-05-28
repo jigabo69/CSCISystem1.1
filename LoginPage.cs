@@ -39,9 +39,6 @@ namespace CSCISystem1._1
             this.Close();
         }
 
-        private void LoginPage_Load(object sender, EventArgs e)
-        {
-
         }
-    }  
+    }
 }
