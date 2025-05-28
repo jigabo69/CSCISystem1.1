@@ -147,6 +147,7 @@
             this.uploadBtn.Size = new System.Drawing.Size(224, 80);
             this.uploadBtn.TabIndex = 31;
             this.uploadBtn.Text = "Upload";
+            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
             // 
             // resetBtn
             // 

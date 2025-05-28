@@ -141,7 +141,7 @@
             this.siticonePanel1.Location = new System.Drawing.Point(0, 29);
             this.siticonePanel1.Name = "siticonePanel1";
             this.siticonePanel1.ShadowDecoration.Parent = this.siticonePanel1;
-            this.siticonePanel1.Size = new System.Drawing.Size(1920, 996);
+            this.siticonePanel1.Size = new System.Drawing.Size(1920, 1026);
             this.siticonePanel1.TabIndex = 2;
             // 
             // siticoneShadowPanel1
@@ -217,7 +217,7 @@
             this.panel6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel6.Location = new System.Drawing.Point(1612, 105);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(289, 636);
+            this.panel6.Size = new System.Drawing.Size(289, 666);
             this.panel6.TabIndex = 2;
             this.panel6.TabStop = false;
             this.panel6.Text = "panel5";
@@ -230,7 +230,7 @@
             this.receiptTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.receiptTextBox.Location = new System.Drawing.Point(18, 61);
             this.receiptTextBox.Name = "receiptTextBox";
-            this.receiptTextBox.Size = new System.Drawing.Size(254, 561);
+            this.receiptTextBox.Size = new System.Drawing.Size(254, 591);
             this.receiptTextBox.TabIndex = 11;
             this.receiptTextBox.Text = "";
             // 
@@ -251,7 +251,7 @@
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 747);
+            this.panel5.Location = new System.Drawing.Point(0, 777);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1920, 249);
             this.panel5.TabIndex = 3;
@@ -373,6 +373,7 @@
             this.button2.Size = new System.Drawing.Size(244, 75);
             this.button2.TabIndex = 1;
             this.button2.Text = "Remove Item";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -494,7 +495,7 @@
             this.panel1.Controls.Add(this.input1);
             this.panel1.Location = new System.Drawing.Point(974, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(632, 721);
+            this.panel1.Size = new System.Drawing.Size(632, 751);
             this.panel1.TabIndex = 2;
             this.panel1.TabStop = false;
             this.panel1.Text = "panel1";
@@ -533,7 +534,7 @@
             this.siticoneDataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
             this.siticoneDataGridView2.EnableHeadersVisualStyles = false;
             this.siticoneDataGridView2.GridColor = System.Drawing.Color.White;
-            this.siticoneDataGridView2.Location = new System.Drawing.Point(14, 24);
+            this.siticoneDataGridView2.Location = new System.Drawing.Point(14, 35);
             this.siticoneDataGridView2.MultiSelect = false;
             this.siticoneDataGridView2.Name = "siticoneDataGridView2";
             this.siticoneDataGridView2.ReadOnly = true;
@@ -541,7 +542,7 @@
             this.siticoneDataGridView2.RowHeadersVisible = false;
             this.siticoneDataGridView2.RowTemplate.Height = 40;
             this.siticoneDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.siticoneDataGridView2.Size = new System.Drawing.Size(604, 589);
+            this.siticoneDataGridView2.Size = new System.Drawing.Size(604, 619);
             this.siticoneDataGridView2.TabIndex = 6;
             this.siticoneDataGridView2.Theme = Siticone.UI.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.siticoneDataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -571,10 +572,10 @@
             this.input1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.input1.JoinLeft = true;
             this.input1.JoinRight = true;
-            this.input1.Location = new System.Drawing.Point(14, 623);
+            this.input1.Location = new System.Drawing.Point(13, 660);
             this.input1.Name = "input1";
             this.input1.PlaceholderText = "";
-            this.input1.Size = new System.Drawing.Size(605, 75);
+            this.input1.Size = new System.Drawing.Size(605, 68);
             this.input1.TabIndex = 5;
             this.input1.WaveSize = 0;
             // 
@@ -589,7 +590,7 @@
             this.productPanel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.productPanel.Location = new System.Drawing.Point(22, 20);
             this.productPanel.Name = "productPanel";
-            this.productPanel.Size = new System.Drawing.Size(945, 721);
+            this.productPanel.Size = new System.Drawing.Size(945, 751);
             this.productPanel.TabIndex = 1;
             this.productPanel.TabStop = false;
             this.productPanel.Text = "panel5";
@@ -636,7 +637,7 @@
             this.gridDataProductList.RowHeadersVisible = false;
             this.gridDataProductList.RowTemplate.Height = 60;
             this.gridDataProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDataProductList.Size = new System.Drawing.Size(902, 613);
+            this.gridDataProductList.Size = new System.Drawing.Size(902, 643);
             this.gridDataProductList.TabIndex = 5;
             this.gridDataProductList.Theme = Siticone.UI.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gridDataProductList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -660,6 +661,7 @@
             this.gridDataProductList.ThemeStyle.RowsStyle.Height = 60;
             this.gridDataProductList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
             this.gridDataProductList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gridDataProductList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDataProductList_CellClick);
             // 
             // txtSearchItem
             // 
@@ -686,7 +688,7 @@
             // 
             // POS
             // 
-            this.ClientSize = new System.Drawing.Size(1920, 1025);
+            this.ClientSize = new System.Drawing.Size(1920, 1055);
             this.ControlBox = false;
             this.Controls.Add(this.siticonePanel1);
             this.Controls.Add(this.titlebar);
