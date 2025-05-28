@@ -188,6 +188,18 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProductForm.Designer.cs">
+      <DependentUpon>EditProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUser.Designer.cs">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,7 +212,6 @@
     <Compile Include="InventoryReport.Designer.cs">
       <DependentUpon>InventoryReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="LiveCharts\WinForms.cs" />
     <Compile Include="POS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,11 +252,20 @@
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditProductForm.resx">
+      <DependentUpon>EditProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUser.resx">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryReport.resx">
       <DependentUpon>InventoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS.resx">
       <DependentUpon>POS.cs</DependentUpon>

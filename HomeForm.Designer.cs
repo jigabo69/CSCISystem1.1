@@ -36,13 +36,14 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.siticoneLabel1);
             this.panel1.Controls.Add(this.labelTime1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel1.Radius = 20;
+            this.panel1.Radius = 10;
             this.panel1.Size = new System.Drawing.Size(952, 696);
             this.panel1.TabIndex = 1;
             this.panel1.Text = "panel1";

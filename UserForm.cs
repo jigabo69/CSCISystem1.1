@@ -22,6 +22,7 @@ namespace CSCISystem1._1
         private void UserForm_Load(object sender, EventArgs e)
         {
             InitializeDataUser();
+            LoadFilter();
         }
 
         public void InitializeDataUser()
@@ -31,35 +32,68 @@ namespace CSCISystem1._1
             gridViewUserList.Columns.Add("FirstName", "First Name");
             gridViewUserList.Columns.Add("LastName", "Last Name");
             gridViewUserList.Columns.Add("UserType", "User Type");
-            DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+            var imgCol = new DataGridViewImageColumn();
             imgCol.Name = "ProfilePicture";
             imgCol.HeaderText = "                       Profile";
             imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
             gridViewUserList.Columns.Add(imgCol); // Fixed syntax issues and corrected the column definition
-
+            labelAction.Text = "Action";
             //edit button
-            var editButton = new DataGridViewButtonColumn
+            //var editButton = new DataGridViewButtonColumn
+            //{
+            //    Name = "EditAction",
+            //    Text = "Edit",
+            //    UseColumnTextForButtonValue = true,
+            //    HeaderText = "                                 Action",
+            //    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+
+            //};
+            //gridViewUserList.Columns.Add(editButton);
+
+            ////delete button
+            //var deleteButton = new DataGridViewButtonColumn
+            //{
+            //    Name = "DeleteAction",
+            //    Text = "Delete",
+            //    UseColumnTextForButtonValue = true,
+            //    HeaderText = "",
+            //    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+
+            //};
+            //gridViewUserList.Columns.Add(deleteButton);
+            //LoadUserData();
+
+
+            var editIconColumn = new DataGridViewImageColumn
             {
                 Name = "EditAction",
-                Text = "Edit",
-                UseColumnTextForButtonValue = true,
-                HeaderText = "                                 Action",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader,
+                HeaderText = "",
+                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit-20.png"),
+                ImageLayout = DataGridViewImageCellLayout.Zoom,
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
-            gridViewUserList.Columns.Add(editButton);
+            gridViewUserList.Columns.Add(editIconColumn);
 
-            //delete button
-            var deleteButton = new DataGridViewButtonColumn
+            // Delete icon column
+            var deleteIconColumn = new DataGridViewImageColumn
             {
                 Name = "DeleteAction",
-                Text = "Delete",
-                UseColumnTextForButtonValue = true,
                 HeaderText = "",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
-
+                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\delete-20.png"), //edit this
+                ImageLayout = DataGridViewImageCellLayout.Zoom,
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
-            gridViewUserList.Columns.Add(deleteButton);
+            gridViewUserList.Columns.Add(deleteIconColumn);
             LoadUserData();
+            
+
+        }
+
+        private void LoadFilter()
+        {
+            filter.Items.Add("Date Added");
+            filter.Items.Add("Username");
+            filter.Items.Add("Email");
 
         }
 
@@ -112,10 +146,9 @@ namespace CSCISystem1._1
             AddUser addUserForm = new AddUser();
             addUserForm.ShowDialog();
             LoadUserData();
-            
         }
 
-        private void gridViewUserList_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void gridViewUserList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
@@ -123,13 +156,11 @@ namespace CSCISystem1._1
 
             if (gridViewUserList.Columns[e.ColumnIndex].Name == "EditAction")
             {
-                // assume AddProductForm has a constructor for editing:
-                // public AddProductForm(string productCode)
-                AddProductForm editForm = new AddProductForm();
-                editForm.ShowDialog();
+                EditUser editUser = new EditUser(username);
+                editUser.ShowDialog();
 
-                // Reload after editing
-                InitializeDataUser();
+                //reload after editing
+                LoadUserData();
             }
             else if (gridViewUserList.Columns[e.ColumnIndex].Name == "DeleteAction")
             {
@@ -138,8 +169,21 @@ namespace CSCISystem1._1
                 if (result == DialogResult.Yes)
                 {
                     DeleteUserFromDatabase(username);
-                    //luke
+
                 }
+            }
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            panel2.Focus();
+        }
+
+        private void breadcrumb1_ItemClick(object sender, AntdUI.BreadcrumbItemEventArgs e)
+        {
+            if (e.Item.Text == "Home")
+            {
+                this.Close();
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace CSCISystem1._1
 {
-    partial class AddUser
+    partial class EditUser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUser));
             this.titlebar = new AntdUI.PageHeader();
             this.siticoneControlBox1 = new Siticone.UI.WinForms.SiticoneControlBox();
             this.txtUsername = new AntdUI.Input();
             this.txtEmail = new AntdUI.Input();
-            this.addBtn = new AntdUI.Button();
+            this.updateBtn = new AntdUI.Button();
             this.panel2 = new AntdUI.Panel();
             this.pictureBoxAddUser = new AntdUI.Avatar();
             this.uploadBtn = new AntdUI.Button();
@@ -64,7 +64,7 @@
             this.titlebar.Size = new System.Drawing.Size(846, 27);
             this.titlebar.SubText = "";
             this.titlebar.TabIndex = 5;
-            this.titlebar.Text = "Add User";
+            this.titlebar.Text = "Edit User";
             // 
             // siticoneControlBox1
             // 
@@ -99,17 +99,17 @@
             this.txtEmail.Size = new System.Drawing.Size(486, 55);
             this.txtEmail.TabIndex = 7;
             // 
-            // addBtn
+            // updateBtn
             // 
-            this.addBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
-            this.addBtn.Font = new System.Drawing.Font("Satoshi", 12F);
-            this.addBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.addBtn.Location = new System.Drawing.Point(159, 438);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(132, 42);
-            this.addBtn.TabIndex = 13;
-            this.addBtn.Text = "Add";
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            this.updateBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
+            this.updateBtn.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.updateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.updateBtn.Location = new System.Drawing.Point(159, 438);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(132, 42);
+            this.updateBtn.TabIndex = 13;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // panel2
             // 
@@ -117,7 +117,7 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.pictureBoxAddUser);
             this.panel2.Controls.Add(this.uploadBtn);
-            this.panel2.Location = new System.Drawing.Point(558, 161);
+            this.panel2.Location = new System.Drawing.Point(559, 161);
             this.panel2.Name = "panel2";
             this.panel2.Radius = 8;
             this.panel2.Size = new System.Drawing.Size(230, 319);
@@ -147,7 +147,6 @@
             this.uploadBtn.Size = new System.Drawing.Size(224, 80);
             this.uploadBtn.TabIndex = 31;
             this.uploadBtn.Text = "Upload";
-            this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
             // 
             // resetBtn
             // 
@@ -169,7 +168,7 @@
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.resetBtn);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.addBtn);
+            this.panel1.Controls.Add(this.updateBtn);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtUsername);
             this.panel1.Controls.Add(this.titlebar);
@@ -240,7 +239,7 @@
             this.siticoneLabel6.TabIndex = 29;
             this.siticoneLabel6.Text = "User Name";
             // 
-            // AddUser
+            // EditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -249,11 +248,11 @@
             this.ClientSize = new System.Drawing.Size(866, 530);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddUser";
+            this.Name = "EditUser";
             this.Padding = new System.Windows.Forms.Padding(10, 3, 10, 10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddProductForm";
-            this.Load += new System.EventHandler(this.AddProductForm_Load);
+            this.Text = "EditUser";
+            this.Load += new System.EventHandler(this.EditProductForm_Load);
             this.titlebar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -267,7 +266,7 @@
         private Siticone.UI.WinForms.SiticoneControlBox siticoneControlBox1;
         private AntdUI.Input txtUsername;
         private AntdUI.Input txtEmail;
-        private AntdUI.Button addBtn;
+        private AntdUI.Button updateBtn;
         private AntdUI.Panel panel2;
         private AntdUI.Avatar pictureBoxAddUser;
         private AntdUI.Button uploadBtn;

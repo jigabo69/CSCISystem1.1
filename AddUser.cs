@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using AntdUI;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace CSCISystem1._1
 {

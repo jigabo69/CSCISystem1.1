@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Management;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using Vanara.PInvoke;
 
 namespace CSCISystem1._1
 {
@@ -8,10 +12,17 @@ namespace CSCISystem1._1
     {
         SqlConnection con = new SqlConnection("Data Source = laptop-jclj6t4h\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
         SqlCommand cmd;
+        
         public Product()
         {
             InitializeComponent();
             InitializeDataGridView();
+        }
+
+        private void Product_Load(object sender, EventArgs e)
+        {
+            LoadFilter();
+            labelAction.Text = "Action";
         }
 
         private void InitializeDataGridView()
@@ -28,25 +39,24 @@ namespace CSCISystem1._1
             gridViewProductList.Columns.Add("TotalPrice", "Total Price");
 
             //edit button
-            var editButton = new DataGridViewButtonColumn
+            var editButton = new DataGridViewImageColumn
             {
                 Name = "EditAction",
-                Text = "Edit",
-                UseColumnTextForButtonValue = true,
-                HeaderText = "                                 Action",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
+                HeaderText = "", // We'll set a label over it later
+                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit-20.png"),
+                ImageLayout = DataGridViewImageCellLayout.Zoom,
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
             gridViewProductList.Columns.Add(editButton);
 
             //delete button
-            var deleteButton = new DataGridViewButtonColumn
+            var deleteButton = new DataGridViewImageColumn
             {
                 Name = "DeleteAction",
-                Text = "Delete",
-                UseColumnTextForButtonValue = true,
                 HeaderText = "",
-                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells,
-
+                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\delete-20.png"),
+                ImageLayout = DataGridViewImageCellLayout.Zoom,
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
             gridViewProductList.Columns.Add(deleteButton);
 
@@ -104,6 +114,13 @@ namespace CSCISystem1._1
             }
         }
 
+        private void LoadFilter()
+        {
+            filter.Items.Add("Date");
+            filter.Items.Add("Item Code");
+            filter.Items.Add("Item Name");
+        }
+
         private void AddProductBtn_Click(object sender, EventArgs e)
         {
             AddProductForm addProductForm = new AddProductForm();
@@ -120,12 +137,10 @@ namespace CSCISystem1._1
 
             if (gridViewProductList.Columns[e.ColumnIndex].Name == "EditAction")
             {
-                // assume AddProductForm has a constructor for editing:
-                // public AddProductForm(string productCode)
-                AddProductForm editForm = new AddProductForm();
-                editForm.ShowDialog();
+                EditProductForm editProduct = new EditProductForm(productCode);
+                editProduct.ShowDialog();
                
-                // Reload after editing
+                // reload after editing
                 InitializeDataGridView();
             }
             else if (gridViewProductList.Columns[e.ColumnIndex].Name == "DeleteAction")
@@ -137,6 +152,14 @@ namespace CSCISystem1._1
                     DeleteProductFromDatabase(productCode);
                     gridViewProductList.Rows.RemoveAt(e.RowIndex);
                 }
+            }
+        }
+
+        private void breadcrumb1_ItemClick(object sender, AntdUI.BreadcrumbItemEventArgs e)
+        {
+            if (e.Item.Text == "Home")
+            {
+                this.Close();
             }
         }
     }
