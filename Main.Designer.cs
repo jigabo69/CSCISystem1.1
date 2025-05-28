@@ -1,4 +1,6 @@
-﻿namespace CSCISystem1._1
+﻿using System.Windows.Forms;
+
+namespace CSCISystem1._1
 {
     partial class Main
     {
@@ -48,11 +50,17 @@
             this.loadingTimer = new System.Windows.Forms.Timer(this.components);
             this.dropDownTimer = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.titlebar = new AntdUI.PageHeader();
+            this.siticoneControlBox2 = new Siticone.UI.WinForms.SiticoneControlBox();
+            this.siticoneControlBox1 = new Siticone.UI.WinForms.SiticoneControlBox();
+            this.backPanel = new AntdUI.Panel();
             this.panel1.SuspendLayout();
             this.siticoneShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siticoneCirclePictureBox1)).BeginInit();
             this.panelDropDown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).BeginInit();
+            this.titlebar.SuspendLayout();
+            this.backPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -64,14 +72,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Radius = 20;
-            this.panel1.Size = new System.Drawing.Size(316, 696);
+            this.panel1.Radius = 10;
+            this.panel1.Size = new System.Drawing.Size(316, 667);
             this.panel1.TabIndex = 0;
             this.panel1.Text = "panel1";
             // 
             // TempPOSBTN
             // 
-            this.TempPOSBTN.Location = new System.Drawing.Point(42, 433);
+            this.TempPOSBTN.Location = new System.Drawing.Point(42, 478);
             this.TempPOSBTN.Name = "TempPOSBTN";
             this.TempPOSBTN.Size = new System.Drawing.Size(227, 66);
             this.TempPOSBTN.TabIndex = 8;
@@ -87,7 +95,7 @@
             this.siticoneShadowPanel1.Controls.Add(this.siticoneRoundedButton7);
             this.siticoneShadowPanel1.Controls.Add(this.siticoneLabel1);
             this.siticoneShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.siticoneShadowPanel1.Location = new System.Drawing.Point(4, 629);
+            this.siticoneShadowPanel1.Location = new System.Drawing.Point(4, 600);
             this.siticoneShadowPanel1.Name = "siticoneShadowPanel1";
             this.siticoneShadowPanel1.Radius = 5;
             this.siticoneShadowPanel1.ShadowColor = System.Drawing.Color.Silver;
@@ -326,8 +334,8 @@
             this.mainpanel.Location = new System.Drawing.Point(326, 10);
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.mainpanel.Radius = 20;
-            this.mainpanel.Size = new System.Drawing.Size(952, 696);
+            this.mainpanel.Radius = 10;
+            this.mainpanel.Size = new System.Drawing.Size(952, 667);
             this.mainpanel.TabIndex = 1;
             this.mainpanel.Text = "panel2";
             // 
@@ -341,17 +349,77 @@
             this.dropDownTimer.Interval = 1;
             this.dropDownTimer.Tick += new System.EventHandler(this.dropDownTimer_Tick);
             // 
+            // titlebar
+            // 
+            this.titlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.titlebar.CloseSize = 35;
+            this.titlebar.Controls.Add(this.siticoneControlBox2);
+            this.titlebar.Controls.Add(this.siticoneControlBox1);
+            this.titlebar.DividerShow = true;
+            this.titlebar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titlebar.DragMove = false;
+            this.titlebar.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.titlebar.Location = new System.Drawing.Point(0, 0);
+            this.titlebar.MaximizeBox = false;
+            this.titlebar.Name = "titlebar";
+            this.titlebar.ShowIcon = true;
+            this.titlebar.Size = new System.Drawing.Size(1288, 29);
+            this.titlebar.SubGap = 5;
+            this.titlebar.SubText = "Inventory Management";
+            this.titlebar.TabIndex = 2;
+            this.titlebar.Text = "WiseMart";
+            // 
+            // siticoneControlBox2
+            // 
+            this.siticoneControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.siticoneControlBox2.ControlBoxType = Siticone.UI.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.siticoneControlBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.siticoneControlBox2.HoveredState.Parent = this.siticoneControlBox2;
+            this.siticoneControlBox2.IconColor = System.Drawing.Color.Black;
+            this.siticoneControlBox2.Location = new System.Drawing.Point(1191, -1);
+            this.siticoneControlBox2.Name = "siticoneControlBox2";
+            this.siticoneControlBox2.ShadowDecoration.Parent = this.siticoneControlBox2;
+            this.siticoneControlBox2.Size = new System.Drawing.Size(49, 29);
+            this.siticoneControlBox2.TabIndex = 3;
+            // 
+            // siticoneControlBox1
+            // 
+            this.siticoneControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.siticoneControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.siticoneControlBox1.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(68)))), ((int)(((byte)(70)))));
+            this.siticoneControlBox1.HoveredState.Parent = this.siticoneControlBox1;
+            this.siticoneControlBox1.IconColor = System.Drawing.Color.Black;
+            this.siticoneControlBox1.Location = new System.Drawing.Point(1239, -1);
+            this.siticoneControlBox1.Name = "siticoneControlBox1";
+            this.siticoneControlBox1.ShadowDecoration.Parent = this.siticoneControlBox1;
+            this.siticoneControlBox1.Size = new System.Drawing.Size(49, 29);
+            this.siticoneControlBox1.TabIndex = 2;
+            // 
+            // backPanel
+            // 
+            this.backPanel.Back = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.backPanel.Controls.Add(this.mainpanel);
+            this.backPanel.Controls.Add(this.panel1);
+            this.backPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.backPanel.Location = new System.Drawing.Point(0, 29);
+            this.backPanel.Name = "backPanel";
+            this.backPanel.padding = new System.Windows.Forms.Padding(10);
+            this.backPanel.Padding = new System.Windows.Forms.Padding(10);
+            this.backPanel.Size = new System.Drawing.Size(1288, 687);
+            this.backPanel.TabIndex = 3;
+            this.backPanel.Text = "panel2";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1288, 716);
-            this.Controls.Add(this.mainpanel);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.backPanel);
+            this.Controls.Add(this.titlebar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
-            this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WiseMart";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -362,6 +430,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.siticoneCirclePictureBox1)).EndInit();
             this.panelDropDown.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).EndInit();
+            this.titlebar.ResumeLayout(false);
+            this.backPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -369,7 +439,6 @@
         #endregion
 
         private AntdUI.Panel panel1;
-        private AntdUI.Panel mainpanel;
         private Siticone.UI.WinForms.SiticoneRoundedButton HomeBtn;
         private System.Windows.Forms.FlowLayoutPanel panelDropDown;
         private Siticone.UI.WinForms.SiticoneRoundedButton ProductBtn;
@@ -386,6 +455,11 @@
         private System.Windows.Forms.Timer dropDownTimer;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button TempPOSBTN;
+        private AntdUI.PageHeader titlebar;
+        private Siticone.UI.WinForms.SiticoneControlBox siticoneControlBox2;
+        private Siticone.UI.WinForms.SiticoneControlBox siticoneControlBox1;
+        private AntdUI.Panel backPanel;
+        private AntdUI.Panel mainpanel;
     }
 }
 

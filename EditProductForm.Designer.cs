@@ -1,6 +1,6 @@
 ﻿namespace CSCISystem1._1
 {
-    partial class AddProductForm
+    partial class EditProductForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProductForm));
             this.panel1 = new AntdUI.Panel();
             this.panel2 = new AntdUI.Panel();
             this.pictureBoxAddProduct = new AntdUI.Avatar();
@@ -43,7 +43,7 @@
             this.siticoneLabel2 = new Siticone.UI.WinForms.SiticoneLabel();
             this.txtTotalPrice = new AntdUI.InputNumber();
             this.txtPrice = new AntdUI.InputNumber();
-            this.addBtn = new AntdUI.Button();
+            this.updateBtn = new AntdUI.Button();
             this.txtQuantity = new AntdUI.InputNumber();
             this.txtProductName = new AntdUI.Input();
             this.txtProductCode = new AntdUI.Input();
@@ -67,7 +67,7 @@
             this.panel1.Controls.Add(this.siticoneLabel2);
             this.panel1.Controls.Add(this.txtTotalPrice);
             this.panel1.Controls.Add(this.txtPrice);
-            this.panel1.Controls.Add(this.addBtn);
+            this.panel1.Controls.Add(this.updateBtn);
             this.panel1.Controls.Add(this.txtQuantity);
             this.panel1.Controls.Add(this.txtProductName);
             this.panel1.Controls.Add(this.txtProductCode);
@@ -89,7 +89,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Radius = 8;
             this.panel2.Size = new System.Drawing.Size(230, 319);
-            this.panel2.TabIndex = 32;
+            this.panel2.TabIndex = 33;
             this.panel2.Text = "panel2";
             // 
             // pictureBoxAddProduct
@@ -123,22 +123,19 @@
             this.datePicker.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.datePicker.BorderRadius = 6;
             this.datePicker.BorderThickness = 2;
-            this.datePicker.CheckedState.BorderColor = System.Drawing.SystemColors.MenuHighlight;
             this.datePicker.CheckedState.Parent = this.datePicker;
             this.datePicker.FillColor = System.Drawing.Color.White;
             this.datePicker.Font = new System.Drawing.Font("Satoshi", 12F);
             this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePicker.HoveredState.BorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.datePicker.HoveredState.FillColor = System.Drawing.Color.White;
             this.datePicker.HoveredState.Parent = this.datePicker;
             this.datePicker.Location = new System.Drawing.Point(58, 270);
             this.datePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datePicker.Name = "datePicker";
             this.datePicker.ShadowDecoration.Parent = this.datePicker;
-            this.datePicker.Size = new System.Drawing.Size(401, 55);
+            this.datePicker.Size = new System.Drawing.Size(399, 55);
             this.datePicker.TabIndex = 31;
-            this.datePicker.Value = new System.DateTime(2025, 5, 27, 0, 0, 0, 0);
+            this.datePicker.Value = new System.DateTime(2025, 5, 24, 20, 50, 7, 0);
             // 
             // resetBtn
             // 
@@ -227,7 +224,7 @@
             this.txtTotalPrice.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.txtTotalPrice.PlaceholderText = "";
             this.txtTotalPrice.ReadOnly = true;
-            this.txtTotalPrice.Size = new System.Drawing.Size(412, 55);
+            this.txtTotalPrice.Size = new System.Drawing.Size(410, 55);
             this.txtTotalPrice.SuffixText = "";
             this.txtTotalPrice.TabIndex = 15;
             this.txtTotalPrice.Text = "0.00";
@@ -245,7 +242,7 @@
             0});
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PlaceholderText = "Price";
-            this.txtPrice.Size = new System.Drawing.Size(412, 55);
+            this.txtPrice.Size = new System.Drawing.Size(410, 55);
             this.txtPrice.SuffixText = "";
             this.txtPrice.TabIndex = 14;
             this.txtPrice.Text = "1.00";
@@ -257,17 +254,17 @@
             0});
             this.txtPrice.Leave += new System.EventHandler(this.txtPrice_Leave);
             // 
-            // addBtn
+            // updateBtn
             // 
-            this.addBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
-            this.addBtn.Font = new System.Drawing.Font("Satoshi", 12F);
-            this.addBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.addBtn.Location = new System.Drawing.Point(114, 602);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(132, 42);
-            this.addBtn.TabIndex = 13;
-            this.addBtn.Text = "Add";
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            this.updateBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
+            this.updateBtn.Font = new System.Drawing.Font("Satoshi", 12F);
+            this.updateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.updateBtn.Location = new System.Drawing.Point(114, 602);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(132, 42);
+            this.updateBtn.TabIndex = 13;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // txtQuantity
             // 
@@ -280,7 +277,7 @@
             0});
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.PlaceholderText = "Quantity";
-            this.txtQuantity.Size = new System.Drawing.Size(409, 55);
+            this.txtQuantity.Size = new System.Drawing.Size(407, 55);
             this.txtQuantity.SuffixText = "";
             this.txtQuantity.TabIndex = 11;
             this.txtQuantity.Text = "1";
@@ -323,7 +320,7 @@
             this.titlebar.Size = new System.Drawing.Size(793, 27);
             this.titlebar.SubText = "";
             this.titlebar.TabIndex = 5;
-            this.titlebar.Text = "Add Product";
+            this.titlebar.Text = "Edit Product";
             // 
             // siticoneControlBox1
             // 
@@ -338,7 +335,7 @@
             this.siticoneControlBox1.Size = new System.Drawing.Size(45, 29);
             this.siticoneControlBox1.TabIndex = 6;
             // 
-            // AddProductForm
+            // EditProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,11 +344,11 @@
             this.ClientSize = new System.Drawing.Size(813, 687);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddProductForm";
+            this.Name = "EditProductForm";
             this.Padding = new System.Windows.Forms.Padding(10, 3, 10, 10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddProductForm";
-            this.Load += new System.EventHandler(this.AddProductForm_Load);
+            this.Text = "EditProductForm";
+            this.Load += new System.EventHandler(this.EditProductForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -368,7 +365,7 @@
         private AntdUI.Input txtProductName;
         private AntdUI.Input txtProductCode;
         private AntdUI.InputNumber txtQuantity;
-        private AntdUI.Button addBtn;
+        private AntdUI.Button updateBtn;
         private AntdUI.InputNumber txtPrice;
         private AntdUI.InputNumber txtTotalPrice;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel2;

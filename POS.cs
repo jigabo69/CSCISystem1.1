@@ -1,11 +1,8 @@
-﻿using AntdUI;
-using Microsoft.Win32;
-using System;
-using System.CodeDom;
+﻿using System;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;
 using System.Drawing;
 using System.IO;
+using Microsoft.Data.SqlClient;
 
 namespace AntdUIDemo
 {
