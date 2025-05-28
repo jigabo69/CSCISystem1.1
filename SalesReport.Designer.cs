@@ -1,4 +1,5 @@
-﻿namespace CSCISystem1._1
+﻿
+namespace CSCISystem1._1
 {
     partial class SalesReport
     {
@@ -20,23 +21,32 @@
             base.Dispose(disposing);
         }
 
+        private void InitializeComponent()
+        {
+            InitializeComponent(cartesianChart1);
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent(LiveCharts.WinForms.CartesianChart cartesianChart1)
         {
             this.panel1 = new AntdUI.Panel();
             this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
+
+            //
             // panel1
-            // 
-            this.panel1.Controls.Add(this.cartesianChart1);
+            //
+
+            // Fix: Add 'this.' before cartesianChart1
+           
             this.panel1.Controls.Add(this.siticoneLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -87,5 +97,19 @@
         private AntdUI.Panel panel1;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel1;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
+   
+    }
+}
+
+namespace LiveChartsCore
+{
+    class SkiaSharpView
+    {
+        internal class WinForms
+        {
+            internal class CartesianChart : LiveCharts.WinForms.CartesianChart
+            {
+            }
+        }
     }
 }

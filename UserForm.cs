@@ -9,7 +9,7 @@ namespace CSCISystem1._1
 {
     public partial class UserForm: Form
     {
-        SqlConnection con = new SqlConnection("Data Source = EMMAN\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
+        SqlConnection con = new SqlConnection("Data Source = laptop-jclj6t4h\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
         SqlCommand cmd;
 
 
