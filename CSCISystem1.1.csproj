@@ -209,6 +209,12 @@
     <Compile Include="InventoryReport.Designer.cs">
       <DependentUpon>InventoryReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="POS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryReport.resx">
       <DependentUpon>InventoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POS.resx">
       <DependentUpon>POS.cs</DependentUpon>
