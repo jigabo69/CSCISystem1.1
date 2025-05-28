@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Azure.Identity;
+using Microsoft.Data.SqlClient;
 
 namespace CSCISystem1._1
 {
 
     public partial class LoginPage : Form
     {
+        
         public bool IsLoginSuccessful { get; private set; } = false;
 
         String Username;
@@ -27,7 +29,6 @@ namespace CSCISystem1._1
         {
 
         }
-
         private void Loginbutton_Click(object sender, EventArgs e)
         {
             Username = InputUserName.Text;
