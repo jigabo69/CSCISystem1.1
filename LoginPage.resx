@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="InputPassword.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtPassword.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAY1JREFUSEvl
         lj9LA0EQxVP6GUQra/0Sfgeb3M7GP6iFIoiIoKW2CjezFloELRS10EpBMKCFdSA2sRcCIRaCVuqTXbcI
@@ -130,7 +130,7 @@
         WilOdGaGSYdhk+KKUjTDn4ZeK0Uzcbj0fp35d/gCq9ZaVxQMe9oAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="InputUserName.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtUsername.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAATVJREFUSEvt
         k71KxEAURre0VjvttLRdK/EVtBLFzJ0FwdJOfAYX/MvcsFgJ2ipoqZ0voYWIYqnvsEdmkWjubmCTxS4H
@@ -141,4 +141,7 @@
         fAMHLi8zCXEPgwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
