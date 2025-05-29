@@ -234,6 +234,17 @@ namespace AntdUIDemo
                 return;
             }
 
+            foreach (DataGridViewRow row in siticoneDataGridView2.Rows)
+            {
+                if (row.Cells["ItemName"].Value != null)
+                {
+                    string name = row.Cells["ItemName"].Value.ToString();
+                    int qty = Convert.ToInt32(row.Cells["Qty"].Value);
+                    InventoryReport.AddSoldItem(name, qty);
+                }
+            }
+
+
             // Step 3: Update database
             try
             {
@@ -290,6 +301,17 @@ namespace AntdUIDemo
             }
 
             isRemovingItem = true; // Set the flag
+
+            if (siticoneDataGridView2.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = siticoneDataGridView2.SelectedRows[0];
+                string name = row.Cells["ItemName"].Value.ToString();
+                int qty = Convert.ToInt32(row.Cells["Qty"].Value);
+                InventoryReport.AddRemovedItem(name, qty);
+
+                siticoneDataGridView2.Rows.Remove(row);
+            }
+
 
             try
             {
