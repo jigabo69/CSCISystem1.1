@@ -9,7 +9,8 @@ namespace CSCISystem1._1
 {
     public partial class AddProductForm: Form
     {
-        SqlConnection _con = new SqlConnection("Data Source = EMMAN\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+
         SqlCommand _cmd = new SqlCommand();
 
         public AddProductForm()
@@ -38,7 +39,7 @@ namespace CSCISystem1._1
             //save the product information to the database here
             var query = "INSERT INTO tb_product (ProductCode, ProductName, ExpDate, Quantity, Price, TotalPrice, Image) " +
                         "VALUES (@ProductCode, @ProductName, @ExpDate, @Quantity, @Price, @TotalPrice, @Image)";
-            _cmd = new SqlCommand(query, _con);
+            _cmd = new SqlCommand(query, con);
             _cmd.Parameters.AddWithValue("@ProductCode", productCode);
             _cmd.Parameters.AddWithValue("@ProductName", productName);
             _cmd.Parameters.AddWithValue("@ExpDate", expDate);
@@ -59,10 +60,10 @@ namespace CSCISystem1._1
             {
                 _cmd.Parameters.AddWithValue("@Image", DBNull.Value);
             }
-            _con.Open();
+            con.Open();
             
             _cmd.ExecuteNonQuery();
-            _con.Close();
+            con.Close();
             
             MessageBox.Show("Product added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClearField();

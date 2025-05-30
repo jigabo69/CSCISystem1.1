@@ -11,19 +11,34 @@ using Microsoft.Data.SqlClient;
 
 namespace CSCISystem1._1
 {
-    public partial class AdminLogin: Form
+    public partial class AdminLogin : Form
     {
-        SqlConnection con = new SqlConnection("Data Source = EMMAN\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+
         SqlCommand cmd;
         public bool IsAuthenticated { get; private set; }
         public AdminLogin()
         {
             InitializeComponent();
+            // UNCOMMENT THIS LINE: This will correctly wire up the FormClosing event.
+            this.FormClosing += new FormClosingEventHandler(this.AdminLogin_FormClosing);
+        }
+        private void AdminLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // If DialogResult has not been set to OK (meaning login was not successful),
+            // ensure it's set to Cancel when the form closes (e.g., via the 'X' button).
+            if (this.DialogResult != DialogResult.OK)
+            {
+                this.DialogResult = DialogResult.Cancel;
+            }
+            // IMPORTANT: Do NOT put 'e.Cancel = true;' here unless you specifically want to prevent the form from closing.
+            // IMPORTANT: Do NOT put 'MessageBox.Show(...);' here, as it will cause the double-click issue.
         }
 
         private void AdminLogin_Load(object sender, EventArgs e)
         {
-            
+            // You can re-enable MessageBox.Show() here if it's necessary for other logic
+            // For now, keep them commented if you are still troubleshooting the double-click issue.
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

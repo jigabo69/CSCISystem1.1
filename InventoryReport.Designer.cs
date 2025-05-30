@@ -1,4 +1,6 @@
-﻿namespace CSCISystem1._1
+﻿using System;
+
+namespace CSCISystem1._1
 {
     partial class InventoryReport
     {
@@ -65,6 +67,7 @@
             this.panel1.Size = new System.Drawing.Size(936, 657);
             this.panel1.TabIndex = 2;
             this.panel1.Text = "panel1";
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // siticoneLabel3
             // 
@@ -280,6 +283,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewUserList)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

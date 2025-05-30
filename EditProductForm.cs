@@ -18,7 +18,8 @@ namespace CSCISystem1._1
     public partial class EditProductForm: Form
     {
         private string _productCodeToEdit;
-        SqlConnection _con = new SqlConnection("Data Source = EMMAN\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+
         SqlCommand _cmd = new SqlCommand();
 
         public EditProductForm(string productCodeToEdit)
@@ -42,9 +43,9 @@ namespace CSCISystem1._1
         {
             try
             {
-                _con.Open();
+                con.Open();
                 string query = "SELECT * FROM tb_product WHERE ProductCode = @ProductCode";
-                using (SqlCommand cmd = new SqlCommand(query, _con))
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@ProductCode", productCode);
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -77,7 +78,7 @@ namespace CSCISystem1._1
             }
             finally
             {
-                _con.Close();
+                con.Close();
             }
         }
 
@@ -100,7 +101,7 @@ namespace CSCISystem1._1
             // Update the product information in the database
             var query =
                 "UPDATE tb_product SET ProductName = @ProductName, ExpDate = @ExpDate, Quantity = @Quantity, Price = @Price, TotalPrice = @TotalPrice, Image = @Image WHERE ProductCode = @ProductCode";
-            _cmd = new SqlCommand(query, _con);
+            _cmd = new SqlCommand(query, con);
             _cmd.Parameters.AddWithValue("@ProductCode", productCode);
             _cmd.Parameters.AddWithValue("@ProductName", productName);
             _cmd.Parameters.AddWithValue("@ExpDate", expDate);
@@ -123,7 +124,7 @@ namespace CSCISystem1._1
 
             try
             {
-                _con.Open();
+                con.Open();
                 int rowsAffected = _cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
@@ -143,7 +144,7 @@ namespace CSCISystem1._1
             }
             finally
             {
-                _con.Close();
+                con.Close();
             }
         }
 

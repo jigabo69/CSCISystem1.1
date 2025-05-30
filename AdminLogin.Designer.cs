@@ -33,9 +33,9 @@
             this.btnLogin = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.loginlabel = new Siticone.UI.WinForms.SiticoneLabel();
             this.SuspendLayout();
-            // 
+            //
             // txtUserName
-            // 
+            //
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUserName.DefaultText = "";
             this.txtUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -55,9 +55,9 @@
             this.txtUserName.ShadowDecoration.Parent = this.txtUserName;
             this.txtUserName.Size = new System.Drawing.Size(212, 47);
             this.txtUserName.TabIndex = 3;
-            // 
+            //
             // txtPassword
-            // 
+            //
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
             this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -77,9 +77,9 @@
             this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
             this.txtPassword.Size = new System.Drawing.Size(212, 47);
             this.txtPassword.TabIndex = 4;
-            // 
+            //
             // btnLogin
-            // 
+            //
             this.btnLogin.CheckedState.Parent = this.btnLogin;
             this.btnLogin.CustomImages.Parent = this.btnLogin;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -92,9 +92,9 @@
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Log in";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
+            //
             // loginlabel
-            // 
+            //
             this.loginlabel.BackColor = System.Drawing.Color.Transparent;
             this.loginlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginlabel.ForeColor = System.Drawing.Color.DimGray;
@@ -103,9 +103,9 @@
             this.loginlabel.Size = new System.Drawing.Size(58, 26);
             this.loginlabel.TabIndex = 6;
             this.loginlabel.Text = "Admin";
-            // 
+            //
             // AdminLogin
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(405, 299);
@@ -117,6 +117,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminLogin";
             this.Load += new System.EventHandler(this.AdminLogin_Load);
+            // ADD THIS LINE TO HOOK UP THE FORMCLOSING EVENT
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminLogin_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

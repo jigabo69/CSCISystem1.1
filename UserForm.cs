@@ -9,7 +9,8 @@ namespace CSCISystem1._1
 {
     public partial class UserForm: Form
     {
-        SqlConnection con = new SqlConnection("Data Source = EMMAN\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+
         SqlCommand cmd;
 
 
@@ -68,7 +69,7 @@ namespace CSCISystem1._1
             {
                 Name = "EditAction",
                 HeaderText = "",
-                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit-20.png"),
+                //Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit-20.png"),
                 ImageLayout = DataGridViewImageCellLayout.Zoom,
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
@@ -79,7 +80,7 @@ namespace CSCISystem1._1
             {
                 Name = "DeleteAction",
                 HeaderText = "",
-                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\delete-20.png"), //edit this
+               // Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\delete-20.png"), //edit this
                 ImageLayout = DataGridViewImageCellLayout.Zoom,
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
