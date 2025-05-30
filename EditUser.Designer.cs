@@ -45,6 +45,7 @@
             this.txtPassword = new AntdUI.Input();
             this.siticoneLabel5 = new Siticone.UI.WinForms.SiticoneLabel();
             this.siticoneLabel6 = new Siticone.UI.WinForms.SiticoneLabel();
+            this.labelEmail = new Siticone.UI.WinForms.SiticoneLabel();
             this.titlebar.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -163,6 +164,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelEmail);
             this.panel1.Controls.Add(this.selectUsertype);
             this.panel1.Controls.Add(this.txtLname);
             this.panel1.Controls.Add(this.txtFname);
@@ -240,6 +242,16 @@
             this.siticoneLabel6.TabIndex = 29;
             this.siticoneLabel6.Text = "User Name";
             // 
+            // labelEmail
+            // 
+            this.labelEmail.BackColor = System.Drawing.Color.Transparent;
+            this.labelEmail.ForeColor = System.Drawing.Color.Red;
+            this.labelEmail.Location = new System.Drawing.Point(68, 209);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(28, 15);
+            this.labelEmail.TabIndex = 37;
+            this.labelEmail.Text = "Email";
+            // 
             // EditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +269,7 @@
             this.titlebar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +292,6 @@
         private AntdUI.Input txtPassword;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel5;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel6;
+        private Siticone.UI.WinForms.SiticoneLabel labelEmail;
     }
 }

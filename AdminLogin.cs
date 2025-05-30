@@ -13,14 +13,13 @@ namespace CSCISystem1._1
 {
     public partial class AdminLogin : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=EMMAN\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
         SqlCommand cmd;
         public bool IsAuthenticated { get; private set; }
         public AdminLogin()
         {
             InitializeComponent();
-            // UNCOMMENT THIS LINE: This will correctly wire up the FormClosing event.
             this.FormClosing += new FormClosingEventHandler(this.AdminLogin_FormClosing);
         }
         private void AdminLogin_FormClosing(object sender, FormClosingEventArgs e)
@@ -39,6 +38,22 @@ namespace CSCISystem1._1
         {
             // You can re-enable MessageBox.Show() here if it's necessary for other logic
             // For now, keep them commented if you are still troubleshooting the double-click issue.
+            RadiusForm();
+        }
+
+        private void RadiusForm()
+        {
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            var radius = 18;
+
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(this.Width - radius, 0, radius, radius, 272, 90);
+            path.AddArc(this.Width - radius, this.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, this.Height - radius, radius, radius, 90, 90);
+
+            path.CloseFigure();
+
+            Region = new Region(path);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

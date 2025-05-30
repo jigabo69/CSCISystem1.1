@@ -35,9 +35,9 @@ namespace CSCISystem1._1
             this.panel1 = new AntdUI.Panel();
             this.TempPOSBTN = new System.Windows.Forms.Button();
             this.siticoneShadowPanel1 = new Siticone.UI.WinForms.SiticoneShadowPanel();
-            this.siticoneCirclePictureBox1 = new Siticone.UI.WinForms.SiticoneCirclePictureBox();
-            this.siticoneRoundedButton7 = new Siticone.UI.WinForms.SiticoneRoundedButton();
-            this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
+            this.UserCirclePictureBox = new Siticone.UI.WinForms.SiticoneCirclePictureBox();
+            this.LogoutBtn = new Siticone.UI.WinForms.SiticoneRoundedButton();
+            this.labelUserType = new Siticone.UI.WinForms.SiticoneLabel();
             this.panelDropDown = new System.Windows.Forms.FlowLayoutPanel();
             this.HomeBtn = new Siticone.UI.WinForms.SiticoneRoundedButton();
             this.ProductBtn = new Siticone.UI.WinForms.SiticoneRoundedButton();
@@ -56,7 +56,7 @@ namespace CSCISystem1._1
             this.backPanel = new AntdUI.Panel();
             this.panel1.SuspendLayout();
             this.siticoneShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.siticoneCirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserCirclePictureBox)).BeginInit();
             this.panelDropDown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).BeginInit();
             this.titlebar.SuspendLayout();
@@ -91,64 +91,64 @@ namespace CSCISystem1._1
             // 
             this.siticoneShadowPanel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.siticoneShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneShadowPanel1.Controls.Add(this.siticoneCirclePictureBox1);
-            this.siticoneShadowPanel1.Controls.Add(this.siticoneRoundedButton7);
-            this.siticoneShadowPanel1.Controls.Add(this.siticoneLabel1);
+            this.siticoneShadowPanel1.Controls.Add(this.UserCirclePictureBox);
+            this.siticoneShadowPanel1.Controls.Add(this.LogoutBtn);
+            this.siticoneShadowPanel1.Controls.Add(this.labelUserType);
             this.siticoneShadowPanel1.FillColor = System.Drawing.Color.White;
             this.siticoneShadowPanel1.Location = new System.Drawing.Point(4, 600);
             this.siticoneShadowPanel1.Name = "siticoneShadowPanel1";
             this.siticoneShadowPanel1.Radius = 5;
             this.siticoneShadowPanel1.ShadowColor = System.Drawing.Color.Silver;
             this.siticoneShadowPanel1.ShadowDepth = 50;
-            this.siticoneShadowPanel1.Size = new System.Drawing.Size(177, 64);
+            this.siticoneShadowPanel1.Size = new System.Drawing.Size(306, 64);
             this.siticoneShadowPanel1.TabIndex = 7;
             // 
-            // siticoneCirclePictureBox1
+            // UserCirclePictureBox
             // 
-            this.siticoneCirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("siticoneCirclePictureBox1.Image")));
-            this.siticoneCirclePictureBox1.Location = new System.Drawing.Point(18, 18);
-            this.siticoneCirclePictureBox1.Name = "siticoneCirclePictureBox1";
-            this.siticoneCirclePictureBox1.ShadowDecoration.Color = System.Drawing.Color.DimGray;
-            this.siticoneCirclePictureBox1.ShadowDecoration.Mode = Siticone.UI.WinForms.Enums.ShadowMode.Circle;
-            this.siticoneCirclePictureBox1.ShadowDecoration.Parent = this.siticoneCirclePictureBox1;
-            this.siticoneCirclePictureBox1.Size = new System.Drawing.Size(30, 29);
-            this.siticoneCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.siticoneCirclePictureBox1.TabIndex = 1;
-            this.siticoneCirclePictureBox1.TabStop = false;
+            this.UserCirclePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.UserCirclePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("UserCirclePictureBox.Image")));
+            this.UserCirclePictureBox.Location = new System.Drawing.Point(18, 18);
+            this.UserCirclePictureBox.Name = "UserCirclePictureBox";
+            this.UserCirclePictureBox.ShadowDecoration.Color = System.Drawing.Color.DimGray;
+            this.UserCirclePictureBox.ShadowDecoration.Mode = Siticone.UI.WinForms.Enums.ShadowMode.Circle;
+            this.UserCirclePictureBox.ShadowDecoration.Parent = this.UserCirclePictureBox;
+            this.UserCirclePictureBox.Size = new System.Drawing.Size(30, 29);
+            this.UserCirclePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UserCirclePictureBox.TabIndex = 1;
+            this.UserCirclePictureBox.TabStop = false;
             // 
-            // siticoneRoundedButton7
+            // LogoutBtn
             // 
-            this.siticoneRoundedButton7.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneRoundedButton7.BorderColor = System.Drawing.Color.Turquoise;
-            this.siticoneRoundedButton7.CheckedState.Parent = this.siticoneRoundedButton7;
-            this.siticoneRoundedButton7.CustomImages.Parent = this.siticoneRoundedButton7;
-            this.siticoneRoundedButton7.FillColor = System.Drawing.Color.Transparent;
-            this.siticoneRoundedButton7.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.siticoneRoundedButton7.ForeColor = System.Drawing.Color.Black;
-            this.siticoneRoundedButton7.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            this.siticoneRoundedButton7.HoveredState.Parent = this.siticoneRoundedButton7;
-            this.siticoneRoundedButton7.Image = ((System.Drawing.Image)(resources.GetObject("siticoneRoundedButton7.Image")));
-            this.siticoneRoundedButton7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.siticoneRoundedButton7.ImageOffset = new System.Drawing.Point(1, 0);
-            this.siticoneRoundedButton7.Location = new System.Drawing.Point(118, 11);
-            this.siticoneRoundedButton7.Name = "siticoneRoundedButton7";
-            this.siticoneRoundedButton7.ShadowDecoration.Parent = this.siticoneRoundedButton7;
-            this.siticoneRoundedButton7.Size = new System.Drawing.Size(42, 42);
-            this.siticoneRoundedButton7.TabIndex = 6;
-            this.siticoneRoundedButton7.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.siticoneRoundedButton7.TextOffset = new System.Drawing.Point(15, 0);
+            this.LogoutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.LogoutBtn.BorderColor = System.Drawing.Color.Turquoise;
+            this.LogoutBtn.CheckedState.Parent = this.LogoutBtn;
+            this.LogoutBtn.CustomImages.Parent = this.LogoutBtn;
+            this.LogoutBtn.FillColor = System.Drawing.Color.Transparent;
+            this.LogoutBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutBtn.ForeColor = System.Drawing.Color.Black;
+            this.LogoutBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.LogoutBtn.HoveredState.Parent = this.LogoutBtn;
+            this.LogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.Image")));
+            this.LogoutBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.LogoutBtn.ImageOffset = new System.Drawing.Point(1, 0);
+            this.LogoutBtn.Location = new System.Drawing.Point(244, 11);
+            this.LogoutBtn.Name = "LogoutBtn";
+            this.LogoutBtn.ShadowDecoration.Parent = this.LogoutBtn;
+            this.LogoutBtn.Size = new System.Drawing.Size(42, 42);
+            this.LogoutBtn.TabIndex = 6;
+            this.LogoutBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.LogoutBtn.TextOffset = new System.Drawing.Point(15, 0);
             // 
-            // siticoneLabel1
+            // labelUserType
             // 
-            this.siticoneLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.siticoneLabel1.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.siticoneLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.siticoneLabel1.Location = new System.Drawing.Point(66, 21);
-            this.siticoneLabel1.Name = "siticoneLabel1";
-            this.siticoneLabel1.Size = new System.Drawing.Size(51, 22);
-            this.siticoneLabel1.TabIndex = 0;
-            this.siticoneLabel1.Text = "Admin";
+            this.labelUserType.BackColor = System.Drawing.Color.Transparent;
+            this.labelUserType.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelUserType.Location = new System.Drawing.Point(66, 21);
+            this.labelUserType.Name = "labelUserType";
+            this.labelUserType.Size = new System.Drawing.Size(51, 22);
+            this.labelUserType.TabIndex = 0;
+            this.labelUserType.Text = "Admin";
             // 
             // panelDropDown
             // 
@@ -172,7 +172,7 @@ namespace CSCISystem1._1
             this.HomeBtn.CheckedState.Parent = this.HomeBtn;
             this.HomeBtn.CustomImages.Parent = this.HomeBtn;
             this.HomeBtn.FillColor = System.Drawing.Color.White;
-            this.HomeBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HomeBtn.Font = new System.Drawing.Font("Satoshi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HomeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.HomeBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.HomeBtn.HoveredState.Parent = this.HomeBtn;
@@ -197,7 +197,7 @@ namespace CSCISystem1._1
             this.ProductBtn.CheckedState.Parent = this.ProductBtn;
             this.ProductBtn.CustomImages.Parent = this.ProductBtn;
             this.ProductBtn.FillColor = System.Drawing.Color.White;
-            this.ProductBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductBtn.Font = new System.Drawing.Font("Satoshi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ProductBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.ProductBtn.HoveredState.Parent = this.ProductBtn;
@@ -222,7 +222,7 @@ namespace CSCISystem1._1
             this.UserBtn.CheckedState.Parent = this.UserBtn;
             this.UserBtn.CustomImages.Parent = this.UserBtn;
             this.UserBtn.FillColor = System.Drawing.Color.White;
-            this.UserBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserBtn.Font = new System.Drawing.Font("Satoshi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.UserBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.UserBtn.HoveredState.Parent = this.UserBtn;
@@ -247,7 +247,7 @@ namespace CSCISystem1._1
             this.ReportBtn.CheckedState.Parent = this.ReportBtn;
             this.ReportBtn.CustomImages.Parent = this.ReportBtn;
             this.ReportBtn.FillColor = System.Drawing.Color.White;
-            this.ReportBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReportBtn.Font = new System.Drawing.Font("Satoshi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ReportBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.ReportBtn.HoveredState.Parent = this.ReportBtn;
@@ -272,7 +272,7 @@ namespace CSCISystem1._1
             this.InventoryRBtn.CheckedState.Parent = this.InventoryRBtn;
             this.InventoryRBtn.CustomImages.Parent = this.InventoryRBtn;
             this.InventoryRBtn.FillColor = System.Drawing.Color.White;
-            this.InventoryRBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InventoryRBtn.Font = new System.Drawing.Font("Satoshi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InventoryRBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.InventoryRBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.InventoryRBtn.HoveredState.Parent = this.InventoryRBtn;
@@ -297,7 +297,7 @@ namespace CSCISystem1._1
             this.SalesBtn.CheckedState.Parent = this.SalesBtn;
             this.SalesBtn.CustomImages.Parent = this.SalesBtn;
             this.SalesBtn.FillColor = System.Drawing.Color.White;
-            this.SalesBtn.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalesBtn.Font = new System.Drawing.Font("Satoshi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.SalesBtn.HoveredState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.SalesBtn.HoveredState.Parent = this.SalesBtn;
@@ -367,7 +367,7 @@ namespace CSCISystem1._1
             this.titlebar.SubGap = 5;
             this.titlebar.SubText = "Inventory Management";
             this.titlebar.TabIndex = 2;
-            this.titlebar.Text = "WiseMart";
+            this.titlebar.Text = "STOREFLOW";
             // 
             // siticoneControlBox2
             // 
@@ -398,6 +398,7 @@ namespace CSCISystem1._1
             // backPanel
             // 
             this.backPanel.Back = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.backPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.backPanel.Controls.Add(this.mainpanel);
             this.backPanel.Controls.Add(this.panel1);
             this.backPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -421,13 +422,13 @@ namespace CSCISystem1._1
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WiseMart";
+            this.Text = "StoreFlow";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.siticoneShadowPanel1.ResumeLayout(false);
             this.siticoneShadowPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.siticoneCirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserCirclePictureBox)).EndInit();
             this.panelDropDown.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).EndInit();
             this.titlebar.ResumeLayout(false);
@@ -447,10 +448,10 @@ namespace CSCISystem1._1
         private Siticone.UI.WinForms.SiticoneRoundedButton InventoryRBtn;
         private Siticone.UI.WinForms.SiticoneRoundedButton SalesBtn;
         private Siticone.UI.WinForms.SiticonePictureBox siticonePictureBox1;
-        private Siticone.UI.WinForms.SiticoneRoundedButton siticoneRoundedButton7;
+        private Siticone.UI.WinForms.SiticoneRoundedButton LogoutBtn;
         private Siticone.UI.WinForms.SiticoneShadowPanel siticoneShadowPanel1;
-        private Siticone.UI.WinForms.SiticoneLabel siticoneLabel1;
-        private Siticone.UI.WinForms.SiticoneCirclePictureBox siticoneCirclePictureBox1;
+        private Siticone.UI.WinForms.SiticoneLabel labelUserType;
+        private Siticone.UI.WinForms.SiticoneCirclePictureBox UserCirclePictureBox;
         private System.Windows.Forms.Timer loadingTimer;
         private System.Windows.Forms.Timer dropDownTimer;
         private System.Windows.Forms.Timer timer2;

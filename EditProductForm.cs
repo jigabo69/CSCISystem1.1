@@ -18,7 +18,7 @@ namespace CSCISystem1._1
     public partial class EditProductForm: Form
     {
         private string _productCodeToEdit;
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=EMMAN\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
         SqlCommand _cmd = new SqlCommand();
 

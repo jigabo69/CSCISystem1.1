@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POS));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titlebar = new AntdUI.PageHeader();
             this.siticoneControlBox2 = new Siticone.UI.WinForms.SiticoneControlBox();
             this.siticoneControlBox1 = new Siticone.UI.WinForms.SiticoneControlBox();
@@ -102,7 +102,7 @@
             this.titlebar.SubGap = 5;
             this.titlebar.SubText = "POS";
             this.titlebar.TabIndex = 1;
-            this.titlebar.Text = "WiseMart";
+            this.titlebar.Text = "StoreFlow";
             // 
             // siticoneControlBox2
             // 
@@ -141,7 +141,7 @@
             this.siticonePanel1.Location = new System.Drawing.Point(0, 29);
             this.siticonePanel1.Name = "siticonePanel1";
             this.siticonePanel1.ShadowDecoration.Parent = this.siticonePanel1;
-            this.siticonePanel1.Size = new System.Drawing.Size(1920, 1026);
+            this.siticonePanel1.Size = new System.Drawing.Size(1920, 1068);
             this.siticonePanel1.TabIndex = 2;
             // 
             // siticoneShadowPanel1
@@ -215,9 +215,9 @@
             this.panel6.Controls.Add(this.receiptTextBox);
             this.panel6.Controls.Add(this.siticoneLabel7);
             this.panel6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel6.Location = new System.Drawing.Point(1612, 105);
+            this.panel6.Location = new System.Drawing.Point(1612, 85);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(289, 666);
+            this.panel6.Size = new System.Drawing.Size(289, 728);
             this.panel6.TabIndex = 2;
             this.panel6.TabStop = false;
             this.panel6.Text = "panel5";
@@ -230,7 +230,7 @@
             this.receiptTextBox.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.receiptTextBox.Location = new System.Drawing.Point(18, 61);
             this.receiptTextBox.Name = "receiptTextBox";
-            this.receiptTextBox.Size = new System.Drawing.Size(254, 591);
+            this.receiptTextBox.Size = new System.Drawing.Size(254, 653);
             this.receiptTextBox.TabIndex = 11;
             this.receiptTextBox.Text = "";
             // 
@@ -251,7 +251,7 @@
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.panel3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 777);
+            this.panel5.Location = new System.Drawing.Point(0, 819);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1920, 249);
             this.panel5.TabIndex = 3;
@@ -373,7 +373,7 @@
             this.button2.Size = new System.Drawing.Size(244, 75);
             this.button2.TabIndex = 1;
             this.button2.Text = "Remove Item";
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.RemoveVoidBtn);
             // 
             // button1
             // 
@@ -495,7 +495,7 @@
             this.panel1.Controls.Add(this.input1);
             this.panel1.Location = new System.Drawing.Point(974, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(632, 751);
+            this.panel1.Size = new System.Drawing.Size(632, 793);
             this.panel1.TabIndex = 2;
             this.panel1.TabStop = false;
             this.panel1.Text = "panel1";
@@ -504,8 +504,8 @@
             // 
             this.siticoneDataGridView2.AllowUserToAddRows = false;
             this.siticoneDataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.siticoneDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.siticoneDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.siticoneDataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -514,24 +514,24 @@
             this.siticoneDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.siticoneDataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.siticoneDataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.siticoneDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.siticoneDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.siticoneDataGridView2.ColumnHeadersHeight = 40;
             this.siticoneDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.siticoneDataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.siticoneDataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
             this.siticoneDataGridView2.EnableHeadersVisualStyles = false;
             this.siticoneDataGridView2.GridColor = System.Drawing.Color.White;
             this.siticoneDataGridView2.Location = new System.Drawing.Point(14, 35);
@@ -542,7 +542,7 @@
             this.siticoneDataGridView2.RowHeadersVisible = false;
             this.siticoneDataGridView2.RowTemplate.Height = 40;
             this.siticoneDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.siticoneDataGridView2.Size = new System.Drawing.Size(604, 619);
+            this.siticoneDataGridView2.Size = new System.Drawing.Size(604, 661);
             this.siticoneDataGridView2.TabIndex = 6;
             this.siticoneDataGridView2.Theme = Siticone.UI.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.siticoneDataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -554,14 +554,14 @@
             this.siticoneDataGridView2.ThemeStyle.GridColor = System.Drawing.Color.White;
             this.siticoneDataGridView2.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.siticoneDataGridView2.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.siticoneDataGridView2.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.siticoneDataGridView2.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Bold);
             this.siticoneDataGridView2.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.siticoneDataGridView2.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.siticoneDataGridView2.ThemeStyle.HeaderStyle.Height = 40;
             this.siticoneDataGridView2.ThemeStyle.ReadOnly = true;
             this.siticoneDataGridView2.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.siticoneDataGridView2.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.siticoneDataGridView2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.siticoneDataGridView2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.siticoneDataGridView2.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.siticoneDataGridView2.ThemeStyle.RowsStyle.Height = 40;
             this.siticoneDataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -572,7 +572,7 @@
             this.input1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.input1.JoinLeft = true;
             this.input1.JoinRight = true;
-            this.input1.Location = new System.Drawing.Point(13, 660);
+            this.input1.Location = new System.Drawing.Point(13, 694);
             this.input1.Name = "input1";
             this.input1.PlaceholderText = "";
             this.input1.Size = new System.Drawing.Size(605, 68);
@@ -590,7 +590,7 @@
             this.productPanel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.productPanel.Location = new System.Drawing.Point(22, 20);
             this.productPanel.Name = "productPanel";
-            this.productPanel.Size = new System.Drawing.Size(945, 751);
+            this.productPanel.Size = new System.Drawing.Size(945, 793);
             this.productPanel.TabIndex = 1;
             this.productPanel.TabStop = false;
             this.productPanel.Text = "panel5";
@@ -599,8 +599,8 @@
             // 
             this.gridDataProductList.AllowUserToAddRows = false;
             this.gridDataProductList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.gridDataProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gridDataProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gridDataProductList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -609,24 +609,24 @@
             this.gridDataProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridDataProductList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridDataProductList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDataProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridDataProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gridDataProductList.ColumnHeadersHeight = 40;
             this.gridDataProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridDataProductList.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridDataProductList.DefaultCellStyle = dataGridViewCellStyle6;
             this.gridDataProductList.EnableHeadersVisualStyles = false;
             this.gridDataProductList.GridColor = System.Drawing.Color.White;
             this.gridDataProductList.Location = new System.Drawing.Point(21, 85);
@@ -637,7 +637,7 @@
             this.gridDataProductList.RowHeadersVisible = false;
             this.gridDataProductList.RowTemplate.Height = 60;
             this.gridDataProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDataProductList.Size = new System.Drawing.Size(902, 643);
+            this.gridDataProductList.Size = new System.Drawing.Size(902, 685);
             this.gridDataProductList.TabIndex = 5;
             this.gridDataProductList.Theme = Siticone.UI.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.gridDataProductList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -649,17 +649,17 @@
             this.gridDataProductList.ThemeStyle.GridColor = System.Drawing.Color.White;
             this.gridDataProductList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
             this.gridDataProductList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gridDataProductList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridDataProductList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Bold);
             this.gridDataProductList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             this.gridDataProductList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridDataProductList.ThemeStyle.HeaderStyle.Height = 40;
             this.gridDataProductList.ThemeStyle.ReadOnly = true;
             this.gridDataProductList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gridDataProductList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gridDataProductList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gridDataProductList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridDataProductList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.gridDataProductList.ThemeStyle.RowsStyle.Height = 60;
-            this.gridDataProductList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.gridDataProductList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             this.gridDataProductList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.gridDataProductList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDataProductList_CellClick);
             // 
@@ -688,17 +688,18 @@
             // 
             // POS
             // 
-            this.ClientSize = new System.Drawing.Size(1920, 1055);
+            this.ClientSize = new System.Drawing.Size(1920, 1097);
             this.ControlBox = false;
             this.Controls.Add(this.siticonePanel1);
             this.Controls.Add(this.titlebar);
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1024, 640);
             this.Name = "POS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WiseMart";
+            this.Text = "StoreFlow";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.POS_Load);
             this.titlebar.ResumeLayout(false);

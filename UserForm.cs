@@ -9,7 +9,7 @@ namespace CSCISystem1._1
 {
     public partial class UserForm: Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=EMMAN\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
         SqlCommand cmd;
 
@@ -24,6 +24,7 @@ namespace CSCISystem1._1
         {
             InitializeDataUser();
             LoadFilter();
+            
         }
 
         public void InitializeDataUser()
@@ -39,6 +40,7 @@ namespace CSCISystem1._1
             imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
             gridViewUserList.Columns.Add(imgCol); // Fixed syntax issues and corrected the column definition
             labelAction.Text = "Action";
+
             //edit button
             //var editButton = new DataGridViewButtonColumn
             //{
@@ -64,12 +66,26 @@ namespace CSCISystem1._1
             //gridViewUserList.Columns.Add(deleteButton);
             //LoadUserData();
 
+            // cursor change on hover
+            gridViewUserList.CellMouseEnter += (s, e) =>
+            {
+                if (e.RowIndex >= 0 && (e.ColumnIndex == gridViewUserList.Columns["EditAction"].Index ||
+                                        e.ColumnIndex == gridViewUserList.Columns["DeleteAction"].Index))
+                {
+                    gridViewUserList.Cursor = Cursors.Hand;
+                }
+            };
+
+            gridViewUserList.CellMouseLeave += (s, e) =>
+            {
+                gridViewUserList.Cursor = Cursors.Default;
+            };
 
             var editIconColumn = new DataGridViewImageColumn
             {
                 Name = "EditAction",
                 HeaderText = "",
-                //Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit-20.png"),
+               Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit40.png"),
                 ImageLayout = DataGridViewImageCellLayout.Zoom,
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
@@ -80,7 +96,7 @@ namespace CSCISystem1._1
             {
                 Name = "DeleteAction",
                 HeaderText = "",
-               // Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\delete-20.png"), //edit this
+                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\delete30r.png"), //edit this
                 ImageLayout = DataGridViewImageCellLayout.Zoom,
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
@@ -92,10 +108,12 @@ namespace CSCISystem1._1
 
         private void LoadFilter()
         {
-            filter.Items.Add("Date Added");
+            filter.Items.Add("All");
             filter.Items.Add("Username");
             filter.Items.Add("Email");
-
+            filter.Items.Add("First Name");
+            filter.Items.Add("Last Name");
+            filter.Items.Add("User Type");
         }
 
         private void LoadUserData()
@@ -185,6 +203,67 @@ namespace CSCISystem1._1
             if (e.Item.Text == "Home")
             {
                 this.Close();
+            }
+        }
+
+        private void txtSearchUser_TextChanged(object sender, EventArgs e)
+        {
+            SearchUsers(txtSearchUser.Text.Trim());
+        }
+
+        private void SearchUsers(string searchText)
+        {
+            gridViewUserList.Rows.Clear();
+            try
+            {
+                con.Open();
+                string query;
+
+                if (filter.SelectedValue == null || filter.SelectedValue.ToString() == "All")
+                {
+                    query = @"SELECT Username, Email, FirstName, LastName, UserType, ProfilePicture 
+                      FROM tb_user 
+                      WHERE Username LIKE @search OR 
+                            Email LIKE @search OR 
+                            FirstName LIKE @search OR 
+                            LastName LIKE @search OR 
+                            UserType LIKE @search";
+                }
+                else
+                {
+                    string column = filter.SelectedValue.ToString().Replace(" ", ""); // Remove space from "First Name"
+                    query = $@"SELECT Username, Email, FirstName, LastName, UserType, ProfilePicture 
+                       FROM tb_user 
+                       WHERE {column} LIKE @search";
+                }
+
+                cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@search", "%" + searchText + "%");
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    gridViewUserList.Rows.Add(
+                        reader["Username"].ToString(),
+                        reader["Email"].ToString(),
+                        reader["FirstName"].ToString(),
+                        reader["LastName"].ToString(),
+                        reader["UserType"].ToString(),
+                        reader["ProfilePicture"] != DBNull.Value
+                            ? Image.FromStream(new MemoryStream((byte[])reader["ProfilePicture"]))
+                            : null
+                    );
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search error: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
     }

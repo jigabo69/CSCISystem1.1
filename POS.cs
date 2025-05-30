@@ -10,11 +10,10 @@ namespace AntdUIDemo
     public partial class POS : AntdUI.Window
     {
         private bool isRemovingItem = false;
+        private bool eventHandlersAttached = false;
         // This is your global connection string
-        // Make sure 'LAPTOP-JCLJ6T4H' is your EXACT computer name.
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
 
-        SqlCommand cmd;
+        SqlConnection con = new SqlConnection(@"Data Source=EMMAN\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
         public POS()
         {
@@ -25,6 +24,7 @@ namespace AntdUIDemo
         private void LoadMoP()
         {
             mopDropdown.Items.Add("Cash");
+            mopDropdown.SelectedIndex = 0;
         }
 
         private void LoadCartHeader()
@@ -38,16 +38,25 @@ namespace AntdUIDemo
 
         private void POS_Load(object sender, EventArgs e)
         {
+            if (!eventHandlersAttached)
+            {
+                txtCash.TextChanged += txtCash_TextChanged;
+                //button2.Click += RemoveVoidBtn;
+                button1.Click += button1_Click;
+
+                eventHandlersAttached = true;
+            }
+
             txtSearchItem.Focus();
             LoadReceipt();
             LoadProductDataHeader();
-            LoadProductDatabase(); // This is where the problematic connection string is
+            LoadProductDatabase();
             LoadCartHeader();
-            //gridDataProductList.CellClick += gridDataProductList_CellClick;
-            txtCash.TextChanged += txtCash_TextChanged;
-            button2.Click += button2_Click;
-            button1.Click += button1_Click;
+
         }
+
+
+       
 
         private void LoadReceipt()
         {
@@ -169,7 +178,7 @@ namespace AntdUIDemo
         {
             // --- CHANGE THIS LINE ---
             // Use your local computer name: LAPTOP-JCLJ6T4H
-            using (SqlConnection localCon = new SqlConnection("Data Source = LAPTOP-JCLJ6T4H\\SQLEXPRESS; Initial Catalog = DB_System; Integrated Security = True; Encrypt=True;Trust Server Certificate=True"))
+            using (SqlConnection localCon = new SqlConnection(@"Data Source=EMMAN\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;Encrypt=True;Trust Server Certificate=True"))
             {
                 try
                 {
@@ -240,7 +249,19 @@ namespace AntdUIDemo
                 {
                     string name = row.Cells["ItemName"].Value.ToString();
                     int qty = Convert.ToInt32(row.Cells["Qty"].Value);
-                    InventoryReport.AddSoldItem(name, qty);
+                    double unitPrice = 0;
+
+                    // Find the unit price from the product list
+                    foreach (DataGridViewRow gridRow in gridDataProductList.Rows)
+                    {
+                        if (gridRow.Cells["ProductName"].Value?.ToString() == name)
+                        {
+                            unitPrice = Convert.ToDouble(gridRow.Cells["Price"].Value);
+                            break;
+                        }
+                    }
+
+                    InventoryReport.AddSoldItem(name, qty, unitPrice);
                 }
             }
 
@@ -254,6 +275,7 @@ namespace AntdUIDemo
                 {
                     string productName = row.Cells["ItemName"].Value.ToString();
                     int qtyPurchased = Convert.ToInt32(row.Cells["Qty"].Value);
+                    double unitPrice = Convert.ToDouble(row.Cells["Price"].Value) / qtyPurchased; // Calculate unit price
 
                     string updateQuery = @"
                         UPDATE tb_product
@@ -264,6 +286,8 @@ namespace AntdUIDemo
                     {
                         cmd.Parameters.AddWithValue("@Qty", qtyPurchased);
                         cmd.Parameters.AddWithValue("@Name", productName);
+                        
+
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected == 0)
@@ -293,61 +317,27 @@ namespace AntdUIDemo
             LoadProductDatabase(); // Reload product list with updated stock
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void RemoveVoidBtn(object sender, EventArgs e)
         {
-            if (isRemovingItem)
+            AdminLogin loginForm = new AdminLogin();
+            DialogResult result = loginForm.ShowDialog();
+
+            if (result == DialogResult.OK && loginForm.IsAuthenticated)
             {
-                return;
-            }
-
-            isRemovingItem = true; // Set the flag
-
-            if (siticoneDataGridView2.SelectedRows.Count > 0)
-            {
-                DataGridViewRow row = siticoneDataGridView2.SelectedRows[0];
-                string name = row.Cells["ItemName"].Value.ToString();
-                int qty = Convert.ToInt32(row.Cells["Qty"].Value);
-                InventoryReport.AddRemovedItem(name, qty);
-
-                siticoneDataGridView2.Rows.Remove(row);
-            }
-
-
-            try
-            {
-                using (AdminLogin login = new AdminLogin())
+                foreach (DataGridViewRow row in siticoneDataGridView2.SelectedRows)
                 {
-                    var result = login.ShowDialog(); // Shows the login form modally
-                    if (result == DialogResult.OK && login.IsAuthenticated)
-                    {
-                        if (siticoneDataGridView2.SelectedRows.Count > 0)
-                        {
-                            siticoneDataGridView2.Rows.RemoveAt(siticoneDataGridView2.SelectedRows[0].Index);
-                            UpdateTotals();
-                            // Message for successful removal (optional)
-                            // MessageBox.Show("Item removed successfully.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please select an item to remove.");
-                        }
-                    }
-                    else // This 'else' block executes if login was NOT OK or not authenticated (e.g., user clicked 'X', or entered wrong credentials).
-                    {
-                        // This is the message box you're clicking "OK" on.
-                        MessageBox.Show("Admin authentication required to remove items.");
-                        // The 'return;' here is still important to exit this specific method call.
-                        return;
-                    }
+                    siticoneDataGridView2.Rows.Remove(row);
                 }
+
+                MessageBox.Show("Item removed by admin.");
+                UpdateTotals();
             }
-            finally
+            else
             {
-                // Always reset the flag when the process completes or exits.
-                isRemovingItem = false;
+                MessageBox.Show("Action canceled or unauthorized.", "Not Authorized", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-            // No code should be here that would implicitly re-open AdminLogin or re-trigger the removal process.
-        }
+
     }
+}
     

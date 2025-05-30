@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            AntdUI.BreadcrumbItem breadcrumbItem13 = new AntdUI.BreadcrumbItem();
+            AntdUI.BreadcrumbItem breadcrumbItem3 = new AntdUI.BreadcrumbItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product));
-            AntdUI.BreadcrumbItem breadcrumbItem14 = new AntdUI.BreadcrumbItem();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            AntdUI.BreadcrumbItem breadcrumbItem4 = new AntdUI.BreadcrumbItem();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainpanelProduct = new AntdUI.Panel();
             this.panel3 = new AntdUI.Panel();
             this.filter = new AntdUI.Dropdown();
@@ -43,8 +43,8 @@
             this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
             this.AddProductBtn = new AntdUI.Button();
             this.panel1 = new AntdUI.Panel();
-            this.gridViewProductList = new Siticone.UI.WinForms.SiticoneDataGridView();
             this.labelAction = new AntdUI.Label();
+            this.gridViewProductList = new Siticone.UI.WinForms.SiticoneDataGridView();
             this.mainpanelProduct.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,6 +104,7 @@
             this.txtSearchItem.Size = new System.Drawing.Size(292, 38);
             this.txtSearchItem.TabIndex = 7;
             this.txtSearchItem.WaveSize = 0;
+            this.txtSearchItem.TextChanged += new System.EventHandler(this.txtSearchItem_TextChanged);
             // 
             // panel2
             // 
@@ -123,13 +124,13 @@
             // 
             this.breadcrumb1.BackColor = System.Drawing.Color.Transparent;
             this.breadcrumb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            breadcrumbItem13.Icon = ((System.Drawing.Image)(resources.GetObject("breadcrumbItem13.Icon")));
-            breadcrumbItem13.LocalizationText = "homebread";
-            breadcrumbItem13.Text = "Home";
-            breadcrumbItem14.LocalizationText = "productbread";
-            breadcrumbItem14.Text = "Product";
-            this.breadcrumb1.Items.Add(breadcrumbItem13);
-            this.breadcrumb1.Items.Add(breadcrumbItem14);
+            breadcrumbItem3.Icon = ((System.Drawing.Image)(resources.GetObject("breadcrumbItem3.Icon")));
+            breadcrumbItem3.LocalizationText = "homebread";
+            breadcrumbItem3.Text = "Home";
+            breadcrumbItem4.LocalizationText = "productbread";
+            breadcrumbItem4.Text = "Product";
+            this.breadcrumb1.Items.Add(breadcrumbItem3);
+            this.breadcrumb1.Items.Add(breadcrumbItem4);
             this.breadcrumb1.Location = new System.Drawing.Point(38, 20);
             this.breadcrumb1.Name = "breadcrumb1";
             this.breadcrumb1.Size = new System.Drawing.Size(873, 40);
@@ -183,12 +184,23 @@
             this.panel1.TabIndex = 6;
             this.panel1.Text = "panel1";
             // 
+            // labelAction
+            // 
+            this.labelAction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelAction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.labelAction.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAction.Location = new System.Drawing.Point(869, 11);
+            this.labelAction.Name = "labelAction";
+            this.labelAction.Size = new System.Drawing.Size(53, 23);
+            this.labelAction.TabIndex = 10;
+            this.labelAction.Text = "";
+            // 
             // gridViewProductList
             // 
             this.gridViewProductList.AllowUserToAddRows = false;
             this.gridViewProductList.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.gridViewProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gridViewProductList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gridViewProductList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -197,24 +209,24 @@
             this.gridViewProductList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridViewProductList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gridViewProductList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridViewProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gridViewProductList.ColumnHeadersHeight = 40;
             this.gridViewProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridViewProductList.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridViewProductList.DefaultCellStyle = dataGridViewCellStyle6;
             this.gridViewProductList.EnableHeadersVisualStyles = false;
             this.gridViewProductList.GridColor = System.Drawing.Color.White;
             this.gridViewProductList.Location = new System.Drawing.Point(20, 0);
@@ -247,20 +259,9 @@
             this.gridViewProductList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridViewProductList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.gridViewProductList.ThemeStyle.RowsStyle.Height = 40;
-            this.gridViewProductList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gridViewProductList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gridViewProductList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.gridViewProductList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.gridViewProductList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewProductList_CellClick_1);
-            // 
-            // labelAction
-            // 
-            this.labelAction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            this.labelAction.Font = new System.Drawing.Font("Satoshi", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAction.Location = new System.Drawing.Point(869, 11);
-            this.labelAction.Name = "labelAction";
-            this.labelAction.Size = new System.Drawing.Size(53, 23);
-            this.labelAction.TabIndex = 10;
-            this.labelAction.Text = "";
             // 
             // Product
             // 

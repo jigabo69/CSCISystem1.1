@@ -3,13 +3,14 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace CSCISystem1._1
 {
     public partial class EditUser: Form
     {
         private string _usernameToEdit;
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=EMMAN\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
         SqlCommand _cmd = new SqlCommand();
 
@@ -18,6 +19,11 @@ namespace CSCISystem1._1
             InitializeComponent();
             RadiusForm();
             _usernameToEdit = usernameToEdit;
+        }
+        private bool IsValidEmail(string email)
+        {
+            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
         }
 
         private void EditProductForm_Load(object sender, EventArgs e)
@@ -91,6 +97,12 @@ namespace CSCISystem1._1
                 string.IsNullOrEmpty(userType))
             {
                 MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!IsValidEmail(email))
+            {
+                labelEmail.Text = "Please enter a valid Email Address.";
                 return;
             }
 

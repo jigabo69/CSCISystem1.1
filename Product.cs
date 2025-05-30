@@ -10,7 +10,7 @@ namespace CSCISystem1._1
 {
     public partial class Product : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=EMMAN\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
         SqlCommand cmd;
 
@@ -40,15 +40,30 @@ namespace CSCISystem1._1
             gridViewProductList.Columns.Add("Quantity", "Qty");
             gridViewProductList.Columns.Add("Price", "Unit Price");
             gridViewProductList.Columns.Add("TotalPrice", "Total Price");
+            // hand cursor for the edit and delete buttons
+            gridViewProductList.CellMouseEnter += (s, e) =>
+            {
+                if (e.RowIndex >= 0 && (e.ColumnIndex == gridViewProductList.Columns["EditAction"].Index ||
+                                        e.ColumnIndex == gridViewProductList.Columns["DeleteAction"].Index))
+                {
+                    gridViewProductList.Cursor = Cursors.Hand;
+                }
+            };
+
+            gridViewProductList.CellMouseLeave += (s, e) =>
+            {
+                gridViewProductList.Cursor = Cursors.Default;
+            };
 
             //edit button
             var editButton = new DataGridViewImageColumn
             {
                 Name = "EditAction",
-                HeaderText = "", // We'll set a label over it later
-                                 // Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit-20.png"),
+                HeaderText = "", 
+                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit20.png"),
                 ImageLayout = DataGridViewImageCellLayout.Zoom,
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                
             };
             gridViewProductList.Columns.Add(editButton);
 
@@ -57,7 +72,7 @@ namespace CSCISystem1._1
             {
                 Name = "DeleteAction",
                 HeaderText = "",
-                //Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\delete-20.png"),
+                Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\delete30r.png"),
                 ImageLayout = DataGridViewImageCellLayout.Zoom,
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
@@ -96,7 +111,6 @@ namespace CSCISystem1._1
                 con.Close();
             }
         }
-
         private void DeleteProductFromDatabase(string productCode)
         {
             try
@@ -119,9 +133,10 @@ namespace CSCISystem1._1
 
         private void LoadFilter()
         {
-            filter.Items.Add("Date");
+            filter.Items.Add("All");
             filter.Items.Add("Item Code");
             filter.Items.Add("Item Name");
+            filter.Items.Add("ExpDate");
         }
 
         private void AddProductBtn_Click(object sender, EventArgs e)
@@ -133,6 +148,9 @@ namespace CSCISystem1._1
 
         private void gridViewProductList_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+            string productCode = gridViewProductList.Rows[e.RowIndex].Cells["ProductCode"].Value.ToString();
+            
             // Ensure a valid row is clicked and it's the "DeleteAction" column
             if (e.RowIndex >= 0 && gridViewProductList.Columns[e.ColumnIndex].Name == "DeleteAction")
             {
@@ -158,8 +176,16 @@ namespace CSCISystem1._1
                 {
                     gridViewProductList.Rows.RemoveAt(e.RowIndex);
                     // Also delete from database if that's the intended action here
-                    // DeleteProductFromDatabase(itemCode);
+                    DeleteProductFromDatabase(itemCode);
                 }
+            }if (e.RowIndex >= 0 && gridViewProductList.Columns[e.ColumnIndex].Name == "EditAction")
+            {
+
+                EditProductForm editProduct = new EditProductForm(productCode);
+                editProduct.ShowDialog();
+
+                // reload after editing
+                InitializeDataGridView();
             }
         }
 
@@ -168,6 +194,61 @@ namespace CSCISystem1._1
             if (e.Item.Text == "Home")
             {
                 this.Close();
+            }
+        }
+
+        private void txtSearchItem_TextChanged(object sender, EventArgs e)
+        {
+            SearchProducts(txtSearchItem.Text.Trim());
+        }
+
+        private void SearchProducts(string searchText)
+        {
+            try
+            {
+                gridViewProductList.Rows.Clear();
+                con.Open();
+
+                string query = "";
+                string column = "";
+
+                if (filter.SelectedValue == null || filter.SelectedValue.ToString() == "All")
+                {
+                    query = @"SELECT ProductCode, ProductName, ExpDate, Quantity, Price, TotalPrice
+                      FROM tb_product
+                      WHERE ProductCode LIKE @search OR ProductName LIKE @search";
+                }
+                else
+                {
+                    column = filter.SelectedValue.ToString();
+                    query = $@"SELECT ProductCode, ProductName, ExpDate, Quantity, Price, TotalPrice
+                       FROM tb_product
+                       WHERE {column} LIKE @search";
+                }
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@search", "%" + searchText + "%");
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    gridViewProductList.Rows.Add(
+                        reader["ProductCode"].ToString(),
+                        reader["ProductName"].ToString(),
+                        Convert.ToDateTime(reader["ExpDate"]).ToString("yyyy-MM-dd"),
+                        reader["Quantity"].ToString(),
+                        reader["Price"].ToString(),
+                        reader["TotalPrice"].ToString()
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Search error: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
     }

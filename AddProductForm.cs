@@ -9,13 +9,14 @@ namespace CSCISystem1._1
 {
     public partial class AddProductForm: Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=EMMAN\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
 
         SqlCommand _cmd = new SqlCommand();
 
         public AddProductForm()
         {
             InitializeComponent();
+            txtProductCode.KeyPress += txtProductCode_KeyPress;
             RadiusForm();
             CalculateTotalPrice();
         }
@@ -154,6 +155,23 @@ namespace CSCISystem1._1
                 // Load the selected image into the PictureBox
                 pictureBoxAddProduct.Image = Image.FromFile(openFileDialog.FileName);
                 pictureBoxAddProduct.ImageFit = TFit.Cover;
+            }
+        }
+
+        private void txtProductCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // block the input
+            }
+        }
+
+        private void txtProductCode_TextChanged(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtProductCode.Text, @"^[0-9\-]*$"))
+            {
+                MessageBox.Show("Only numbers and dashes are allowed.");
+                txtProductCode.Text = "";
             }
         }
     }

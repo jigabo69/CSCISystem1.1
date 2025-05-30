@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using AntdUIDemo;
 
@@ -6,15 +7,36 @@ namespace CSCISystem1._1
 {
     public partial class Main: Form
     {
-
+        string firstname;
+        string userType;
+        Image profileImage;
         public Main()
         {
             InitializeComponent();
+        }
+
+        public Main(string firstname, string userType, Image profileImage)
+        {
+            InitializeComponent();
+
+            this.firstname = firstname;
+            this.userType = userType;
+            this.profileImage = profileImage;
+
+            if (profileImage != null)
+            {
+                UserCirclePictureBox.Image = profileImage;
+            }
         }
         private void Main_Load(object sender, EventArgs e)
         {
             loadingTimer.Start();
             LoadForm(new HomeForm());
+
+            labelUserType.Text = firstname + " (" + userType + ")";
+
+            ToolTip tooltip = new ToolTip();
+            tooltip.SetToolTip(UserCirclePictureBox, firstname);
         }
         public void LoadForm(object Form)
         {
@@ -84,7 +106,7 @@ namespace CSCISystem1._1
 
         private void SalesBtn_Click(object sender, EventArgs e)
         {
-            LoadForm(new SalesReport());
+            LoadForm(new Sales());
         }
 
         private void TempPOSBTN_Click(object sender, EventArgs e)

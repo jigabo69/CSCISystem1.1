@@ -45,6 +45,7 @@
             this.txtPassword = new AntdUI.Input();
             this.siticoneLabel5 = new Siticone.UI.WinForms.SiticoneLabel();
             this.siticoneLabel6 = new Siticone.UI.WinForms.SiticoneLabel();
+            this.labelEmail = new Siticone.UI.WinForms.SiticoneLabel();
             this.titlebar.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -93,18 +94,19 @@
             // 
             this.txtEmail.AllowClear = true;
             this.txtEmail.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(56, 156);
+            this.txtEmail.Location = new System.Drawing.Point(56, 161);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PlaceholderText = "Email";
             this.txtEmail.Size = new System.Drawing.Size(486, 55);
             this.txtEmail.TabIndex = 7;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // addBtn
             // 
             this.addBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(151)))), ((int)(((byte)(255)))));
             this.addBtn.Font = new System.Drawing.Font("Satoshi", 12F);
             this.addBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.addBtn.Location = new System.Drawing.Point(159, 438);
+            this.addBtn.Location = new System.Drawing.Point(159, 459);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(132, 42);
             this.addBtn.TabIndex = 13;
@@ -154,7 +156,7 @@
             this.resetBtn.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.resetBtn.Font = new System.Drawing.Font("Satoshi", 12F);
             this.resetBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.resetBtn.Location = new System.Drawing.Point(297, 438);
+            this.resetBtn.Location = new System.Drawing.Point(297, 459);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(132, 42);
             this.resetBtn.TabIndex = 30;
@@ -163,6 +165,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.labelEmail);
             this.panel1.Controls.Add(this.selectUsertype);
             this.panel1.Controls.Add(this.txtLname);
             this.panel1.Controls.Add(this.txtFname);
@@ -176,7 +179,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(10, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 517);
+            this.panel1.Size = new System.Drawing.Size(846, 547);
             this.panel1.TabIndex = 0;
             this.panel1.Text = "panel1";
             // 
@@ -193,7 +196,7 @@
             // 
             this.txtLname.AllowClear = true;
             this.txtLname.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLname.Location = new System.Drawing.Point(56, 370);
+            this.txtLname.Location = new System.Drawing.Point(56, 386);
             this.txtLname.Name = "txtLname";
             this.txtLname.PlaceholderText = "Last Name";
             this.txtLname.Size = new System.Drawing.Size(486, 55);
@@ -203,7 +206,7 @@
             // 
             this.txtFname.AllowClear = true;
             this.txtFname.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFname.Location = new System.Drawing.Point(56, 299);
+            this.txtFname.Location = new System.Drawing.Point(56, 309);
             this.txtFname.Name = "txtFname";
             this.txtFname.PlaceholderText = "First Name";
             this.txtFname.Size = new System.Drawing.Size(486, 55);
@@ -213,7 +216,7 @@
             // 
             this.txtPassword.AllowClear = true;
             this.txtPassword.Font = new System.Drawing.Font("Satoshi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(56, 228);
+            this.txtPassword.Location = new System.Drawing.Point(56, 234);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.Size = new System.Drawing.Size(486, 55);
@@ -240,13 +243,22 @@
             this.siticoneLabel6.TabIndex = 29;
             this.siticoneLabel6.Text = "User Name";
             // 
+            // labelEmail
+            // 
+            this.labelEmail.BackColor = System.Drawing.Color.Transparent;
+            this.labelEmail.ForeColor = System.Drawing.Color.Red;
+            this.labelEmail.Location = new System.Drawing.Point(68, 214);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(3, 2);
+            this.labelEmail.TabIndex = 36;
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(866, 530);
+            this.ClientSize = new System.Drawing.Size(866, 560);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddUser";
@@ -257,6 +269,7 @@
             this.titlebar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +292,6 @@
         private AntdUI.Input txtPassword;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel5;
         private Siticone.UI.WinForms.SiticoneLabel siticoneLabel6;
+        private Siticone.UI.WinForms.SiticoneLabel labelEmail;
     }
 }

@@ -7,12 +7,13 @@ using AntdUI;
 using System.Data;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace CSCISystem1._1
 {
     public partial class AddUser: Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection con = new SqlConnection(@"Data Source=EMMAN\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
         SqlCommand cmd = new SqlCommand();
 
         public AddUser()
@@ -22,28 +23,50 @@ namespace CSCISystem1._1
             
         }
 
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] inputBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = sha256.ComputeHash(inputBytes);
+                return Convert.ToBase64String(hashBytes);
+            }
+        }
+        private bool IsValidEmail(string email)
+        {
+            string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
+        }
+
         private void AddUserToDatabase()
         {
-
-            // Trim and gather input values
+            //gathering input values
             var username = txtUsername.Text.Trim();
             var email = txtEmail.Text.Trim();
             var password = txtPassword.Text.Trim();
             var firstName = txtFname.Text.Trim();
             var lastName = txtLname.Text.Trim();
-            var userType = selectUsertype.SelectedValue.ToString();
 
-            // Check for empty required fields
+            //check for empty required fields
             if (string.IsNullOrEmpty(username) ||
                 string.IsNullOrEmpty(email) ||
                 string.IsNullOrEmpty(password) ||
                 string.IsNullOrEmpty(firstName) ||
                 string.IsNullOrEmpty(lastName) ||
-                string.IsNullOrEmpty(userType))
+                selectUsertype.SelectedValue == null ||
+                string.IsNullOrEmpty(selectUsertype.SelectedValue.ToString()))
             {
                 MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            //validate email format
+            if (!IsValidEmail(email))
+            {
+                labelEmail.Text = "Please enter a valid Email Address.";
+                return;
+            }
+            labelEmail.Text = "";
 
             try
             {
@@ -51,12 +74,14 @@ namespace CSCISystem1._1
                                "VALUES (@Username, @Email, @Password, @FirstName, @LastName, @UserType, @ProfilePicture)";
                 using (SqlCommand _cmd = new SqlCommand(query, con))
                 {
+                    string hashedPassword = HashPassword(password);
+
                     _cmd.Parameters.AddWithValue("@Username", username);
                     _cmd.Parameters.AddWithValue("@Email", email);
-                    _cmd.Parameters.AddWithValue("@Password", password);
+                    _cmd.Parameters.AddWithValue("@Password", hashedPassword);
                     _cmd.Parameters.AddWithValue("@FirstName", firstName);
                     _cmd.Parameters.AddWithValue("@LastName", lastName);
-                    _cmd.Parameters.AddWithValue("@UserType", userType);
+                    _cmd.Parameters.AddWithValue("@UserType", selectUsertype.SelectedValue.ToString());
 
                     if (pictureBoxAddUser.Image != null)
                     {
@@ -92,6 +117,7 @@ namespace CSCISystem1._1
         }
 
 
+
         private void LoadUserType()
         {
             selectUsertype.Items.Clear();
@@ -101,7 +127,6 @@ namespace CSCISystem1._1
 
         }
 
-        
         private void AddProductForm_Load(object sender, EventArgs e)
         {
             
@@ -166,6 +191,11 @@ namespace CSCISystem1._1
                 pictureBoxAddUser.Image = Image.FromFile(openFileDialog.FileName);
                 pictureBoxAddUser.ImageFit = TFit.Cover;
             }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            labelEmail.Text = "";
         }
     }
 }
