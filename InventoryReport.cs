@@ -22,8 +22,11 @@ namespace CSCISystem1._1
 
             if (removedItemsTable.Columns.Count == 0)
             {
-                removedItemsTable.Columns.Add("Item Name", typeof(string));
+                removedItemsTable.Columns.Add("ItemCode", typeof(string));
+                removedItemsTable.Columns.Add("ItemName", typeof(string));
                 removedItemsTable.Columns.Add("Quantity", typeof(int));
+                removedItemsTable.Columns.Add("UnitPrice", typeof(double));
+                removedItemsTable.Columns.Add("ExpirationDate", typeof(DateTime));
                 removedItemsTable.Columns.Add("Date Removed", typeof(DateTime));
             }
         }
@@ -42,9 +45,14 @@ namespace CSCISystem1._1
             soldItemsTable.Rows.Add(itemName, quantity, DateTime.Now);
         }
 
-        public static void AddRemovedItem(string itemName, int quantity)
+        public static void AddRemovedItem(string itemCode, string itemName, int quantity, double unitPrice, DateTime expirationDate)
         {
-            removedItemsTable.Rows.Add(itemName, quantity, DateTime.Now);
+            removedItemsTable.Rows.Add(itemCode, itemName, quantity, unitPrice, expirationDate, DateTime.Now);
+        }
+
+        internal static void AddRemovedItem(string name, int qty)
+        {
+            throw new NotImplementedException();
         }
     }
 }

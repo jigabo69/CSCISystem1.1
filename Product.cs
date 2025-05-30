@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Management;
+using System.Management; // Not directly used in snippets, but kept
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
-using Vanara.PInvoke;
+using Vanara.PInvoke; // Not directly used in snippets, but kept
 
 namespace CSCISystem1._1
 {
@@ -12,9 +12,8 @@ namespace CSCISystem1._1
     {
         SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-JCLJ6T4H\SQLEXPRESS;Initial Catalog=DB_System;Integrated Security=True;TrustServerCertificate=True");
 
-
         SqlCommand cmd;
-        
+
         public Product()
         {
             InitializeComponent();
@@ -31,11 +30,13 @@ namespace CSCISystem1._1
         {
             gridViewProductList.Columns.Clear();
             gridViewProductList.Rows.Clear();
-            
 
+            // IMPORTANT: The first string is the INTERNAL NAME (Name property) of the column.
+            // The second string is the DISPLAY TEXT (HeaderText) of the column.
+            // Your row.Cells["ColumnName"] access uses the INTERNAL NAME.
             gridViewProductList.Columns.Add("ProductCode", "Item Code");
             gridViewProductList.Columns.Add("ProductName", "Item Name");
-            gridViewProductList.Columns.Add("ExpDate", "Expiration Date");
+            gridViewProductList.Columns.Add("ExpDate", "Expiration Date"); // Corrected for consistency below
             gridViewProductList.Columns.Add("Quantity", "Qty");
             gridViewProductList.Columns.Add("Price", "Unit Price");
             gridViewProductList.Columns.Add("TotalPrice", "Total Price");
@@ -45,7 +46,7 @@ namespace CSCISystem1._1
             {
                 Name = "EditAction",
                 HeaderText = "", // We'll set a label over it later
-               // Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit-20.png"),
+                                 // Image = Image.FromFile(@"C:\Users\emman\Downloads\Icon\edit-20.png"),
                 ImageLayout = DataGridViewImageCellLayout.Zoom,
                 AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             };
@@ -128,31 +129,36 @@ namespace CSCISystem1._1
             AddProductForm addProductForm = new AddProductForm();
             addProductForm.ShowDialog();
             InitializeDataGridView();
-
         }
 
         private void gridViewProductList_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
-
-            string productCode = gridViewProductList.Rows[e.RowIndex].Cells["ProductCode"].Value.ToString();
-
-            if (gridViewProductList.Columns[e.ColumnIndex].Name == "EditAction")
+            // Ensure a valid row is clicked and it's the "DeleteAction" column
+            if (e.RowIndex >= 0 && gridViewProductList.Columns[e.ColumnIndex].Name == "DeleteAction")
             {
-                EditProductForm editProduct = new EditProductForm(productCode);
-                editProduct.ShowDialog();
-               
-                // reload after editing
-                InitializeDataGridView();
-            }
-            else if (gridViewProductList.Columns[e.ColumnIndex].Name == "DeleteAction")
-            {
-                DialogResult result = MessageBox.Show($"Are you sure you want to delete Item: {productCode}?" ,
-                    "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                // Get the clicked row
+                var row = gridViewProductList.Rows[e.RowIndex];
+
+                // Get product data from the DataGridView cells.
+                // THESE NAMES MUST MATCH THE FIRST STRING (NAME) OF THE COLUMNS ADDED IN InitializeDataGridView().
+                // Also, ensure they match the InventoryReport.AddRemovedItem parameter order.
+                string itemCode = row.Cells["ProductCode"].Value.ToString(); // Changed: "ItemCode" to "ProductCode"
+                string itemName = row.Cells["ProductName"].Value.ToString(); // Changed: "ItemName" to "ProductName"
+                int qty = int.Parse(row.Cells["Quantity"].Value.ToString());
+                double unitPrice = double.Parse(row.Cells["Price"].Value.ToString()); // Changed: "UnitPrice" to "Price"
+                DateTime expDate = DateTime.Parse(row.Cells["ExpDate"].Value.ToString()); // Changed: "ExpirationDate" to "ExpDate"
+
+                // Send to InventoryReport.cs
+                // This call uses the parameters that match InventoryReport's AddRemovedItem
+                InventoryReport.AddRemovedItem(itemCode, itemName, qty, unitPrice, expDate);
+
+                // Confirm and remove from grid
+                DialogResult result = MessageBox.Show($"Are you sure you want to remove {itemName}?", "Confirm", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    DeleteProductFromDatabase(productCode);
                     gridViewProductList.Rows.RemoveAt(e.RowIndex);
+                    // Also delete from database if that's the intended action here
+                    // DeleteProductFromDatabase(itemCode);
                 }
             }
         }
